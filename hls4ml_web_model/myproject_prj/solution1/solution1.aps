@@ -1,0 +1,24 @@
+<AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <config>
+        <config_array_partition maximum_size="4096"/>
+        <config_compile name_max_length="80"/>
+        <schedule model="myproject"/>
+    </config>
+    <name>
+        <value string="solution1"/>
+    </name>
+    <project>
+        <value string="myproject_prj"/>
+    </project>
+    <targetInfo>
+        <TargetInfo value="xc7a200t:sbv484:-2"/>
+    </targetInfo>
+    <libraryList>
+        <library value="xilinx/artix7/artix7" name="DefaultPlatform"/>
+        <library value="xilinx/artix7/artix7_fpv6" name="DefaultPlatform"/>
+    </libraryList>
+    <clockList>
+        <clock default="false" name="default" uncertainty="12.5%" period="10ns"/>
+    </clockList>
+</AutoPilot:solution>
+
