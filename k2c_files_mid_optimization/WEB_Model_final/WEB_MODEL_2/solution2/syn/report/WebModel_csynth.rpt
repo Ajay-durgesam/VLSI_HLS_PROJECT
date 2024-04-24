@@ -1,0 +1,333 @@
+
+
+================================================================
+== Vivado HLS Report for 'WebModel'
+================================================================
+* Date:           Mon Apr 22 22:21:36 2024
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        WEB_MODEL_2
+* Solution:       solution2
+* Product family: artix7
+* Target device:  xc7a200tsbv484-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|    10.192|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------+-------------+-----+-----+-----+-----+---------+
+        |                        |             |  Latency  |  Interval | Pipeline|
+        |        Instance        |    Module   | min | max | min | max |   Type  |
+        +------------------------+-------------+-----+-----+-----+-----+---------+
+        |grp_k2c_dense_fu_765    |k2c_dense    |    ?|    ?|    ?|    ?|   none  |
+        |grp_k2c_dense_1_fu_790  |k2c_dense_1  |    ?|    ?|    ?|    ?|   none  |
+        |grp_k2c_dense_2_fu_814  |k2c_dense_2  |    ?|    ?|    ?|    ?|   none  |
+        +------------------------+-------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        +----------+-------+-------+----------+-----------+-----------+-------+----------+
+        |          |    Latency    | Iteration|  Initiation Interval  |  Trip |          |
+        | Loop Name|  min  |  max  |  Latency |  achieved |   target  | Count | Pipelined|
+        +----------+-------+-------+----------+-----------+-----------+-------+----------+
+        |- Loop 1  |     64|     64|         1|          -|          -|     64|    no    |
+        |- Loop 2  |  51072|  51072|         2|          -|          -|  25536|    no    |
+        |- Loop 3  |    128|    128|         2|          -|          -|     64|    no    |
+        |- Loop 4  |     64|     64|         1|          -|          -|     64|    no    |
+        |- Loop 5  |   8192|   8192|         2|          -|          -|   4096|    no    |
+        |- Loop 6  |    128|    128|         2|          -|          -|     64|    no    |
+        |- Loop 7  |    128|    128|         2|          -|          -|     64|    no    |
+        +----------+-------+-------+----------+-----------+-----------+-------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      -|       0|     772|
+|FIFO             |        -|      -|       -|       -|
+|Instance         |       82|    403|   45703|   36185|
+|Memory           |      606|      -|     256|      32|
+|Multiplexer      |        -|      -|       -|     896|
+|Register         |        -|      -|     207|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |      688|    403|   46166|   37885|
++-----------------+---------+-------+--------+--------+
+|Available        |      730|    740|  269200|  129000|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |       94|     54|      17|      29|
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    +------------------------+-------------+---------+-------+-------+-------+
+    |        Instance        |    Module   | BRAM_18K| DSP48E|   FF  |  LUT  |
+    +------------------------+-------------+---------+-------+-------+-------+
+    |grp_k2c_dense_fu_765    |k2c_dense    |        2|    139|  16033|  13453|
+    |grp_k2c_dense_1_fu_790  |k2c_dense_1  |       16|    132|  15141|  11583|
+    |grp_k2c_dense_2_fu_814  |k2c_dense_2  |       64|    132|  14529|  11149|
+    +------------------------+-------------+---------+-------+-------+-------+
+    |Total                   |             |       82|    403|  45703|  36185|
+    +------------------------+-------------+---------+-------+-------+-------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +--------------------------+----------------------+---------+----+----+-------+-----+------+-------------+
+    |          Memory          |        Module        | BRAM_18K| FF | LUT| Words | Bits| Banks| W*Bits*Banks|
+    +--------------------------+----------------------+---------+----+----+-------+-----+------+-------------+
+    |dense_69_kernel_arra_5_U  |WebModel_dense_69Aem  |        8|   0|   0|   3192|   32|     1|       102144|
+    |dense_69_kernel_arra_4_U  |WebModel_dense_69Bew  |        8|   0|   0|   3192|   32|     1|       102144|
+    |dense_69_kernel_arra_3_U  |WebModel_dense_69CeG  |        8|   0|   0|   3192|   32|     1|       102144|
+    |dense_69_kernel_arra_2_U  |WebModel_dense_69DeQ  |        8|   0|   0|   3192|   32|     1|       102144|
+    |dense_69_kernel_arra_1_U  |WebModel_dense_69Ee0  |        8|   0|   0|   3192|   32|     1|       102144|
+    |dense_69_kernel_arra_8_U  |WebModel_dense_69Ffa  |       64|   0|   0|  26000|   32|     1|       832000|
+    |dense_69_bias_array_9_U   |WebModel_dense_69Ffa  |       64|   0|   0|  26000|   32|     1|       832000|
+    |dense_70_output_arra_U    |WebModel_dense_69Ffa  |       64|   0|   0|  26000|   32|     1|       832000|
+    |dense_70_kernel_arra_1_U  |WebModel_dense_69Ffa  |       64|   0|   0|  26000|   32|     1|       832000|
+    |dense_70_bias_array_U     |WebModel_dense_69Ffa  |       64|   0|   0|  26000|   32|     1|       832000|
+    |dense_71_kernel_arra_0_U  |WebModel_dense_69Ffa  |       64|   0|   0|  26000|   32|     1|       832000|
+    |dense_71_bias_array_U     |WebModel_dense_69Ffa  |       64|   0|   0|  26000|   32|     1|       832000|
+    |dense_69_bias_array_U     |WebModel_dense_69Gfk  |        1|   0|   0|     64|   32|     1|         2048|
+    |dense_69_kernel_shap_U    |WebModel_dense_69WhU  |        4|   0|   0|      5|   64|     1|          320|
+    |dense_69_output_shap_U    |WebModel_dense_69WhU  |        4|   0|   0|      5|   64|     1|          320|
+    |dense_70_kernel_shap_U    |WebModel_dense_69WhU  |        4|   0|   0|      5|   64|     1|          320|
+    |dense_70_output_shap_U    |WebModel_dense_69WhU  |        4|   0|   0|      5|   64|     1|          320|
+    |dense_71_kernel_shap_U    |WebModel_dense_69WhU  |        4|   0|   0|      5|   64|     1|          320|
+    |dense_69_output_arra_U    |WebModel_dense_69wdI  |       64|   0|   0|  26000|   32|     1|       832000|
+    |dense_69_kernel_arra_U    |WebModel_dense_69xdS  |        8|   0|   0|   3192|   32|     1|       102144|
+    |dense_69_kernel_arra_7_U  |WebModel_dense_69yd2  |        8|   0|   0|   3192|   32|     1|       102144|
+    |dense_69_kernel_arra_6_U  |WebModel_dense_69zec  |        8|   0|   0|   3192|   32|     1|       102144|
+    |dense_70_kernel_arra_U    |WebModel_dense_70JfO  |        8|   0|   0|   4096|   32|     1|       131072|
+    |dense_70_bias_array_7_U   |WebModel_dense_70Lf8  |        0|  32|   4|      8|   32|     1|          256|
+    |dense_70_bias_array_s_U   |WebModel_dense_70Mgi  |        0|  32|   4|      8|   32|     1|          256|
+    |dense_70_bias_array_1_U   |WebModel_dense_70Ngs  |        0|  32|   4|      8|   32|     1|          256|
+    |dense_70_bias_array_2_U   |WebModel_dense_70OgC  |        0|  32|   4|      8|   32|     1|          256|
+    |dense_70_bias_array_3_U   |WebModel_dense_70PgM  |        0|  32|   4|      8|   32|     1|          256|
+    |dense_70_bias_array_4_U   |WebModel_dense_70QgW  |        0|  32|   4|      8|   32|     1|          256|
+    |dense_70_bias_array_5_U   |WebModel_dense_70Rg6  |        0|  32|   4|      8|   32|     1|          256|
+    |dense_70_bias_array_6_U   |WebModel_dense_70Shg  |        0|  32|   4|      8|   32|     1|          256|
+    |dense_71_kernel_arra_U    |WebModel_dense_71UhA  |        1|   0|   0|     64|   32|     1|         2048|
+    +--------------------------+----------------------+---------+----+----+-------+-----+------+-------------+
+    |Total                     |                      |      606| 256|  32| 237849| 1184|    32|      7611968|
+    +--------------------------+----------------------+---------+----+----+-------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+-------+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+-------+---+----+------------+------------+
+    |b1_1_fu_859_p2             |     +    |      0|  0|  15|           7|           1|
+    |b2_1_fu_887_p2             |     +    |      0|  0|  22|          15|           1|
+    |b3_1_fu_1022_p2            |     +    |      0|  0|  15|           7|           1|
+    |b4_1_fu_1039_p2            |     +    |      0|  0|  15|           7|           1|
+    |b5_1_fu_1068_p2            |     +    |      0|  0|  20|          13|           1|
+    |b6_1_fu_1096_p2            |     +    |      0|  0|  15|           7|           1|
+    |b7_1_fu_1237_p2            |     +    |      0|  0|  15|           7|           1|
+    |sel_tmp10_i1_fu_1199_p2    |   icmp   |      0|  0|   9|           3|           3|
+    |sel_tmp10_i_fu_984_p2      |   icmp   |      0|  0|   9|           3|           3|
+    |sel_tmp12_i1_fu_1212_p2    |   icmp   |      0|  0|   9|           3|           3|
+    |sel_tmp12_i_fu_997_p2      |   icmp   |      0|  0|   9|           3|           3|
+    |sel_tmp2_i3_fu_1147_p2     |   icmp   |      0|  0|   9|           3|           1|
+    |sel_tmp2_i_fu_932_p2       |   icmp   |      0|  0|   9|           3|           1|
+    |sel_tmp4_i5_fu_1160_p2     |   icmp   |      0|  0|   9|           3|           2|
+    |sel_tmp4_i_fu_945_p2       |   icmp   |      0|  0|   9|           3|           2|
+    |sel_tmp6_i7_fu_1173_p2     |   icmp   |      0|  0|   9|           3|           2|
+    |sel_tmp6_i_fu_958_p2       |   icmp   |      0|  0|   9|           3|           2|
+    |sel_tmp8_i9_fu_1186_p2     |   icmp   |      0|  0|   9|           3|           4|
+    |sel_tmp8_i_fu_971_p2       |   icmp   |      0|  0|   9|           3|           4|
+    |sel_tmp_i1_fu_1134_p2      |   icmp   |      0|  0|   9|           3|           1|
+    |sel_tmp_i_fu_919_p2        |   icmp   |      0|  0|   9|           3|           1|
+    |tmp_3_fu_1062_p2           |   icmp   |      0|  0|  13|          13|          14|
+    |tmp_4_fu_1090_p2           |   icmp   |      0|  0|  11|           7|           8|
+    |tmp_6_fu_1231_p2           |   icmp   |      0|  0|  11|           7|           8|
+    |tmp_8_fu_1016_p2           |   icmp   |      0|  0|  11|           7|           8|
+    |tmp_9_fu_1033_p2           |   icmp   |      0|  0|  11|           7|           8|
+    |tmp_fu_853_p2              |   icmp   |      0|  0|  11|           7|           8|
+    |tmp_s_fu_881_p2            |   icmp   |      0|  0|  13|          15|          14|
+    |dense_69_kernel_arra_8_d0  |  select  |      0|  0|  32|           1|          32|
+    |dense_70_bias_array_d0     |  select  |      0|  0|  32|           1|          32|
+    |sel_tmp11_i1_fu_1204_p3    |  select  |      0|  0|  32|           1|          32|
+    |sel_tmp11_i_fu_989_p3      |  select  |      0|  0|  32|           1|          32|
+    |sel_tmp1_i2_fu_1139_p3     |  select  |      0|  0|  32|           1|          32|
+    |sel_tmp1_i_fu_924_p3       |  select  |      0|  0|  32|           1|          32|
+    |sel_tmp3_i4_fu_1152_p3     |  select  |      0|  0|  32|           1|          32|
+    |sel_tmp3_i_fu_937_p3       |  select  |      0|  0|  32|           1|          32|
+    |sel_tmp5_i6_fu_1165_p3     |  select  |      0|  0|  32|           1|          32|
+    |sel_tmp5_i_fu_950_p3       |  select  |      0|  0|  32|           1|          32|
+    |sel_tmp7_i8_fu_1178_p3     |  select  |      0|  0|  32|           1|          32|
+    |sel_tmp7_i_fu_963_p3       |  select  |      0|  0|  32|           1|          32|
+    |sel_tmp9_i1_fu_1191_p3     |  select  |      0|  0|  32|           1|          32|
+    |sel_tmp9_i_fu_976_p3       |  select  |      0|  0|  32|           1|          32|
+    +---------------------------+----------+-------+---+----+------------+------------+
+    |Total                      |          |      0|  0| 772|         182|         555|
+    +---------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------+-----+-----------+-----+-----------+
+    |               Name              | LUT | Input Size| Bits| Total Bits|
+    +---------------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                        |  125|         27|    1|         27|
+    |b1_reg_688                       |    9|          2|    7|         14|
+    |b2_reg_699                       |    9|          2|   15|         30|
+    |b3_reg_710                       |    9|          2|    7|         14|
+    |b4_reg_721                       |    9|          2|    7|         14|
+    |b5_reg_732                       |    9|          2|   13|         26|
+    |b6_reg_743                       |    9|          2|    7|         14|
+    |b7_reg_754                       |    9|          2|    7|         14|
+    |dense_69_bias_array_9_address0   |   15|          3|   15|         45|
+    |dense_69_bias_array_9_ce0        |   15|          3|    1|          3|
+    |dense_69_kernel_arra_8_address0  |   15|          3|   15|         45|
+    |dense_69_kernel_arra_8_ce0       |   15|          3|    1|          3|
+    |dense_69_kernel_shap_address0    |   27|          5|    3|         15|
+    |dense_69_kernel_shap_address1    |   15|          3|    3|          9|
+    |dense_69_kernel_shap_ce0         |   15|          3|    1|          3|
+    |dense_69_kernel_shap_d0          |   21|          4|   64|        256|
+    |dense_69_output_arra_address0    |   21|          4|   15|         60|
+    |dense_69_output_arra_ce0         |   21|          4|    1|          4|
+    |dense_69_output_arra_ce1         |    9|          2|    1|          2|
+    |dense_69_output_arra_d0          |   15|          3|   32|         96|
+    |dense_69_output_arra_we0         |   15|          3|    1|          3|
+    |dense_69_output_arra_we1         |    9|          2|    1|          2|
+    |dense_69_output_shap_address0    |   27|          5|    3|         15|
+    |dense_69_output_shap_address1    |   15|          3|    3|          9|
+    |dense_69_output_shap_ce0         |   15|          3|    1|          3|
+    |dense_69_output_shap_d0          |   15|          3|   64|        192|
+    |dense_70_bias_array_address0     |   15|          3|   15|         45|
+    |dense_70_bias_array_ce0          |   15|          3|    1|          3|
+    |dense_70_kernel_arra_1_address0  |   15|          3|   15|         45|
+    |dense_70_kernel_arra_1_ce0       |   15|          3|    1|          3|
+    |dense_70_kernel_shap_address0    |   27|          5|    3|         15|
+    |dense_70_kernel_shap_address1    |   15|          3|    3|          9|
+    |dense_70_kernel_shap_ce0         |   15|          3|    1|          3|
+    |dense_70_kernel_shap_d0          |   15|          3|   64|        192|
+    |dense_70_output_arra_address0    |   21|          4|   15|         60|
+    |dense_70_output_arra_ce0         |   21|          4|    1|          4|
+    |dense_70_output_arra_d0          |   15|          3|   32|         96|
+    |dense_70_output_arra_we0         |   15|          3|    1|          3|
+    |dense_70_output_shap_address0    |   27|          5|    3|         15|
+    |dense_70_output_shap_address1    |   15|          3|    3|          9|
+    |dense_70_output_shap_ce0         |   15|          3|    1|          3|
+    |dense_70_output_shap_d0          |   15|          3|   64|        192|
+    |dense_71_bias_array_address0     |   15|          3|   15|         45|
+    |dense_71_bias_array_ce0          |   15|          3|    1|          3|
+    |dense_71_kernel_arra_0_address0  |   15|          3|   15|         45|
+    |dense_71_kernel_arra_0_ce0       |   15|          3|    1|          3|
+    |dense_71_kernel_shap_address0    |   27|          5|    3|         15|
+    |dense_71_kernel_shap_address1    |   15|          3|    3|          9|
+    |dense_71_kernel_shap_ce0         |   15|          3|    1|          3|
+    |dense_71_kernel_shap_d0          |   15|          3|   64|        192|
+    +---------------------------------+-----+-----------+-----+-----------+
+    |Total                            |  896|        180|  615|       1930|
+    +---------------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------+----+----+-----+-----------+
+    |                 Name                | FF | LUT| Bits| Const Bits|
+    +-------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                            |  26|   0|   26|          0|
+    |b1_reg_688                           |   7|   0|    7|          0|
+    |b2_1_reg_1322                        |  15|   0|   15|          0|
+    |b2_cast_reg_1314                     |  15|   0|   64|         49|
+    |b2_reg_699                           |  15|   0|   15|          0|
+    |b3_1_reg_1386                        |   7|   0|    7|          0|
+    |b3_cast_reg_1378                     |   7|   0|   64|         57|
+    |b3_reg_710                           |   7|   0|    7|          0|
+    |b4_reg_721                           |   7|   0|    7|          0|
+    |b5_1_reg_1412                        |  13|   0|   13|          0|
+    |b5_cast_reg_1404                     |  13|   0|   64|         51|
+    |b5_reg_732                           |  13|   0|   13|          0|
+    |b6_1_reg_1430                        |   7|   0|    7|          0|
+    |b6_cast_reg_1422                     |   7|   0|   64|         57|
+    |b6_reg_743                           |   7|   0|    7|          0|
+    |b7_1_reg_1494                        |   7|   0|    7|          0|
+    |b7_cast_reg_1486                     |   7|   0|   64|         57|
+    |b7_reg_754                           |   7|   0|    7|          0|
+    |dense_69_output_ndim                 |   1|   0|   64|         63|
+    |dense_69_output_nume                 |   1|   0|   64|         63|
+    |dense_70_bias_numel                  |   1|   0|   64|         63|
+    |dense_70_kernel_ndim                 |   1|   0|   64|         63|
+    |dense_70_kernel_nume                 |   1|   0|   64|         63|
+    |dense_70_output_ndim                 |   1|   0|   64|         63|
+    |dense_70_output_nume                 |   1|   0|   64|         63|
+    |dense_71_bias_numel                  |   1|   0|   64|         63|
+    |dense_71_kernel_ndim                 |   1|   0|   64|         63|
+    |dense_71_kernel_nume                 |   1|   0|   64|         63|
+    |grp_k2c_dense_1_fu_790_ap_start_reg  |   1|   0|    1|          0|
+    |grp_k2c_dense_2_fu_814_ap_start_reg  |   1|   0|    1|          0|
+    |grp_k2c_dense_fu_765_ap_start_reg    |   1|   0|    1|          0|
+    |reg_842                              |   1|   0|   64|         63|
+    |tmp_70_reg_1327                      |   3|   0|    3|          0|
+    |tmp_71_reg_1435                      |   3|   0|    3|          0|
+    +-------------------------------------+----+----+-----+-----------+
+    |Total                                | 207|   0| 1171|        964|
+    +-------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------------+-----+-----+------------+----------------------------+--------------+
+|              RTL Ports              | Dir | Bits|  Protocol  |        Source Object       |    C Type    |
++-------------------------------------+-----+-----+------------+----------------------------+--------------+
+|ap_clk                               |  in |    1| ap_ctrl_hs |          WebModel          | return value |
+|ap_rst                               |  in |    1| ap_ctrl_hs |          WebModel          | return value |
+|ap_start                             |  in |    1| ap_ctrl_hs |          WebModel          | return value |
+|ap_done                              | out |    1| ap_ctrl_hs |          WebModel          | return value |
+|ap_idle                              | out |    1| ap_ctrl_hs |          WebModel          | return value |
+|ap_ready                             | out |    1| ap_ctrl_hs |          WebModel          | return value |
+|dense_69_input_input_array_address0  | out |   15|  ap_memory | dense_69_input_input_array |     array    |
+|dense_69_input_input_array_ce0       | out |    1|  ap_memory | dense_69_input_input_array |     array    |
+|dense_69_input_input_array_q0        |  in |   32|  ap_memory | dense_69_input_input_array |     array    |
+|dense_69_input_input_ndim            |  in |   64|   ap_none  |  dense_69_input_input_ndim |    pointer   |
+|dense_69_input_input_numel           |  in |   64|   ap_none  | dense_69_input_input_numel |    pointer   |
+|dense_69_input_input_shape_address0  | out |    3|  ap_memory | dense_69_input_input_shape |     array    |
+|dense_69_input_input_shape_ce0       | out |    1|  ap_memory | dense_69_input_input_shape |     array    |
+|dense_69_input_input_shape_q0        |  in |   64|  ap_memory | dense_69_input_input_shape |     array    |
+|dense_71_output_array_address0       | out |   15|  ap_memory |    dense_71_output_array   |     array    |
+|dense_71_output_array_ce0            | out |    1|  ap_memory |    dense_71_output_array   |     array    |
+|dense_71_output_array_we0            | out |    1|  ap_memory |    dense_71_output_array   |     array    |
+|dense_71_output_array_d0             | out |   32|  ap_memory |    dense_71_output_array   |     array    |
+|dense_71_output_array_q0             |  in |   32|  ap_memory |    dense_71_output_array   |     array    |
+|dense_71_output_ndim                 |  in |   64|   ap_none  |    dense_71_output_ndim    |    pointer   |
+|dense_71_output_numel                |  in |   64|   ap_none  |    dense_71_output_numel   |    pointer   |
+|dense_71_output_shape_address0       | out |    3|  ap_memory |    dense_71_output_shape   |     array    |
+|dense_71_output_shape_ce0            | out |    1|  ap_memory |    dense_71_output_shape   |     array    |
+|dense_71_output_shape_we0            | out |    1|  ap_memory |    dense_71_output_shape   |     array    |
+|dense_71_output_shape_d0             | out |   64|  ap_memory |    dense_71_output_shape   |     array    |
+|dense_71_output_shape_q0             |  in |   64|  ap_memory |    dense_71_output_shape   |     array    |
+|dense_71_output_shape_address1       | out |    3|  ap_memory |    dense_71_output_shape   |     array    |
+|dense_71_output_shape_ce1            | out |    1|  ap_memory |    dense_71_output_shape   |     array    |
+|dense_71_output_shape_we1            | out |    1|  ap_memory |    dense_71_output_shape   |     array    |
+|dense_71_output_shape_d1             | out |   64|  ap_memory |    dense_71_output_shape   |     array    |
+|dense_71_output_shape_q1             |  in |   64|  ap_memory |    dense_71_output_shape   |     array    |
++-------------------------------------+-----+-----+------------+----------------------------+--------------+
+

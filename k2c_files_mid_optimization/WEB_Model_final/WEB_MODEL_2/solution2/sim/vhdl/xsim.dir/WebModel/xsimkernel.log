@@ -1,0 +1,7 @@
+Running: xsim.dir/WebModel/xsimk.exe -simmode gui -wdb WebModel.wdb -simrunnum 0 -socket 16085
+Design successfully loaded
+Design Loading Memory Usage: 32284 KB (Peak: 32284 KB)
+Design Loading CPU Usage: 46 ms
+Simulation completed
+Simulation Memory Usage: 51504 KB (Peak: 51504 KB)
+Simulation CPU Usage: 861999 ms

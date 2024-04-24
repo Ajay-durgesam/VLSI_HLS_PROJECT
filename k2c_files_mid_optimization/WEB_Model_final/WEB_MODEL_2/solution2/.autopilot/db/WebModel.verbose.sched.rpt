@@ -1,0 +1,607 @@
+
+
+================================================================
+== Vivado HLS Report for 'WebModel'
+================================================================
+* Date:           Mon Apr 22 22:21:23 2024
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        WEB_MODEL_2
+* Solution:       solution2
+* Product family: artix7
+* Target device:  xc7a200tsbv484-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|    10.192|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-------+-------+----------+-----------+-----------+-------+----------+
+        |          |    Latency    | Iteration|  Initiation Interval  |  Trip |          |
+        | Loop Name|  min  |  max  |  Latency |  achieved |   target  | Count | Pipelined|
+        +----------+-------+-------+----------+-----------+-----------+-------+----------+
+        |- Loop 1  |     64|     64|         1|          -|          -|     64|    no    |
+        |- Loop 2  |  51072|  51072|         2|          -|          -|  25536|    no    |
+        |- Loop 3  |    128|    128|         2|          -|          -|     64|    no    |
+        |- Loop 4  |     64|     64|         1|          -|          -|     64|    no    |
+        |- Loop 5  |   8192|   8192|         2|          -|          -|   4096|    no    |
+        |- Loop 6  |    128|    128|         2|          -|          -|     64|    no    |
+        |- Loop 7  |    128|    128|         2|          -|          -|     64|    no    |
+        +----------+-------+-------+----------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 26
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (tmp)
+	2  / (!tmp)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / (!tmp_s)
+	7  / (tmp_s)
+6 --> 
+	5  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / (!tmp_8)
+	11  / (tmp_8)
+10 --> 
+	9  / true
+11 --> 
+	12  / (tmp_9)
+	11  / (!tmp_9)
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / (!tmp_3)
+	16  / (tmp_3)
+15 --> 
+	14  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / (!tmp_4)
+	20  / (tmp_4)
+19 --> 
+	18  / true
+20 --> 
+	21  / (!tmp_6)
+	22  / (tmp_6)
+21 --> 
+	20  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.35>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([26000 x float]* %dense_69_input_input_array), !map !236"   --->   Operation 27 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %dense_69_input_input_ndim), !map !240"   --->   Operation 28 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %dense_69_input_input_numel), !map !244"   --->   Operation 29 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([5 x i64]* %dense_69_input_input_shape), !map !248"   --->   Operation 30 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([26000 x float]* %dense_71_output_array), !map !252"   --->   Operation 31 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %dense_71_output_ndim), !map !256"   --->   Operation 32 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %dense_71_output_numel), !map !260"   --->   Operation 33 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([5 x i64]* %dense_71_output_shape), !map !264"   --->   Operation 34 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @WebModel_str) nounwind"   --->   Operation 35 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (1.35ns)   --->   "br label %1" [WebModel.c:30146]   --->   Operation 36 'br' <Predicate = true> <Delay = 1.35>
+
+State 2 <SV = 1> <Delay = 2.77>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%b1 = phi i7 [ 0, %0 ], [ %b1_1, %2 ]"   --->   Operation 37 'phi' 'b1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%b1_cast = zext i7 %b1 to i64" [WebModel.c:30146]   --->   Operation 38 'zext' 'b1_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (1.23ns)   --->   "%tmp = icmp eq i7 %b1, -64" [WebModel.c:30146]   --->   Operation 39 'icmp' 'tmp' <Predicate = true> <Delay = 1.23> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64)"   --->   Operation 40 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (1.66ns)   --->   "%b1_1 = add i7 %b1, 1" [WebModel.c:30146]   --->   Operation 41 'add' 'b1_1' <Predicate = true> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "br i1 %tmp, label %3, label %2" [WebModel.c:30146]   --->   Operation 42 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%dense_69_output_arra_1 = getelementptr [26000 x float]* @dense_69_output_arra, i64 0, i64 %b1_cast" [WebModel.c:30148]   --->   Operation 43 'getelementptr' 'dense_69_output_arra_1' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (2.77ns)   --->   "store float 0.000000e+00, float* %dense_69_output_arra_1, align 4" [WebModel.c:30148]   --->   Operation 44 'store' <Predicate = (!tmp)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "br label %1" [WebModel.c:30146]   --->   Operation 45 'br' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "store i64 1, i64* @dense_69_output_ndim, align 8" [WebModel.c:30150]   --->   Operation 46 'store' <Predicate = (tmp)> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "store i64 64, i64* @dense_69_output_nume, align 8" [WebModel.c:30151]   --->   Operation 47 'store' <Predicate = (tmp)> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (1.75ns)   --->   "store i64 64, i64* getelementptr inbounds ([5 x i64]* @dense_69_output_shap, i64 0, i64 0), align 8" [WebModel.c:30152]   --->   Operation 48 'store' <Predicate = (tmp)> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 3 <SV = 2> <Delay = 1.75>
+ST_3 : Operation 49 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_69_output_shap, i64 0, i64 1), align 8" [WebModel.c:30153]   --->   Operation 49 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_3 : Operation 50 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_69_output_shap, i64 0, i64 2), align 8" [WebModel.c:30154]   --->   Operation 50 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 4 <SV = 3> <Delay = 1.75>
+ST_4 : Operation 51 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_69_output_shap, i64 0, i64 3), align 8" [WebModel.c:30155]   --->   Operation 51 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_4 : Operation 52 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_69_output_shap, i64 0, i64 4), align 8" [WebModel.c:30156]   --->   Operation 52 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_4 : Operation 53 [1/1] (1.35ns)   --->   "br label %4" [WebModel.c:30161]   --->   Operation 53 'br' <Predicate = true> <Delay = 1.35>
+
+State 5 <SV = 4> <Delay = 2.77>
+ST_5 : Operation 54 [1/1] (0.00ns)   --->   "%b2 = phi i15 [ 0, %3 ], [ %b2_1, %5 ]"   --->   Operation 54 'phi' 'b2' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 55 [1/1] (0.00ns)   --->   "%b2_cast = zext i15 %b2 to i64" [WebModel.c:30161]   --->   Operation 55 'zext' 'b2_cast' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 56 [1/1] (1.88ns)   --->   "%tmp_s = icmp eq i15 %b2, -7232" [WebModel.c:30161]   --->   Operation 56 'icmp' 'tmp_s' <Predicate = true> <Delay = 1.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 57 [1/1] (0.00ns)   --->   "%empty_37 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 25536, i64 25536, i64 25536)"   --->   Operation 57 'speclooptripcount' 'empty_37' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 58 [1/1] (1.82ns)   --->   "%b2_1 = add i15 %b2, 1" [WebModel.c:30161]   --->   Operation 58 'add' 'b2_1' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 59 [1/1] (0.00ns)   --->   "br i1 %tmp_s, label %6, label %5" [WebModel.c:30161]   --->   Operation 59 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 60 [1/1] (0.00ns)   --->   "%tmp_70 = trunc i15 %b2 to i3" [WebModel.c:30161]   --->   Operation 60 'trunc' 'tmp_70' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_5 : Operation 61 [1/1] (0.00ns)   --->   "%newIndex = call i12 @_ssdm_op_PartSelect.i12.i15.i32.i32(i15 %b2, i32 3, i32 14)" [WebModel.c:30161]   --->   Operation 61 'partselect' 'newIndex' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_5 : Operation 62 [1/1] (0.00ns)   --->   "%newIndex_cast = zext i12 %newIndex to i64" [WebModel.c:30161]   --->   Operation 62 'zext' 'newIndex_cast' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "%dense_69_kernel_arra_8 = getelementptr [3192 x float]* @dense_69_kernel_arra, i64 0, i64 %newIndex_cast" [WebModel.c:30161]   --->   Operation 63 'getelementptr' 'dense_69_kernel_arra_8' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_5 : Operation 64 [2/2] (2.77ns)   --->   "%dense_69_kernel_arra_9 = load float* %dense_69_kernel_arra_8, align 4" [WebModel.c:30161]   --->   Operation 64 'load' 'dense_69_kernel_arra_9' <Predicate = (!tmp_s)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_5 : Operation 65 [1/1] (0.00ns)   --->   "%dense_69_kernel_arra_10 = getelementptr [3192 x float]* @dense_69_kernel_arra_7, i64 0, i64 %newIndex_cast" [WebModel.c:30161]   --->   Operation 65 'getelementptr' 'dense_69_kernel_arra_10' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_5 : Operation 66 [2/2] (2.77ns)   --->   "%dense_69_kernel_arra_11 = load float* %dense_69_kernel_arra_10, align 4" [WebModel.c:30161]   --->   Operation 66 'load' 'dense_69_kernel_arra_11' <Predicate = (!tmp_s)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_5 : Operation 67 [1/1] (0.00ns)   --->   "%dense_69_kernel_arra_12 = getelementptr [3192 x float]* @dense_69_kernel_arra_6, i64 0, i64 %newIndex_cast" [WebModel.c:30161]   --->   Operation 67 'getelementptr' 'dense_69_kernel_arra_12' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_5 : Operation 68 [2/2] (2.77ns)   --->   "%dense_69_kernel_arra_13 = load float* %dense_69_kernel_arra_12, align 4" [WebModel.c:30161]   --->   Operation 68 'load' 'dense_69_kernel_arra_13' <Predicate = (!tmp_s)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_5 : Operation 69 [1/1] (0.00ns)   --->   "%dense_69_kernel_arra_14 = getelementptr [3192 x float]* @dense_69_kernel_arra_5, i64 0, i64 %newIndex_cast" [WebModel.c:30161]   --->   Operation 69 'getelementptr' 'dense_69_kernel_arra_14' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_5 : Operation 70 [2/2] (2.77ns)   --->   "%dense_69_kernel_arra_15 = load float* %dense_69_kernel_arra_14, align 4" [WebModel.c:30161]   --->   Operation 70 'load' 'dense_69_kernel_arra_15' <Predicate = (!tmp_s)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_5 : Operation 71 [1/1] (0.00ns)   --->   "%dense_69_kernel_arra_16 = getelementptr [3192 x float]* @dense_69_kernel_arra_4, i64 0, i64 %newIndex_cast" [WebModel.c:30161]   --->   Operation 71 'getelementptr' 'dense_69_kernel_arra_16' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_5 : Operation 72 [2/2] (2.77ns)   --->   "%dense_69_kernel_arra_17 = load float* %dense_69_kernel_arra_16, align 4" [WebModel.c:30161]   --->   Operation 72 'load' 'dense_69_kernel_arra_17' <Predicate = (!tmp_s)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_5 : Operation 73 [1/1] (0.00ns)   --->   "%dense_69_kernel_arra_18 = getelementptr [3192 x float]* @dense_69_kernel_arra_3, i64 0, i64 %newIndex_cast" [WebModel.c:30161]   --->   Operation 73 'getelementptr' 'dense_69_kernel_arra_18' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_5 : Operation 74 [2/2] (2.77ns)   --->   "%dense_69_kernel_arra_19 = load float* %dense_69_kernel_arra_18, align 4" [WebModel.c:30161]   --->   Operation 74 'load' 'dense_69_kernel_arra_19' <Predicate = (!tmp_s)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_5 : Operation 75 [1/1] (0.00ns)   --->   "%dense_69_kernel_arra_20 = getelementptr [3192 x float]* @dense_69_kernel_arra_2, i64 0, i64 %newIndex_cast" [WebModel.c:30161]   --->   Operation 75 'getelementptr' 'dense_69_kernel_arra_20' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_5 : Operation 76 [2/2] (2.77ns)   --->   "%dense_69_kernel_arra_21 = load float* %dense_69_kernel_arra_20, align 4" [WebModel.c:30161]   --->   Operation 76 'load' 'dense_69_kernel_arra_21' <Predicate = (!tmp_s)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_5 : Operation 77 [1/1] (0.00ns)   --->   "%dense_69_kernel_arra_22 = getelementptr [3192 x float]* @dense_69_kernel_arra_1, i64 0, i64 %newIndex_cast" [WebModel.c:30161]   --->   Operation 77 'getelementptr' 'dense_69_kernel_arra_22' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_5 : Operation 78 [2/2] (2.77ns)   --->   "%dense_69_kernel_arra_23 = load float* %dense_69_kernel_arra_22, align 4" [WebModel.c:30161]   --->   Operation 78 'load' 'dense_69_kernel_arra_23' <Predicate = (!tmp_s)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_5 : Operation 79 [1/1] (1.75ns)   --->   "store i64 399, i64* getelementptr inbounds ([5 x i64]* @dense_69_kernel_shap, i64 0, i64 0), align 8" [WebModel.c:30167]   --->   Operation 79 'store' <Predicate = (tmp_s)> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 6 <SV = 5> <Delay = 8.63>
+ST_6 : Operation 80 [1/2] (2.77ns)   --->   "%dense_69_kernel_arra_9 = load float* %dense_69_kernel_arra_8, align 4" [WebModel.c:30161]   --->   Operation 80 'load' 'dense_69_kernel_arra_9' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_6 : Operation 81 [1/2] (2.77ns)   --->   "%dense_69_kernel_arra_11 = load float* %dense_69_kernel_arra_10, align 4" [WebModel.c:30161]   --->   Operation 81 'load' 'dense_69_kernel_arra_11' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_6 : Operation 82 [1/2] (2.77ns)   --->   "%dense_69_kernel_arra_13 = load float* %dense_69_kernel_arra_12, align 4" [WebModel.c:30161]   --->   Operation 82 'load' 'dense_69_kernel_arra_13' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_6 : Operation 83 [1/2] (2.77ns)   --->   "%dense_69_kernel_arra_15 = load float* %dense_69_kernel_arra_14, align 4" [WebModel.c:30161]   --->   Operation 83 'load' 'dense_69_kernel_arra_15' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_6 : Operation 84 [1/2] (2.77ns)   --->   "%dense_69_kernel_arra_17 = load float* %dense_69_kernel_arra_16, align 4" [WebModel.c:30161]   --->   Operation 84 'load' 'dense_69_kernel_arra_17' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_6 : Operation 85 [1/2] (2.77ns)   --->   "%dense_69_kernel_arra_19 = load float* %dense_69_kernel_arra_18, align 4" [WebModel.c:30161]   --->   Operation 85 'load' 'dense_69_kernel_arra_19' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_6 : Operation 86 [1/2] (2.77ns)   --->   "%dense_69_kernel_arra_21 = load float* %dense_69_kernel_arra_20, align 4" [WebModel.c:30161]   --->   Operation 86 'load' 'dense_69_kernel_arra_21' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_6 : Operation 87 [1/2] (2.77ns)   --->   "%dense_69_kernel_arra_23 = load float* %dense_69_kernel_arra_22, align 4" [WebModel.c:30161]   --->   Operation 87 'load' 'dense_69_kernel_arra_23' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_6 : Operation 88 [1/1] (1.00ns)   --->   "%sel_tmp_i = icmp eq i3 %tmp_70, 0" [WebModel.c:30161]   --->   Operation 88 'icmp' 'sel_tmp_i' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 89 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp3_i)   --->   "%sel_tmp1_i = select i1 %sel_tmp_i, float %dense_69_kernel_arra_11, float %dense_69_kernel_arra_9" [WebModel.c:30161]   --->   Operation 89 'select' 'sel_tmp1_i' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 90 [1/1] (1.00ns)   --->   "%sel_tmp2_i = icmp eq i3 %tmp_70, 1" [WebModel.c:30161]   --->   Operation 90 'icmp' 'sel_tmp2_i' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 91 [1/1] (0.77ns) (out node of the LUT)   --->   "%sel_tmp3_i = select i1 %sel_tmp2_i, float %dense_69_kernel_arra_13, float %sel_tmp1_i" [WebModel.c:30161]   --->   Operation 91 'select' 'sel_tmp3_i' <Predicate = true> <Delay = 0.77> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 92 [1/1] (1.00ns)   --->   "%sel_tmp4_i = icmp eq i3 %tmp_70, 2" [WebModel.c:30161]   --->   Operation 92 'icmp' 'sel_tmp4_i' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 93 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp7_i)   --->   "%sel_tmp5_i = select i1 %sel_tmp4_i, float %dense_69_kernel_arra_15, float %sel_tmp3_i" [WebModel.c:30161]   --->   Operation 93 'select' 'sel_tmp5_i' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 94 [1/1] (1.00ns)   --->   "%sel_tmp6_i = icmp eq i3 %tmp_70, 3" [WebModel.c:30161]   --->   Operation 94 'icmp' 'sel_tmp6_i' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 95 [1/1] (0.77ns) (out node of the LUT)   --->   "%sel_tmp7_i = select i1 %sel_tmp6_i, float %dense_69_kernel_arra_17, float %sel_tmp5_i" [WebModel.c:30161]   --->   Operation 95 'select' 'sel_tmp7_i' <Predicate = true> <Delay = 0.77> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 96 [1/1] (1.00ns)   --->   "%sel_tmp8_i = icmp eq i3 %tmp_70, -4" [WebModel.c:30161]   --->   Operation 96 'icmp' 'sel_tmp8_i' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 97 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp11_i)   --->   "%sel_tmp9_i = select i1 %sel_tmp8_i, float %dense_69_kernel_arra_19, float %sel_tmp7_i" [WebModel.c:30161]   --->   Operation 97 'select' 'sel_tmp9_i' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 98 [1/1] (1.00ns)   --->   "%sel_tmp10_i = icmp eq i3 %tmp_70, -3" [WebModel.c:30161]   --->   Operation 98 'icmp' 'sel_tmp10_i' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 99 [1/1] (0.77ns) (out node of the LUT)   --->   "%sel_tmp11_i = select i1 %sel_tmp10_i, float %dense_69_kernel_arra_21, float %sel_tmp9_i" [WebModel.c:30161]   --->   Operation 99 'select' 'sel_tmp11_i' <Predicate = true> <Delay = 0.77> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 100 [1/1] (1.00ns)   --->   "%sel_tmp12_i = icmp eq i3 %tmp_70, -2" [WebModel.c:30161]   --->   Operation 100 'icmp' 'sel_tmp12_i' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 101 [1/1] (0.77ns) (out node of the LUT)   --->   "%UnifiedRetVal_i = select i1 %sel_tmp12_i, float %dense_69_kernel_arra_23, float %sel_tmp11_i" [WebModel.c:30161]   --->   Operation 101 'select' 'UnifiedRetVal_i' <Predicate = true> <Delay = 0.77> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 102 [1/1] (0.00ns)   --->   "%dense_69_kernel_arra_1 = getelementptr [26000 x float]* @dense_69_kernel_arra_8, i64 0, i64 %b2_cast" [WebModel.c:30163]   --->   Operation 102 'getelementptr' 'dense_69_kernel_arra_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 103 [1/1] (2.77ns)   --->   "store float %UnifiedRetVal_i, float* %dense_69_kernel_arra_1, align 4" [WebModel.c:30163]   --->   Operation 103 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_6 : Operation 104 [1/1] (0.00ns)   --->   "br label %4" [WebModel.c:30161]   --->   Operation 104 'br' <Predicate = true> <Delay = 0.00>
+
+State 7 <SV = 5> <Delay = 1.75>
+ST_7 : Operation 105 [1/1] (1.75ns)   --->   "store i64 64, i64* getelementptr inbounds ([5 x i64]* @dense_69_kernel_shap, i64 0, i64 1), align 8" [WebModel.c:30168]   --->   Operation 105 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_7 : Operation 106 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_69_kernel_shap, i64 0, i64 2), align 8" [WebModel.c:30169]   --->   Operation 106 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 8 <SV = 6> <Delay = 1.75>
+ST_8 : Operation 107 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_69_kernel_shap, i64 0, i64 3), align 8" [WebModel.c:30170]   --->   Operation 107 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_8 : Operation 108 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_69_kernel_shap, i64 0, i64 4), align 8" [WebModel.c:30171]   --->   Operation 108 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_8 : Operation 109 [1/1] (1.35ns)   --->   "br label %7" [WebModel.c:30174]   --->   Operation 109 'br' <Predicate = true> <Delay = 1.35>
+
+State 9 <SV = 7> <Delay = 2.77>
+ST_9 : Operation 110 [1/1] (0.00ns)   --->   "%b3 = phi i7 [ 0, %6 ], [ %b3_1, %8 ]"   --->   Operation 110 'phi' 'b3' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 111 [1/1] (0.00ns)   --->   "%b3_cast = zext i7 %b3 to i64" [WebModel.c:30174]   --->   Operation 111 'zext' 'b3_cast' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 112 [1/1] (1.23ns)   --->   "%tmp_8 = icmp eq i7 %b3, -64" [WebModel.c:30174]   --->   Operation 112 'icmp' 'tmp_8' <Predicate = true> <Delay = 1.23> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 113 [1/1] (0.00ns)   --->   "%empty_38 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64)"   --->   Operation 113 'speclooptripcount' 'empty_38' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 114 [1/1] (1.66ns)   --->   "%b3_1 = add i7 %b3, 1" [WebModel.c:30174]   --->   Operation 114 'add' 'b3_1' <Predicate = true> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 115 [1/1] (0.00ns)   --->   "br i1 %tmp_8, label %.preheader.preheader, label %8" [WebModel.c:30174]   --->   Operation 115 'br' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 116 [1/1] (0.00ns)   --->   "%dense_69_bias_array_s = getelementptr inbounds [64 x float]* @dense_69_bias_array, i64 0, i64 %b3_cast" [WebModel.c:30176]   --->   Operation 116 'getelementptr' 'dense_69_bias_array_s' <Predicate = (!tmp_8)> <Delay = 0.00>
+ST_9 : Operation 117 [2/2] (2.77ns)   --->   "%dense_69_bias_array_1 = load float* %dense_69_bias_array_s, align 4" [WebModel.c:30176]   --->   Operation 117 'load' 'dense_69_bias_array_1' <Predicate = (!tmp_8)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_9 : Operation 118 [1/1] (1.35ns)   --->   "br label %.preheader" [WebModel.c:30189]   --->   Operation 118 'br' <Predicate = (tmp_8)> <Delay = 1.35>
+
+State 10 <SV = 8> <Delay = 5.54>
+ST_10 : Operation 119 [1/2] (2.77ns)   --->   "%dense_69_bias_array_1 = load float* %dense_69_bias_array_s, align 4" [WebModel.c:30176]   --->   Operation 119 'load' 'dense_69_bias_array_1' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_10 : Operation 120 [1/1] (0.00ns)   --->   "%dense_69_bias_array_s_39 = getelementptr [26000 x float]* @dense_69_bias_array_9, i64 0, i64 %b3_cast" [WebModel.c:30176]   --->   Operation 120 'getelementptr' 'dense_69_bias_array_s_39' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 121 [1/1] (2.77ns)   --->   "store float %dense_69_bias_array_1, float* %dense_69_bias_array_s_39, align 4" [WebModel.c:30176]   --->   Operation 121 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_10 : Operation 122 [1/1] (0.00ns)   --->   "br label %7" [WebModel.c:30174]   --->   Operation 122 'br' <Predicate = true> <Delay = 0.00>
+
+State 11 <SV = 8> <Delay = 2.77>
+ST_11 : Operation 123 [1/1] (0.00ns)   --->   "%b4 = phi i7 [ %b4_1, %9 ], [ 0, %.preheader.preheader ]"   --->   Operation 123 'phi' 'b4' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 124 [1/1] (0.00ns)   --->   "%b4_cast = zext i7 %b4 to i64" [WebModel.c:30189]   --->   Operation 124 'zext' 'b4_cast' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 125 [1/1] (1.23ns)   --->   "%tmp_9 = icmp eq i7 %b4, -64" [WebModel.c:30189]   --->   Operation 125 'icmp' 'tmp_9' <Predicate = true> <Delay = 1.23> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 126 [1/1] (0.00ns)   --->   "%empty_40 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64)"   --->   Operation 126 'speclooptripcount' 'empty_40' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 127 [1/1] (1.66ns)   --->   "%b4_1 = add i7 %b4, 1" [WebModel.c:30189]   --->   Operation 127 'add' 'b4_1' <Predicate = true> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 128 [1/1] (0.00ns)   --->   "br i1 %tmp_9, label %10, label %9" [WebModel.c:30189]   --->   Operation 128 'br' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 129 [1/1] (0.00ns)   --->   "%dense_70_output_arra_1 = getelementptr [26000 x float]* @dense_70_output_arra, i64 0, i64 %b4_cast" [WebModel.c:30191]   --->   Operation 129 'getelementptr' 'dense_70_output_arra_1' <Predicate = (!tmp_9)> <Delay = 0.00>
+ST_11 : Operation 130 [1/1] (2.77ns)   --->   "store float 0.000000e+00, float* %dense_70_output_arra_1, align 4" [WebModel.c:30191]   --->   Operation 130 'store' <Predicate = (!tmp_9)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_11 : Operation 131 [1/1] (0.00ns)   --->   "br label %.preheader" [WebModel.c:30189]   --->   Operation 131 'br' <Predicate = (!tmp_9)> <Delay = 0.00>
+ST_11 : Operation 132 [1/1] (0.00ns)   --->   "store i64 1, i64* @dense_70_output_ndim, align 8" [WebModel.c:30193]   --->   Operation 132 'store' <Predicate = (tmp_9)> <Delay = 0.00>
+ST_11 : Operation 133 [1/1] (0.00ns)   --->   "store i64 64, i64* @dense_70_output_nume, align 8" [WebModel.c:30194]   --->   Operation 133 'store' <Predicate = (tmp_9)> <Delay = 0.00>
+ST_11 : Operation 134 [1/1] (1.75ns)   --->   "store i64 64, i64* getelementptr inbounds ([5 x i64]* @dense_70_output_shap, i64 0, i64 0), align 8" [WebModel.c:30195]   --->   Operation 134 'store' <Predicate = (tmp_9)> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 12 <SV = 9> <Delay = 1.75>
+ST_12 : Operation 135 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_70_output_shap, i64 0, i64 1), align 8" [WebModel.c:30196]   --->   Operation 135 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_12 : Operation 136 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_70_output_shap, i64 0, i64 2), align 8" [WebModel.c:30197]   --->   Operation 136 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 13 <SV = 10> <Delay = 1.75>
+ST_13 : Operation 137 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_70_output_shap, i64 0, i64 3), align 8" [WebModel.c:30198]   --->   Operation 137 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_13 : Operation 138 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_70_output_shap, i64 0, i64 4), align 8" [WebModel.c:30199]   --->   Operation 138 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_13 : Operation 139 [1/1] (1.35ns)   --->   "br label %11" [WebModel.c:30203]   --->   Operation 139 'br' <Predicate = true> <Delay = 1.35>
+
+State 14 <SV = 11> <Delay = 2.77>
+ST_14 : Operation 140 [1/1] (0.00ns)   --->   "%b5 = phi i13 [ 0, %10 ], [ %b5_1, %12 ]"   --->   Operation 140 'phi' 'b5' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 141 [1/1] (0.00ns)   --->   "%b5_cast = zext i13 %b5 to i64" [WebModel.c:30203]   --->   Operation 141 'zext' 'b5_cast' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 142 [1/1] (1.70ns)   --->   "%tmp_3 = icmp eq i13 %b5, -4096" [WebModel.c:30203]   --->   Operation 142 'icmp' 'tmp_3' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 143 [1/1] (0.00ns)   --->   "%empty_41 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4096, i64 4096, i64 4096)"   --->   Operation 143 'speclooptripcount' 'empty_41' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 144 [1/1] (1.79ns)   --->   "%b5_1 = add i13 %b5, 1" [WebModel.c:30203]   --->   Operation 144 'add' 'b5_1' <Predicate = true> <Delay = 1.79> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 145 [1/1] (0.00ns)   --->   "br i1 %tmp_3, label %13, label %12" [WebModel.c:30203]   --->   Operation 145 'br' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 146 [1/1] (0.00ns)   --->   "%dense_70_kernel_arra_1 = getelementptr inbounds [4096 x float]* @dense_70_kernel_arra, i64 0, i64 %b5_cast" [WebModel.c:30205]   --->   Operation 146 'getelementptr' 'dense_70_kernel_arra_1' <Predicate = (!tmp_3)> <Delay = 0.00>
+ST_14 : Operation 147 [2/2] (2.77ns)   --->   "%dense_70_kernel_arra_2 = load float* %dense_70_kernel_arra_1, align 4" [WebModel.c:30205]   --->   Operation 147 'load' 'dense_70_kernel_arra_2' <Predicate = (!tmp_3)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_14 : Operation 148 [1/1] (0.00ns)   --->   "store i64 2, i64* @dense_70_kernel_ndim, align 8" [WebModel.c:30207]   --->   Operation 148 'store' <Predicate = (tmp_3)> <Delay = 0.00>
+ST_14 : Operation 149 [1/1] (0.00ns)   --->   "store i64 4096, i64* @dense_70_kernel_nume, align 8" [WebModel.c:30208]   --->   Operation 149 'store' <Predicate = (tmp_3)> <Delay = 0.00>
+ST_14 : Operation 150 [1/1] (1.75ns)   --->   "store i64 64, i64* getelementptr inbounds ([5 x i64]* @dense_70_kernel_shap, i64 0, i64 0), align 8" [WebModel.c:30209]   --->   Operation 150 'store' <Predicate = (tmp_3)> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 15 <SV = 12> <Delay = 5.54>
+ST_15 : Operation 151 [1/2] (2.77ns)   --->   "%dense_70_kernel_arra_2 = load float* %dense_70_kernel_arra_1, align 4" [WebModel.c:30205]   --->   Operation 151 'load' 'dense_70_kernel_arra_2' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_15 : Operation 152 [1/1] (0.00ns)   --->   "%dense_70_kernel_arra_1_42 = getelementptr [26000 x float]* @dense_70_kernel_arra_1, i64 0, i64 %b5_cast" [WebModel.c:30205]   --->   Operation 152 'getelementptr' 'dense_70_kernel_arra_1_42' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 153 [1/1] (2.77ns)   --->   "store float %dense_70_kernel_arra_2, float* %dense_70_kernel_arra_1_42, align 4" [WebModel.c:30205]   --->   Operation 153 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_15 : Operation 154 [1/1] (0.00ns)   --->   "br label %11" [WebModel.c:30203]   --->   Operation 154 'br' <Predicate = true> <Delay = 0.00>
+
+State 16 <SV = 12> <Delay = 1.75>
+ST_16 : Operation 155 [1/1] (1.75ns)   --->   "store i64 64, i64* getelementptr inbounds ([5 x i64]* @dense_70_kernel_shap, i64 0, i64 1), align 8" [WebModel.c:30210]   --->   Operation 155 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_16 : Operation 156 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_70_kernel_shap, i64 0, i64 2), align 8" [WebModel.c:30211]   --->   Operation 156 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 17 <SV = 13> <Delay = 1.75>
+ST_17 : Operation 157 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_70_kernel_shap, i64 0, i64 3), align 8" [WebModel.c:30212]   --->   Operation 157 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_17 : Operation 158 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_70_kernel_shap, i64 0, i64 4), align 8" [WebModel.c:30213]   --->   Operation 158 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_17 : Operation 159 [1/1] (1.35ns)   --->   "br label %14" [WebModel.c:30219]   --->   Operation 159 'br' <Predicate = true> <Delay = 1.35>
+
+State 18 <SV = 14> <Delay = 2.77>
+ST_18 : Operation 160 [1/1] (0.00ns)   --->   "%b6 = phi i7 [ 0, %13 ], [ %b6_1, %15 ]"   --->   Operation 160 'phi' 'b6' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 161 [1/1] (0.00ns)   --->   "%b6_cast = zext i7 %b6 to i64" [WebModel.c:30219]   --->   Operation 161 'zext' 'b6_cast' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 162 [1/1] (1.23ns)   --->   "%tmp_4 = icmp eq i7 %b6, -64" [WebModel.c:30219]   --->   Operation 162 'icmp' 'tmp_4' <Predicate = true> <Delay = 1.23> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 163 [1/1] (0.00ns)   --->   "%empty_43 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64)"   --->   Operation 163 'speclooptripcount' 'empty_43' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 164 [1/1] (1.66ns)   --->   "%b6_1 = add i7 %b6, 1" [WebModel.c:30219]   --->   Operation 164 'add' 'b6_1' <Predicate = true> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 165 [1/1] (0.00ns)   --->   "br i1 %tmp_4, label %16, label %15" [WebModel.c:30219]   --->   Operation 165 'br' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 166 [1/1] (0.00ns)   --->   "%tmp_71 = trunc i7 %b6 to i3" [WebModel.c:30219]   --->   Operation 166 'trunc' 'tmp_71' <Predicate = (!tmp_4)> <Delay = 0.00>
+ST_18 : Operation 167 [1/1] (0.00ns)   --->   "%newIndex1 = call i4 @_ssdm_op_PartSelect.i4.i7.i32.i32(i7 %b6, i32 3, i32 6)" [WebModel.c:30219]   --->   Operation 167 'partselect' 'newIndex1' <Predicate = (!tmp_4)> <Delay = 0.00>
+ST_18 : Operation 168 [1/1] (0.00ns)   --->   "%newIndex1_cast = zext i4 %newIndex1 to i64" [WebModel.c:30219]   --->   Operation 168 'zext' 'newIndex1_cast' <Predicate = (!tmp_4)> <Delay = 0.00>
+ST_18 : Operation 169 [1/1] (0.00ns)   --->   "%dense_70_bias_array_1 = getelementptr [8 x float]* @dense_70_bias_array_7, i64 0, i64 %newIndex1_cast" [WebModel.c:30219]   --->   Operation 169 'getelementptr' 'dense_70_bias_array_1' <Predicate = (!tmp_4)> <Delay = 0.00>
+ST_18 : Operation 170 [2/2] (2.77ns)   --->   "%dense_70_bias_array_2 = load float* %dense_70_bias_array_1, align 4" [WebModel.c:30219]   --->   Operation 170 'load' 'dense_70_bias_array_2' <Predicate = (!tmp_4)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_18 : Operation 171 [1/1] (0.00ns)   --->   "%dense_70_bias_array_3 = getelementptr [8 x float]* @dense_70_bias_array_s, i64 0, i64 %newIndex1_cast" [WebModel.c:30219]   --->   Operation 171 'getelementptr' 'dense_70_bias_array_3' <Predicate = (!tmp_4)> <Delay = 0.00>
+ST_18 : Operation 172 [2/2] (2.77ns)   --->   "%dense_70_bias_array_4 = load float* %dense_70_bias_array_3, align 4" [WebModel.c:30219]   --->   Operation 172 'load' 'dense_70_bias_array_4' <Predicate = (!tmp_4)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_18 : Operation 173 [1/1] (0.00ns)   --->   "%dense_70_bias_array_5 = getelementptr [8 x float]* @dense_70_bias_array_1, i64 0, i64 %newIndex1_cast" [WebModel.c:30219]   --->   Operation 173 'getelementptr' 'dense_70_bias_array_5' <Predicate = (!tmp_4)> <Delay = 0.00>
+ST_18 : Operation 174 [2/2] (2.77ns)   --->   "%dense_70_bias_array_6 = load float* %dense_70_bias_array_5, align 4" [WebModel.c:30219]   --->   Operation 174 'load' 'dense_70_bias_array_6' <Predicate = (!tmp_4)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_18 : Operation 175 [1/1] (0.00ns)   --->   "%dense_70_bias_array_7 = getelementptr [8 x float]* @dense_70_bias_array_2, i64 0, i64 %newIndex1_cast" [WebModel.c:30219]   --->   Operation 175 'getelementptr' 'dense_70_bias_array_7' <Predicate = (!tmp_4)> <Delay = 0.00>
+ST_18 : Operation 176 [2/2] (2.77ns)   --->   "%dense_70_bias_array_8 = load float* %dense_70_bias_array_7, align 4" [WebModel.c:30219]   --->   Operation 176 'load' 'dense_70_bias_array_8' <Predicate = (!tmp_4)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_18 : Operation 177 [1/1] (0.00ns)   --->   "%dense_70_bias_array_9 = getelementptr [8 x float]* @dense_70_bias_array_3, i64 0, i64 %newIndex1_cast" [WebModel.c:30219]   --->   Operation 177 'getelementptr' 'dense_70_bias_array_9' <Predicate = (!tmp_4)> <Delay = 0.00>
+ST_18 : Operation 178 [2/2] (2.77ns)   --->   "%dense_70_bias_array_10 = load float* %dense_70_bias_array_9, align 4" [WebModel.c:30219]   --->   Operation 178 'load' 'dense_70_bias_array_10' <Predicate = (!tmp_4)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_18 : Operation 179 [1/1] (0.00ns)   --->   "%dense_70_bias_array_11 = getelementptr [8 x float]* @dense_70_bias_array_4, i64 0, i64 %newIndex1_cast" [WebModel.c:30219]   --->   Operation 179 'getelementptr' 'dense_70_bias_array_11' <Predicate = (!tmp_4)> <Delay = 0.00>
+ST_18 : Operation 180 [2/2] (2.77ns)   --->   "%dense_70_bias_array_12 = load float* %dense_70_bias_array_11, align 4" [WebModel.c:30219]   --->   Operation 180 'load' 'dense_70_bias_array_12' <Predicate = (!tmp_4)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_18 : Operation 181 [1/1] (0.00ns)   --->   "%dense_70_bias_array_13 = getelementptr [8 x float]* @dense_70_bias_array_5, i64 0, i64 %newIndex1_cast" [WebModel.c:30219]   --->   Operation 181 'getelementptr' 'dense_70_bias_array_13' <Predicate = (!tmp_4)> <Delay = 0.00>
+ST_18 : Operation 182 [2/2] (2.77ns)   --->   "%dense_70_bias_array_14 = load float* %dense_70_bias_array_13, align 4" [WebModel.c:30219]   --->   Operation 182 'load' 'dense_70_bias_array_14' <Predicate = (!tmp_4)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_18 : Operation 183 [1/1] (0.00ns)   --->   "%dense_70_bias_array_15 = getelementptr [8 x float]* @dense_70_bias_array_6, i64 0, i64 %newIndex1_cast" [WebModel.c:30219]   --->   Operation 183 'getelementptr' 'dense_70_bias_array_15' <Predicate = (!tmp_4)> <Delay = 0.00>
+ST_18 : Operation 184 [2/2] (2.77ns)   --->   "%dense_70_bias_array_16 = load float* %dense_70_bias_array_15, align 4" [WebModel.c:30219]   --->   Operation 184 'load' 'dense_70_bias_array_16' <Predicate = (!tmp_4)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_18 : Operation 185 [1/1] (0.00ns)   --->   "store i64 64, i64* @dense_70_bias_numel, align 8" [WebModel.c:30224]   --->   Operation 185 'store' <Predicate = (tmp_4)> <Delay = 0.00>
+ST_18 : Operation 186 [1/1] (1.35ns)   --->   "br label %17" [WebModel.c:30233]   --->   Operation 186 'br' <Predicate = (tmp_4)> <Delay = 1.35>
+
+State 19 <SV = 15> <Delay = 8.63>
+ST_19 : Operation 187 [1/2] (2.77ns)   --->   "%dense_70_bias_array_2 = load float* %dense_70_bias_array_1, align 4" [WebModel.c:30219]   --->   Operation 187 'load' 'dense_70_bias_array_2' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_19 : Operation 188 [1/2] (2.77ns)   --->   "%dense_70_bias_array_4 = load float* %dense_70_bias_array_3, align 4" [WebModel.c:30219]   --->   Operation 188 'load' 'dense_70_bias_array_4' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_19 : Operation 189 [1/2] (2.77ns)   --->   "%dense_70_bias_array_6 = load float* %dense_70_bias_array_5, align 4" [WebModel.c:30219]   --->   Operation 189 'load' 'dense_70_bias_array_6' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_19 : Operation 190 [1/2] (2.77ns)   --->   "%dense_70_bias_array_8 = load float* %dense_70_bias_array_7, align 4" [WebModel.c:30219]   --->   Operation 190 'load' 'dense_70_bias_array_8' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_19 : Operation 191 [1/2] (2.77ns)   --->   "%dense_70_bias_array_10 = load float* %dense_70_bias_array_9, align 4" [WebModel.c:30219]   --->   Operation 191 'load' 'dense_70_bias_array_10' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_19 : Operation 192 [1/2] (2.77ns)   --->   "%dense_70_bias_array_12 = load float* %dense_70_bias_array_11, align 4" [WebModel.c:30219]   --->   Operation 192 'load' 'dense_70_bias_array_12' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_19 : Operation 193 [1/2] (2.77ns)   --->   "%dense_70_bias_array_14 = load float* %dense_70_bias_array_13, align 4" [WebModel.c:30219]   --->   Operation 193 'load' 'dense_70_bias_array_14' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_19 : Operation 194 [1/2] (2.77ns)   --->   "%dense_70_bias_array_16 = load float* %dense_70_bias_array_15, align 4" [WebModel.c:30219]   --->   Operation 194 'load' 'dense_70_bias_array_16' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_19 : Operation 195 [1/1] (1.00ns)   --->   "%sel_tmp_i1 = icmp eq i3 %tmp_71, 0" [WebModel.c:30219]   --->   Operation 195 'icmp' 'sel_tmp_i1' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 196 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp3_i4)   --->   "%sel_tmp1_i2 = select i1 %sel_tmp_i1, float %dense_70_bias_array_4, float %dense_70_bias_array_2" [WebModel.c:30219]   --->   Operation 196 'select' 'sel_tmp1_i2' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_19 : Operation 197 [1/1] (1.00ns)   --->   "%sel_tmp2_i3 = icmp eq i3 %tmp_71, 1" [WebModel.c:30219]   --->   Operation 197 'icmp' 'sel_tmp2_i3' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 198 [1/1] (0.77ns) (out node of the LUT)   --->   "%sel_tmp3_i4 = select i1 %sel_tmp2_i3, float %dense_70_bias_array_6, float %sel_tmp1_i2" [WebModel.c:30219]   --->   Operation 198 'select' 'sel_tmp3_i4' <Predicate = true> <Delay = 0.77> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_19 : Operation 199 [1/1] (1.00ns)   --->   "%sel_tmp4_i5 = icmp eq i3 %tmp_71, 2" [WebModel.c:30219]   --->   Operation 199 'icmp' 'sel_tmp4_i5' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 200 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp7_i8)   --->   "%sel_tmp5_i6 = select i1 %sel_tmp4_i5, float %dense_70_bias_array_8, float %sel_tmp3_i4" [WebModel.c:30219]   --->   Operation 200 'select' 'sel_tmp5_i6' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_19 : Operation 201 [1/1] (1.00ns)   --->   "%sel_tmp6_i7 = icmp eq i3 %tmp_71, 3" [WebModel.c:30219]   --->   Operation 201 'icmp' 'sel_tmp6_i7' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 202 [1/1] (0.77ns) (out node of the LUT)   --->   "%sel_tmp7_i8 = select i1 %sel_tmp6_i7, float %dense_70_bias_array_10, float %sel_tmp5_i6" [WebModel.c:30219]   --->   Operation 202 'select' 'sel_tmp7_i8' <Predicate = true> <Delay = 0.77> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_19 : Operation 203 [1/1] (1.00ns)   --->   "%sel_tmp8_i9 = icmp eq i3 %tmp_71, -4" [WebModel.c:30219]   --->   Operation 203 'icmp' 'sel_tmp8_i9' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 204 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp11_i1)   --->   "%sel_tmp9_i1 = select i1 %sel_tmp8_i9, float %dense_70_bias_array_12, float %sel_tmp7_i8" [WebModel.c:30219]   --->   Operation 204 'select' 'sel_tmp9_i1' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_19 : Operation 205 [1/1] (1.00ns)   --->   "%sel_tmp10_i1 = icmp eq i3 %tmp_71, -3" [WebModel.c:30219]   --->   Operation 205 'icmp' 'sel_tmp10_i1' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 206 [1/1] (0.77ns) (out node of the LUT)   --->   "%sel_tmp11_i1 = select i1 %sel_tmp10_i1, float %dense_70_bias_array_14, float %sel_tmp9_i1" [WebModel.c:30219]   --->   Operation 206 'select' 'sel_tmp11_i1' <Predicate = true> <Delay = 0.77> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_19 : Operation 207 [1/1] (1.00ns)   --->   "%sel_tmp12_i1 = icmp eq i3 %tmp_71, -2" [WebModel.c:30219]   --->   Operation 207 'icmp' 'sel_tmp12_i1' <Predicate = true> <Delay = 1.00> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 208 [1/1] (0.77ns) (out node of the LUT)   --->   "%UnifiedRetVal_i1 = select i1 %sel_tmp12_i1, float %dense_70_bias_array_16, float %sel_tmp11_i1" [WebModel.c:30219]   --->   Operation 208 'select' 'UnifiedRetVal_i1' <Predicate = true> <Delay = 0.77> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_19 : Operation 209 [1/1] (0.00ns)   --->   "%dense_70_bias_array_s = getelementptr [26000 x float]* @dense_70_bias_array, i64 0, i64 %b6_cast" [WebModel.c:30221]   --->   Operation 209 'getelementptr' 'dense_70_bias_array_s' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 210 [1/1] (2.77ns)   --->   "store float %UnifiedRetVal_i1, float* %dense_70_bias_array_s, align 4" [WebModel.c:30221]   --->   Operation 210 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_19 : Operation 211 [1/1] (0.00ns)   --->   "br label %14" [WebModel.c:30219]   --->   Operation 211 'br' <Predicate = true> <Delay = 0.00>
+
+State 20 <SV = 15> <Delay = 2.99>
+ST_20 : Operation 212 [1/1] (0.00ns)   --->   "%b7 = phi i7 [ 0, %16 ], [ %b7_1, %18 ]"   --->   Operation 212 'phi' 'b7' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 213 [1/1] (0.00ns)   --->   "%b7_cast = zext i7 %b7 to i64" [WebModel.c:30233]   --->   Operation 213 'zext' 'b7_cast' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 214 [1/1] (1.23ns)   --->   "%tmp_6 = icmp eq i7 %b7, -64" [WebModel.c:30233]   --->   Operation 214 'icmp' 'tmp_6' <Predicate = true> <Delay = 1.23> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.23> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 215 [1/1] (0.00ns)   --->   "%empty_44 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64)"   --->   Operation 215 'speclooptripcount' 'empty_44' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 216 [1/1] (1.66ns)   --->   "%b7_1 = add i7 %b7, 1" [WebModel.c:30233]   --->   Operation 216 'add' 'b7_1' <Predicate = true> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 217 [1/1] (0.00ns)   --->   "br i1 %tmp_6, label %.critedge, label %18" [WebModel.c:30233]   --->   Operation 217 'br' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 218 [1/1] (0.00ns)   --->   "%dense_71_kernel_arra_1 = getelementptr inbounds [64 x float]* @dense_71_kernel_arra, i64 0, i64 %b7_cast" [WebModel.c:30235]   --->   Operation 218 'getelementptr' 'dense_71_kernel_arra_1' <Predicate = (!tmp_6)> <Delay = 0.00>
+ST_20 : Operation 219 [2/2] (2.77ns)   --->   "%dense_71_kernel_arra_2 = load float* %dense_71_kernel_arra_1, align 4" [WebModel.c:30235]   --->   Operation 219 'load' 'dense_71_kernel_arra_2' <Predicate = (!tmp_6)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_20 : Operation 220 [1/1] (0.00ns)   --->   "store i64 2, i64* @dense_71_kernel_ndim, align 8" [WebModel.c:30237]   --->   Operation 220 'store' <Predicate = (tmp_6)> <Delay = 0.00>
+ST_20 : Operation 221 [1/1] (0.00ns)   --->   "store i64 64, i64* @dense_71_kernel_nume, align 8" [WebModel.c:30238]   --->   Operation 221 'store' <Predicate = (tmp_6)> <Delay = 0.00>
+ST_20 : Operation 222 [1/1] (0.00ns)   --->   "store i64 1, i64* @dense_71_bias_numel, align 8" [WebModel.c:30252]   --->   Operation 222 'store' <Predicate = (tmp_6)> <Delay = 0.00>
+ST_20 : Operation 223 [1/1] (0.00ns)   --->   "%dense_69_input_input = call i64 @_ssdm_op_Read.ap_auto.i64P(i64* %dense_69_input_input_ndim)" [WebModel.c:30261]   --->   Operation 223 'read' 'dense_69_input_input' <Predicate = (tmp_6)> <Delay = 0.00>
+ST_20 : Operation 224 [1/1] (0.00ns)   --->   "%dense_69_input_input_1 = call i64 @_ssdm_op_Read.ap_auto.i64P(i64* %dense_69_input_input_numel)" [WebModel.c:30261]   --->   Operation 224 'read' 'dense_69_input_input_1' <Predicate = (tmp_6)> <Delay = 0.00>
+ST_20 : Operation 225 [2/2] (2.99ns)   --->   "call fastcc void @k2c_dense.2([26000 x float]* @dense_69_output_arra, [26000 x float]* %dense_69_input_input_array, i64 %dense_69_input_input, i64 %dense_69_input_input_1, [5 x i64]* %dense_69_input_input_shape, [26000 x float]* @dense_69_kernel_arra_8, [5 x i64]* @dense_69_kernel_shap, [26000 x float]* @dense_69_bias_array_9)" [WebModel.c:30261]   --->   Operation 225 'call' <Predicate = (tmp_6)> <Delay = 2.99> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 21 <SV = 16> <Delay = 5.54>
+ST_21 : Operation 226 [1/2] (2.77ns)   --->   "%dense_71_kernel_arra_2 = load float* %dense_71_kernel_arra_1, align 4" [WebModel.c:30235]   --->   Operation 226 'load' 'dense_71_kernel_arra_2' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 64> <ROM>
+ST_21 : Operation 227 [1/1] (0.00ns)   --->   "%dense_71_kernel_arra_1_45 = getelementptr [26000 x float]* @dense_71_kernel_arra_0, i64 0, i64 %b7_cast" [WebModel.c:30235]   --->   Operation 227 'getelementptr' 'dense_71_kernel_arra_1_45' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 228 [1/1] (2.77ns)   --->   "store float %dense_71_kernel_arra_2, float* %dense_71_kernel_arra_1_45, align 4" [WebModel.c:30235]   --->   Operation 228 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_21 : Operation 229 [1/1] (0.00ns)   --->   "br label %17" [WebModel.c:30233]   --->   Operation 229 'br' <Predicate = true> <Delay = 0.00>
+
+State 22 <SV = 16> <Delay = 1.75>
+ST_22 : Operation 230 [1/1] (1.75ns)   --->   "store i64 64, i64* getelementptr inbounds ([5 x i64]* @dense_71_kernel_shap, i64 0, i64 0), align 8" [WebModel.c:30239]   --->   Operation 230 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_22 : Operation 231 [1/2] (0.00ns)   --->   "call fastcc void @k2c_dense.2([26000 x float]* @dense_69_output_arra, [26000 x float]* %dense_69_input_input_array, i64 %dense_69_input_input, i64 %dense_69_input_input_1, [5 x i64]* %dense_69_input_input_shape, [26000 x float]* @dense_69_kernel_arra_8, [5 x i64]* @dense_69_kernel_shap, [26000 x float]* @dense_69_bias_array_9)" [WebModel.c:30261]   --->   Operation 231 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 23 <SV = 17> <Delay = 2.99>
+ST_23 : Operation 232 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_71_kernel_shap, i64 0, i64 1), align 8" [WebModel.c:30240]   --->   Operation 232 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_23 : Operation 233 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_71_kernel_shap, i64 0, i64 2), align 8" [WebModel.c:30241]   --->   Operation 233 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_23 : Operation 234 [1/1] (0.00ns)   --->   "%dense_70_output_nume_1 = load i64* @dense_70_output_nume, align 8" [WebModel.c:30262]   --->   Operation 234 'load' 'dense_70_output_nume_1' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 235 [1/1] (0.00ns)   --->   "%dense_70_bias_numel_s = load i64* @dense_70_bias_numel, align 8" [WebModel.c:30262]   --->   Operation 235 'load' 'dense_70_bias_numel_s' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 236 [1/1] (0.00ns)   --->   "%dense_69_output_ndim_1 = load i64* @dense_69_output_ndim, align 8" [WebModel.c:30262]   --->   Operation 236 'load' 'dense_69_output_ndim_1' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 237 [1/1] (0.00ns)   --->   "%dense_69_output_nume_1 = load i64* @dense_69_output_nume, align 8" [WebModel.c:30262]   --->   Operation 237 'load' 'dense_69_output_nume_1' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 238 [1/1] (0.00ns)   --->   "%dense_70_kernel_ndim_1 = load i64* @dense_70_kernel_ndim, align 8" [WebModel.c:30262]   --->   Operation 238 'load' 'dense_70_kernel_ndim_1' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 239 [1/1] (0.00ns)   --->   "%dense_70_kernel_nume_1 = load i64* @dense_70_kernel_nume, align 8" [WebModel.c:30262]   --->   Operation 239 'load' 'dense_70_kernel_nume_1' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 240 [2/2] (2.99ns)   --->   "call fastcc void @k2c_dense.1([26000 x float]* @dense_70_output_arra, i64 %dense_70_output_nume_1, [26000 x float]* @dense_69_output_arra, i64 %dense_69_output_ndim_1, i64 %dense_69_output_nume_1, [5 x i64]* @dense_69_output_shap, [26000 x float]* @dense_70_kernel_arra_1, i64 %dense_70_kernel_ndim_1, i64 %dense_70_kernel_nume_1, [5 x i64]* @dense_70_kernel_shap, [26000 x float]* @dense_70_bias_array, i64 %dense_70_bias_numel_s)" [WebModel.c:30262]   --->   Operation 240 'call' <Predicate = true> <Delay = 2.99> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 18> <Delay = 2.77>
+ST_24 : Operation 241 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_71_kernel_shap, i64 0, i64 3), align 8" [WebModel.c:30242]   --->   Operation 241 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_24 : Operation 242 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_71_kernel_shap, i64 0, i64 4), align 8" [WebModel.c:30243]   --->   Operation 242 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_24 : Operation 243 [1/1] (2.77ns)   --->   "store float 0x3FCF4ADCC0000000, float* getelementptr inbounds ([26000 x float]* @dense_71_bias_array, i64 0, i64 0), align 8" [WebModel.c:30249]   --->   Operation 243 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_24 : Operation 244 [1/2] (0.00ns)   --->   "call fastcc void @k2c_dense.1([26000 x float]* @dense_70_output_arra, i64 %dense_70_output_nume_1, [26000 x float]* @dense_69_output_arra, i64 %dense_69_output_ndim_1, i64 %dense_69_output_nume_1, [5 x i64]* @dense_69_output_shap, [26000 x float]* @dense_70_kernel_arra_1, i64 %dense_70_kernel_ndim_1, i64 %dense_70_kernel_nume_1, [5 x i64]* @dense_70_kernel_shap, [26000 x float]* @dense_70_bias_array, i64 %dense_70_bias_numel_s)" [WebModel.c:30262]   --->   Operation 244 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 25 <SV = 19> <Delay = 2.99>
+ST_25 : Operation 245 [1/1] (0.00ns)   --->   "%dense_71_output_nume = call i64 @_ssdm_op_Read.ap_auto.i64P(i64* %dense_71_output_numel)" [WebModel.c:30263]   --->   Operation 245 'read' 'dense_71_output_nume' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 246 [1/1] (0.00ns)   --->   "%dense_71_bias_numel_s = load i64* @dense_71_bias_numel, align 8" [WebModel.c:30263]   --->   Operation 246 'load' 'dense_71_bias_numel_s' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 247 [1/1] (0.00ns)   --->   "%dense_70_output_ndim_1 = load i64* @dense_70_output_ndim, align 8" [WebModel.c:30263]   --->   Operation 247 'load' 'dense_70_output_ndim_1' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 248 [1/1] (0.00ns)   --->   "%dense_70_output_nume_2 = load i64* @dense_70_output_nume, align 8" [WebModel.c:30263]   --->   Operation 248 'load' 'dense_70_output_nume_2' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 249 [1/1] (0.00ns)   --->   "%dense_71_kernel_ndim_1 = load i64* @dense_71_kernel_ndim, align 8" [WebModel.c:30263]   --->   Operation 249 'load' 'dense_71_kernel_ndim_1' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 250 [1/1] (0.00ns)   --->   "%dense_71_kernel_nume_1 = load i64* @dense_71_kernel_nume, align 8" [WebModel.c:30263]   --->   Operation 250 'load' 'dense_71_kernel_nume_1' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 251 [2/2] (2.99ns)   --->   "call fastcc void @k2c_dense([26000 x float]* %dense_71_output_array, i64 %dense_71_output_nume, [26000 x float]* @dense_70_output_arra, i64 %dense_70_output_ndim_1, i64 %dense_70_output_nume_2, [5 x i64]* @dense_70_output_shap, [26000 x float]* @dense_71_kernel_arra_0, i64 %dense_71_kernel_ndim_1, i64 %dense_71_kernel_nume_1, [5 x i64]* @dense_71_kernel_shap, [26000 x float]* @dense_71_bias_array, i64 %dense_71_bias_numel_s)" [WebModel.c:30263]   --->   Operation 251 'call' <Predicate = true> <Delay = 2.99> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 26 <SV = 20> <Delay = 0.00>
+ST_26 : Operation 252 [1/2] (0.00ns)   --->   "call fastcc void @k2c_dense([26000 x float]* %dense_71_output_array, i64 %dense_71_output_nume, [26000 x float]* @dense_70_output_arra, i64 %dense_70_output_ndim_1, i64 %dense_70_output_nume_2, [5 x i64]* @dense_70_output_shap, [26000 x float]* @dense_71_kernel_arra_0, i64 %dense_71_kernel_ndim_1, i64 %dense_71_kernel_nume_1, [5 x i64]* @dense_71_kernel_shap, [26000 x float]* @dense_71_bias_array, i64 %dense_71_bias_numel_s)" [WebModel.c:30263]   --->   Operation 252 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_26 : Operation 253 [1/1] (0.00ns)   --->   "ret void" [WebModel.c:30264]   --->   Operation 253 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('b1') with incoming values : ('b1', WebModel.c:30146) [65]  (1.35 ns)
+
+ <State 2>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('b1') with incoming values : ('b1', WebModel.c:30146) [65]  (0 ns)
+	'getelementptr' operation ('dense_69_output_arra_1', WebModel.c:30148) [72]  (0 ns)
+	'store' operation (WebModel.c:30148) of constant 0 on array 'dense_69_output_arra' [73]  (2.77 ns)
+
+ <State 3>: 1.75ns
+The critical path consists of the following:
+	'store' operation (WebModel.c:30153) of constant 1 on array 'dense_69_output_shap' [79]  (1.75 ns)
+
+ <State 4>: 1.75ns
+The critical path consists of the following:
+	'store' operation (WebModel.c:30155) of constant 1 on array 'dense_69_output_shap' [81]  (1.75 ns)
+
+ <State 5>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('b2') with incoming values : ('b2', WebModel.c:30161) [85]  (0 ns)
+	'getelementptr' operation ('dense_69_kernel_arra_18', WebModel.c:30161) [105]  (0 ns)
+	'load' operation ('dense_69_kernel_arra_19', WebModel.c:30161) on array 'dense_69_kernel_arra_3' [106]  (2.77 ns)
+
+ <State 6>: 8.64ns
+The critical path consists of the following:
+	'load' operation ('dense_69_kernel_arra_9', WebModel.c:30161) on array 'dense_69_kernel_arra' [96]  (2.77 ns)
+	'select' operation ('sel_tmp1_i', WebModel.c:30161) [112]  (0 ns)
+	'select' operation ('sel_tmp3_i', WebModel.c:30161) [114]  (0.773 ns)
+	'select' operation ('sel_tmp5_i', WebModel.c:30161) [116]  (0 ns)
+	'select' operation ('sel_tmp7_i', WebModel.c:30161) [118]  (0.773 ns)
+	'select' operation ('sel_tmp9_i', WebModel.c:30161) [120]  (0 ns)
+	'select' operation ('sel_tmp11_i', WebModel.c:30161) [122]  (0.773 ns)
+	'select' operation ('UnifiedRetVal_i', WebModel.c:30161) [124]  (0.773 ns)
+	'store' operation (WebModel.c:30163) of variable 'UnifiedRetVal_i', WebModel.c:30161 on array 'dense_69_kernel_arra_8' [126]  (2.77 ns)
+
+ <State 7>: 1.75ns
+The critical path consists of the following:
+	'store' operation (WebModel.c:30168) of constant 64 on array 'dense_69_kernel_shap' [130]  (1.75 ns)
+
+ <State 8>: 1.75ns
+The critical path consists of the following:
+	'store' operation (WebModel.c:30170) of constant 1 on array 'dense_69_kernel_shap' [132]  (1.75 ns)
+
+ <State 9>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('b3') with incoming values : ('b3', WebModel.c:30174) [136]  (0 ns)
+	'getelementptr' operation ('dense_69_bias_array_s', WebModel.c:30176) [143]  (0 ns)
+	'load' operation ('dense_69_bias_array_1', WebModel.c:30176) on array 'dense_69_bias_array' [144]  (2.77 ns)
+
+ <State 10>: 5.54ns
+The critical path consists of the following:
+	'load' operation ('dense_69_bias_array_1', WebModel.c:30176) on array 'dense_69_bias_array' [144]  (2.77 ns)
+	'store' operation (WebModel.c:30176) of variable 'dense_69_bias_array_1', WebModel.c:30176 on array 'dense_69_bias_array_9' [146]  (2.77 ns)
+
+ <State 11>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('b4') with incoming values : ('b4', WebModel.c:30189) [151]  (0 ns)
+	'getelementptr' operation ('dense_70_output_arra_1', WebModel.c:30191) [158]  (0 ns)
+	'store' operation (WebModel.c:30191) of constant 0 on array 'dense_70_output_arra' [159]  (2.77 ns)
+
+ <State 12>: 1.75ns
+The critical path consists of the following:
+	'store' operation (WebModel.c:30196) of constant 1 on array 'dense_70_output_shap' [165]  (1.75 ns)
+
+ <State 13>: 1.75ns
+The critical path consists of the following:
+	'store' operation (WebModel.c:30198) of constant 1 on array 'dense_70_output_shap' [167]  (1.75 ns)
+
+ <State 14>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('b5') with incoming values : ('b5', WebModel.c:30203) [171]  (0 ns)
+	'getelementptr' operation ('dense_70_kernel_arra_1', WebModel.c:30205) [178]  (0 ns)
+	'load' operation ('dense_70_kernel_arra_2', WebModel.c:30205) on array 'dense_70_kernel_arra' [179]  (2.77 ns)
+
+ <State 15>: 5.54ns
+The critical path consists of the following:
+	'load' operation ('dense_70_kernel_arra_2', WebModel.c:30205) on array 'dense_70_kernel_arra' [179]  (2.77 ns)
+	'store' operation (WebModel.c:30205) of variable 'dense_70_kernel_arra_2', WebModel.c:30205 on array 'dense_70_kernel_arra_1' [181]  (2.77 ns)
+
+ <State 16>: 1.75ns
+The critical path consists of the following:
+	'store' operation (WebModel.c:30210) of constant 64 on array 'dense_70_kernel_shap' [187]  (1.75 ns)
+
+ <State 17>: 1.75ns
+The critical path consists of the following:
+	'store' operation (WebModel.c:30212) of constant 1 on array 'dense_70_kernel_shap' [189]  (1.75 ns)
+
+ <State 18>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('b6') with incoming values : ('b6', WebModel.c:30219) [193]  (0 ns)
+	'getelementptr' operation ('dense_70_bias_array_13', WebModel.c:30219) [215]  (0 ns)
+	'load' operation ('dense_70_bias_array_14', WebModel.c:30219) on array 'dense_70_bias_array_5' [216]  (2.77 ns)
+
+ <State 19>: 8.64ns
+The critical path consists of the following:
+	'load' operation ('dense_70_bias_array_2', WebModel.c:30219) on array 'dense_70_bias_array_7' [204]  (2.77 ns)
+	'select' operation ('sel_tmp1_i2', WebModel.c:30219) [220]  (0 ns)
+	'select' operation ('sel_tmp3_i4', WebModel.c:30219) [222]  (0.773 ns)
+	'select' operation ('sel_tmp5_i6', WebModel.c:30219) [224]  (0 ns)
+	'select' operation ('sel_tmp7_i8', WebModel.c:30219) [226]  (0.773 ns)
+	'select' operation ('sel_tmp9_i1', WebModel.c:30219) [228]  (0 ns)
+	'select' operation ('sel_tmp11_i1', WebModel.c:30219) [230]  (0.773 ns)
+	'select' operation ('UnifiedRetVal_i1', WebModel.c:30219) [232]  (0.773 ns)
+	'store' operation (WebModel.c:30221) of variable 'UnifiedRetVal_i1', WebModel.c:30219 on array 'dense_70_bias_array' [234]  (2.77 ns)
+
+ <State 20>: 3ns
+The critical path consists of the following:
+	wire read on port 'dense_69_input_input_ndim' (WebModel.c:30261) [262]  (0 ns)
+	'call' operation (WebModel.c:30261) to 'k2c_dense.2' [264]  (3 ns)
+
+ <State 21>: 5.54ns
+The critical path consists of the following:
+	'load' operation ('dense_71_kernel_arra_2', WebModel.c:30235) on array 'dense_71_kernel_arra' [248]  (2.77 ns)
+	'store' operation (WebModel.c:30235) of variable 'dense_71_kernel_arra_2', WebModel.c:30235 on array 'dense_71_kernel_arra_0' [250]  (2.77 ns)
+
+ <State 22>: 1.75ns
+The critical path consists of the following:
+	'store' operation (WebModel.c:30239) of constant 64 on array 'dense_71_kernel_shap' [255]  (1.75 ns)
+
+ <State 23>: 3ns
+The critical path consists of the following:
+	'load' operation ('dense_70_output_nume_1', WebModel.c:30262) on global variable 'dense_70_output_nume' [265]  (0 ns)
+	'call' operation (WebModel.c:30262) to 'k2c_dense.1' [271]  (3 ns)
+
+ <State 24>: 2.77ns
+The critical path consists of the following:
+	'store' operation (WebModel.c:30249) of constant 0.244472 on array 'dense_71_bias_array' [260]  (2.77 ns)
+
+ <State 25>: 3ns
+The critical path consists of the following:
+	wire read on port 'dense_71_output_numel' (WebModel.c:30263) [272]  (0 ns)
+	'call' operation (WebModel.c:30263) to 'k2c_dense' [278]  (3 ns)
+
+ <State 26>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,161 @@
+
+
+================================================================
+== Vivado HLS Report for 'k2c_relu_func'
+================================================================
+* Date:           Mon Apr 22 22:21:16 2024
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        WEB_MODEL_2
+* Solution:       solution2
+* Product family: artix7
+* Target device:  xc7a200tsbv484-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.081|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         3|          -|          -|     ?|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond)
+3 --> 
+	4  / true
+4 --> 
+	2  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.35>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%size_read = call i64 @_ssdm_op_Read.ap_auto.i64(i64 %size)"   --->   Operation 5 'read' 'size_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (1.35ns)   --->   "br label %1" [WebModel.c:44]   --->   Operation 6 'br' <Predicate = true> <Delay = 1.35>
+
+State 2 <SV = 1> <Delay = 2.99>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%i = phi i64 [ 0, %0 ], [ %i_2, %._crit_edge ]"   --->   Operation 7 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (2.34ns)   --->   "%exitcond = icmp eq i64 %i, %size_read" [WebModel.c:44]   --->   Operation 8 'icmp' 'exitcond' <Predicate = true> <Delay = 2.34> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.03> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 9 [1/1] (2.99ns)   --->   "%i_2 = add i64 %i, 1" [WebModel.c:44]   --->   Operation 9 'add' 'i_2' <Predicate = true> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %4, label %2" [WebModel.c:44]   --->   Operation 10 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%x_addr = getelementptr [26000 x float]* %x, i64 0, i64 %i" [WebModel.c:45]   --->   Operation 11 'getelementptr' 'x_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_2 : Operation 12 [2/2] (2.77ns)   --->   "%x_load = load float* %x_addr, align 4" [WebModel.c:45]   --->   Operation 12 'load' 'x_load' <Predicate = (!exitcond)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "ret void" [WebModel.c:49]   --->   Operation 13 'ret' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 8.08>
+ST_3 : Operation 14 [1/2] (2.77ns)   --->   "%x_load = load float* %x_addr, align 4" [WebModel.c:45]   --->   Operation 14 'load' 'x_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%x_load_to_int = bitcast float %x_load to i32" [WebModel.c:45]   --->   Operation 15 'bitcast' 'x_load_to_int' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "%tmp = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %x_load_to_int, i32 23, i32 30)" [WebModel.c:45]   --->   Operation 16 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "%tmp_5 = trunc i32 %x_load_to_int to i23" [WebModel.c:45]   --->   Operation 17 'trunc' 'tmp_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 18 [1/1] (1.24ns)   --->   "%notlhs = icmp ne i8 %tmp, -1" [WebModel.c:45]   --->   Operation 18 'icmp' 'notlhs' <Predicate = true> <Delay = 1.24> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.03> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 19 [1/1] (2.03ns)   --->   "%notrhs = icmp eq i23 %tmp_5, 0" [WebModel.c:45]   --->   Operation 19 'icmp' 'notrhs' <Predicate = true> <Delay = 2.03> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.03> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 20 [1/1] (5.30ns)   --->   "%tmp_3 = fcmp ole float %x_load, 0.000000e+00" [WebModel.c:45]   --->   Operation 20 'fcmp' 'tmp_3' <Predicate = true> <Delay = 5.30> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 0> <II = 1> <Delay = 5.30> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 2.77>
+ST_4 : Operation 21 [1/1] (0.00ns) (grouped into LUT with out node tmp_4)   --->   "%tmp_2 = or i1 %notrhs, %notlhs" [WebModel.c:45]   --->   Operation 21 'or' 'tmp_2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 22 [1/1] (0.80ns) (out node of the LUT)   --->   "%tmp_4 = and i1 %tmp_2, %tmp_3" [WebModel.c:45]   --->   Operation 22 'and' 'tmp_4' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 23 [1/1] (0.00ns)   --->   "br i1 %tmp_4, label %3, label %._crit_edge" [WebModel.c:45]   --->   Operation 23 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 24 [1/1] (2.77ns)   --->   "store float 0.000000e+00, float* %x_addr, align 4" [WebModel.c:46]   --->   Operation 24 'store' <Predicate = (tmp_4)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_4 : Operation 25 [1/1] (0.00ns)   --->   "br label %._crit_edge" [WebModel.c:47]   --->   Operation 25 'br' <Predicate = (tmp_4)> <Delay = 0.00>
+ST_4 : Operation 26 [1/1] (0.00ns)   --->   "br label %1" [WebModel.c:44]   --->   Operation 26 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', WebModel.c:44) [6]  (1.35 ns)
+
+ <State 2>: 3ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', WebModel.c:44) [6]  (0 ns)
+	'add' operation ('i', WebModel.c:44) [8]  (3 ns)
+
+ <State 3>: 8.08ns
+The critical path consists of the following:
+	'load' operation ('x_load', WebModel.c:45) on array 'x' [12]  (2.77 ns)
+	'fcmp' operation ('tmp_3', WebModel.c:45) [19]  (5.31 ns)
+
+ <State 4>: 2.77ns
+The critical path consists of the following:
+	'store' operation (WebModel.c:46) of constant 0 on array 'x' [23]  (2.77 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

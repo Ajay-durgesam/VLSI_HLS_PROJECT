@@ -1,0 +1,418 @@
+
+
+================================================================
+== Vivado HLS Report for 'k2c_affine_matmul'
+================================================================
+* Date:           Mon Apr 22 22:21:16 2024
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        WEB_MODEL_2
+* Solution:       solution2
+* Product family: artix7
+* Target device:  xc7a200tsbv484-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     9.286|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |    ?|    ?|         1|          -|          -|     ?|    no    |
+        |- Loop 2     |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        | + Loop 2.1  |    ?|    ?|        10|          6|          1|     ?|    yes   |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 6, depth = 10
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 24
+* Pipeline : 1
+  Pipeline-0 : II = 6, D = 10, States = { 7 8 9 10 11 12 13 14 15 16 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / (exitcond3)
+	3  / (!exitcond3)
+4 --> 
+	5  / true
+5 --> 
+	6  / (!exitcond_flatten)
+6 --> 
+	7  / true
+7 --> 
+	17  / (exitcond)
+	8  / (!exitcond)
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	7  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	5  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 8.60>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%outcols_read = call i64 @_ssdm_op_Read.ap_auto.i64(i64 %outcols)"   --->   Operation 25 'read' 'outcols_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%outrows_read = call i64 @_ssdm_op_Read.ap_auto.i64(i64 %outrows)"   --->   Operation 26 'read' 'outrows_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [2/2] (8.60ns)   --->   "%tmp = mul i64 %outcols_read, %outrows_read" [WebModel.c:60]   --->   Operation 27 'mul' 'tmp' <Predicate = true> <Delay = 8.60> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 8.60> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 8.60>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%innerdim_read = call i64 @_ssdm_op_Read.ap_auto.i64(i64 %innerdim)"   --->   Operation 28 'read' 'innerdim_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/2] (8.60ns)   --->   "%tmp = mul i64 %outcols_read, %outrows_read" [WebModel.c:60]   --->   Operation 29 'mul' 'tmp' <Predicate = true> <Delay = 8.60> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 8.60> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 30 [1/1] (1.35ns)   --->   "br label %1" [WebModel.c:60]   --->   Operation 30 'br' <Predicate = true> <Delay = 1.35>
+
+State 3 <SV = 2> <Delay = 8.60>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%p = phi i15 [ 0, %0 ], [ %p_1, %2 ]"   --->   Operation 31 'phi' 'p' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%p_cast = zext i15 %p to i64" [WebModel.c:60]   --->   Operation 32 'zext' 'p_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (2.34ns)   --->   "%exitcond3 = icmp eq i64 %p_cast, %tmp" [WebModel.c:60]   --->   Operation 33 'icmp' 'exitcond3' <Predicate = true> <Delay = 2.34> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 34 [1/1] (1.82ns)   --->   "%p_1 = add i15 %p, 1" [WebModel.c:60]   --->   Operation 34 'add' 'p_1' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %.preheader4.preheader, label %2" [WebModel.c:60]   --->   Operation 35 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%C_addr = getelementptr [26000 x float]* %C, i64 0, i64 %p_cast" [WebModel.c:62]   --->   Operation 36 'getelementptr' 'C_addr' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (2.77ns)   --->   "store float 0.000000e+00, float* %C_addr, align 4" [WebModel.c:62]   --->   Operation 37 'store' <Predicate = (!exitcond3)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "br label %1" [WebModel.c:60]   --->   Operation 38 'br' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%cast = zext i64 %outrows_read to i128"   --->   Operation 39 'zext' 'cast' <Predicate = (exitcond3)> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%cast1 = zext i64 %outcols_read to i128"   --->   Operation 40 'zext' 'cast1' <Predicate = (exitcond3)> <Delay = 0.00>
+ST_3 : Operation 41 [2/2] (8.60ns)   --->   "%bound = mul i128 %cast1, %cast"   --->   Operation 41 'mul' 'bound' <Predicate = (exitcond3)> <Delay = 8.60> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 8.60> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 8.60>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_65 = trunc i64 %outcols_read to i16" [WebModel.c:65]   --->   Operation 42 'trunc' 'tmp_65' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_66 = trunc i64 %innerdim_read to i16" [WebModel.c:66]   --->   Operation 43 'trunc' 'tmp_66' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 44 [1/2] (8.60ns)   --->   "%bound = mul i128 %cast1, %cast"   --->   Operation 44 'mul' 'bound' <Predicate = true> <Delay = 8.60> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 8.60> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 45 [1/1] (1.35ns)   --->   "br label %3" [WebModel.c:64]   --->   Operation 45 'br' <Predicate = true> <Delay = 1.35>
+
+State 5 <SV = 4> <Delay = 4.56>
+ST_5 : Operation 46 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i128 [ 0, %.preheader4.preheader ], [ %indvar_flatten_next, %5 ]"   --->   Operation 46 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 47 [1/1] (0.00ns)   --->   "%i = phi i64 [ 0, %.preheader4.preheader ], [ %outrowidx_mid2_v_v, %5 ]" [WebModel.c:65]   --->   Operation 47 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 48 [1/1] (0.00ns)   --->   "%j = phi i64 [ 0, %.preheader4.preheader ], [ %j_8, %5 ]"   --->   Operation 48 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 49 [1/1] (2.91ns)   --->   "%exitcond_flatten = icmp eq i128 %indvar_flatten, %bound"   --->   Operation 49 'icmp' 'exitcond_flatten' <Predicate = true> <Delay = 2.91> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 50 [1/1] (4.56ns)   --->   "%indvar_flatten_next = add i128 %indvar_flatten, 1"   --->   Operation 50 'add' 'indvar_flatten_next' <Predicate = true> <Delay = 4.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 51 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten, label %6, label %.preheader4"   --->   Operation 51 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 52 [1/1] (2.34ns)   --->   "%exitcond1 = icmp eq i64 %j, %outcols_read" [WebModel.c:67]   --->   Operation 52 'icmp' 'exitcond1' <Predicate = (!exitcond_flatten)> <Delay = 2.34> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 53 [1/1] (2.99ns)   --->   "%i_s = add i64 1, %i" [WebModel.c:64]   --->   Operation 53 'add' 'i_s' <Predicate = (!exitcond_flatten)> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 54 [1/1] (0.83ns)   --->   "%outrowidx_mid2_v_v = select i1 %exitcond1, i64 %i_s, i64 %i" [WebModel.c:65]   --->   Operation 54 'select' 'outrowidx_mid2_v_v' <Predicate = (!exitcond_flatten)> <Delay = 0.83> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_67 = trunc i64 %outrowidx_mid2_v_v to i16" [WebModel.c:65]   --->   Operation 55 'trunc' 'tmp_67' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_5 : Operation 56 [1/1] (0.00ns)   --->   "ret void" [WebModel.c:75]   --->   Operation 56 'ret' <Predicate = (exitcond_flatten)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 6.35>
+ST_6 : Operation 57 [1/1] (0.83ns)   --->   "%j_mid2 = select i1 %exitcond1, i64 0, i64 %j" [WebModel.c:67]   --->   Operation 57 'select' 'j_mid2' <Predicate = true> <Delay = 0.83> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 58 [1/1] (2.82ns)   --->   "%outrowidx_mid2 = mul i16 %tmp_67, %tmp_65" [WebModel.c:65]   --->   Operation 58 'mul' 'outrowidx_mid2' <Predicate = true> <Delay = 2.82> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.35> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 59 [1/1] (6.35ns)   --->   "%inneridx_mid2 = mul i16 %tmp_67, %tmp_66" [WebModel.c:66]   --->   Operation 59 'mul' 'inneridx_mid2' <Predicate = true> <Delay = 6.35> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.35> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 60 [1/1] (0.00ns)   --->   "%tmp_68 = trunc i64 %j_mid2 to i16" [WebModel.c:67]   --->   Operation 60 'trunc' 'tmp_68' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 61 [1/1] (3.53ns)   --->   "%sum2 = add i16 %tmp_68, %outrowidx_mid2" [WebModel.c:67]   --->   Operation 61 'add' 'sum2' <Predicate = true> <Delay = 3.53> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.35> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 62 [1/1] (0.00ns)   --->   "%sum2_cast = zext i16 %sum2 to i64" [WebModel.c:67]   --->   Operation 62 'zext' 'sum2_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 63 [1/1] (0.00ns)   --->   "%C_addr_4 = getelementptr [26000 x float]* %C, i64 0, i64 %sum2_cast" [WebModel.c:70]   --->   Operation 63 'getelementptr' 'C_addr_4' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 64 [1/1] (1.35ns)   --->   "br label %.preheader" [WebModel.c:68]   --->   Operation 64 'br' <Predicate = true> <Delay = 1.35>
+
+State 7 <SV = 6> <Delay = 9.12>
+ST_7 : Operation 65 [1/1] (0.00ns)   --->   "%k = phi i64 [ %k_1, %4 ], [ 0, %.preheader4 ]"   --->   Operation 65 'phi' 'k' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 66 [1/1] (2.34ns)   --->   "%exitcond = icmp eq i64 %k, %innerdim_read" [WebModel.c:68]   --->   Operation 66 'icmp' 'exitcond' <Predicate = true> <Delay = 2.34> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 67 [1/1] (2.99ns)   --->   "%k_1 = add i64 %k, 1" [WebModel.c:68]   --->   Operation 67 'add' 'k_1' <Predicate = true> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 68 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %5, label %4" [WebModel.c:68]   --->   Operation 68 'br' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 69 [1/1] (0.00ns)   --->   "%tmp_69 = trunc i64 %k to i16" [WebModel.c:68]   --->   Operation 69 'trunc' 'tmp_69' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_7 : Operation 70 [1/1] (1.84ns)   --->   "%sum5 = add i16 %tmp_69, %inneridx_mid2" [WebModel.c:68]   --->   Operation 70 'add' 'sum5' <Predicate = (!exitcond)> <Delay = 1.84> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 71 [1/1] (0.00ns)   --->   "%sum5_cast = zext i16 %sum5 to i64" [WebModel.c:68]   --->   Operation 71 'zext' 'sum5_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_7 : Operation 72 [1/1] (0.00ns)   --->   "%A_addr = getelementptr [26000 x float]* %A, i64 0, i64 %sum5_cast" [WebModel.c:70]   --->   Operation 72 'getelementptr' 'A_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_7 : Operation 73 [2/2] (2.77ns)   --->   "%A_load = load float* %A_addr, align 4" [WebModel.c:70]   --->   Operation 73 'load' 'A_load' <Predicate = (!exitcond)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_7 : Operation 74 [1/1] (2.82ns)   --->   "%tmp_5 = mul i16 %tmp_69, %tmp_65" [WebModel.c:70]   --->   Operation 74 'mul' 'tmp_5' <Predicate = (!exitcond)> <Delay = 2.82> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.35> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_7 : Operation 75 [1/1] (3.53ns)   --->   "%sum8 = add i16 %tmp_5, %tmp_68" [WebModel.c:70]   --->   Operation 75 'add' 'sum8' <Predicate = (!exitcond)> <Delay = 3.53> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.35> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_7 : Operation 76 [1/1] (0.00ns)   --->   "%sum8_cast = zext i16 %sum8 to i64" [WebModel.c:70]   --->   Operation 76 'zext' 'sum8_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_7 : Operation 77 [1/1] (0.00ns)   --->   "%B_addr = getelementptr [26000 x float]* %B, i64 0, i64 %sum8_cast" [WebModel.c:70]   --->   Operation 77 'getelementptr' 'B_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_7 : Operation 78 [2/2] (2.77ns)   --->   "%B_load = load float* %B_addr, align 4" [WebModel.c:70]   --->   Operation 78 'load' 'B_load' <Predicate = (!exitcond)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 8 <SV = 7> <Delay = 2.77>
+ST_8 : Operation 79 [1/2] (2.77ns)   --->   "%A_load = load float* %A_addr, align 4" [WebModel.c:70]   --->   Operation 79 'load' 'A_load' <Predicate = (!exitcond)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_8 : Operation 80 [1/2] (2.77ns)   --->   "%B_load = load float* %B_addr, align 4" [WebModel.c:70]   --->   Operation 80 'load' 'B_load' <Predicate = (!exitcond)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 9 <SV = 8> <Delay = 8.54>
+ST_9 : Operation 81 [3/3] (8.54ns)   --->   "%tmp_6 = fmul float %A_load, %B_load" [WebModel.c:70]   --->   Operation 81 'fmul' 'tmp_6' <Predicate = (!exitcond)> <Delay = 8.54> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 2> <II = 1> <Delay = 8.54> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 8.54>
+ST_10 : Operation 82 [2/3] (8.54ns)   --->   "%tmp_6 = fmul float %A_load, %B_load" [WebModel.c:70]   --->   Operation 82 'fmul' 'tmp_6' <Predicate = (!exitcond)> <Delay = 8.54> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 2> <II = 1> <Delay = 8.54> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 8.54>
+ST_11 : Operation 83 [1/3] (8.54ns)   --->   "%tmp_6 = fmul float %A_load, %B_load" [WebModel.c:70]   --->   Operation 83 'fmul' 'tmp_6' <Predicate = (!exitcond)> <Delay = 8.54> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 2> <II = 1> <Delay = 8.54> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 84 [2/2] (2.77ns)   --->   "%C_load_1 = load float* %C_addr_4, align 4" [WebModel.c:70]   --->   Operation 84 'load' 'C_load_1' <Predicate = (!exitcond)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 12 <SV = 11> <Delay = 9.28>
+ST_12 : Operation 85 [1/2] (2.77ns)   --->   "%C_load_1 = load float* %C_addr_4, align 4" [WebModel.c:70]   --->   Operation 85 'load' 'C_load_1' <Predicate = (!exitcond)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_12 : Operation 86 [5/5] (6.51ns)   --->   "%tmp_7 = fadd float %C_load_1, %tmp_6" [WebModel.c:70]   --->   Operation 86 'fadd' 'tmp_7' <Predicate = (!exitcond)> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 6.51>
+ST_13 : Operation 87 [4/5] (6.51ns)   --->   "%tmp_7 = fadd float %C_load_1, %tmp_6" [WebModel.c:70]   --->   Operation 87 'fadd' 'tmp_7' <Predicate = (!exitcond)> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 6.51>
+ST_14 : Operation 88 [3/5] (6.51ns)   --->   "%tmp_7 = fadd float %C_load_1, %tmp_6" [WebModel.c:70]   --->   Operation 88 'fadd' 'tmp_7' <Predicate = (!exitcond)> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 6.51>
+ST_15 : Operation 89 [2/5] (6.51ns)   --->   "%tmp_7 = fadd float %C_load_1, %tmp_6" [WebModel.c:70]   --->   Operation 89 'fadd' 'tmp_7' <Predicate = (!exitcond)> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 9.28>
+ST_16 : Operation 90 [1/1] (0.00ns)   --->   "%tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1)" [WebModel.c:68]   --->   Operation 90 'specregionbegin' 'tmp_1' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_16 : Operation 91 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [WebModel.c:69]   --->   Operation 91 'specpipeline' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_16 : Operation 92 [1/5] (6.51ns)   --->   "%tmp_7 = fadd float %C_load_1, %tmp_6" [WebModel.c:70]   --->   Operation 92 'fadd' 'tmp_7' <Predicate = (!exitcond)> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 93 [1/1] (2.77ns)   --->   "store float %tmp_7, float* %C_addr_4, align 4" [WebModel.c:70]   --->   Operation 93 'store' <Predicate = (!exitcond)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_16 : Operation 94 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1, i32 %tmp_1)" [WebModel.c:71]   --->   Operation 94 'specregionend' 'empty' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_16 : Operation 95 [1/1] (0.00ns)   --->   "br label %.preheader" [WebModel.c:68]   --->   Operation 95 'br' <Predicate = (!exitcond)> <Delay = 0.00>
+
+State 17 <SV = 7> <Delay = 2.99>
+ST_17 : Operation 96 [1/1] (0.00ns)   --->   "%d_addr = getelementptr [26000 x float]* %d, i64 0, i64 %j_mid2" [WebModel.c:72]   --->   Operation 96 'getelementptr' 'd_addr' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 97 [2/2] (2.77ns)   --->   "%d_load = load float* %d_addr, align 4" [WebModel.c:72]   --->   Operation 97 'load' 'd_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_17 : Operation 98 [2/2] (2.77ns)   --->   "%C_load = load float* %C_addr_4, align 4" [WebModel.c:72]   --->   Operation 98 'load' 'C_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_17 : Operation 99 [1/1] (2.99ns)   --->   "%j_8 = add i64 %j_mid2, 1" [WebModel.c:67]   --->   Operation 99 'add' 'j_8' <Predicate = true> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 8> <Delay = 2.77>
+ST_18 : Operation 100 [1/2] (2.77ns)   --->   "%d_load = load float* %d_addr, align 4" [WebModel.c:72]   --->   Operation 100 'load' 'd_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_18 : Operation 101 [1/2] (2.77ns)   --->   "%C_load = load float* %C_addr_4, align 4" [WebModel.c:72]   --->   Operation 101 'load' 'C_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 19 <SV = 9> <Delay = 6.51>
+ST_19 : Operation 102 [5/5] (6.51ns)   --->   "%tmp_s = fadd float %C_load, %d_load" [WebModel.c:72]   --->   Operation 102 'fadd' 'tmp_s' <Predicate = true> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 10> <Delay = 6.51>
+ST_20 : Operation 103 [4/5] (6.51ns)   --->   "%tmp_s = fadd float %C_load, %d_load" [WebModel.c:72]   --->   Operation 103 'fadd' 'tmp_s' <Predicate = true> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 11> <Delay = 6.51>
+ST_21 : Operation 104 [3/5] (6.51ns)   --->   "%tmp_s = fadd float %C_load, %d_load" [WebModel.c:72]   --->   Operation 104 'fadd' 'tmp_s' <Predicate = true> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 12> <Delay = 6.51>
+ST_22 : Operation 105 [2/5] (6.51ns)   --->   "%tmp_s = fadd float %C_load, %d_load" [WebModel.c:72]   --->   Operation 105 'fadd' 'tmp_s' <Predicate = true> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 13> <Delay = 6.51>
+ST_23 : Operation 106 [1/5] (6.51ns)   --->   "%tmp_s = fadd float %C_load, %d_load" [WebModel.c:72]   --->   Operation 106 'fadd' 'tmp_s' <Predicate = true> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 14> <Delay = 2.77>
+ST_24 : Operation 107 [1/1] (2.77ns)   --->   "store float %tmp_s, float* %C_addr_4, align 4" [WebModel.c:72]   --->   Operation 107 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_24 : Operation 108 [1/1] (0.00ns)   --->   "br label %3" [WebModel.c:67]   --->   Operation 108 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 8.61ns
+The critical path consists of the following:
+	wire read on port 'outcols' [9]  (0 ns)
+	'mul' operation ('tmp', WebModel.c:60) [11]  (8.61 ns)
+
+ <State 2>: 8.61ns
+The critical path consists of the following:
+	'mul' operation ('tmp', WebModel.c:60) [11]  (8.61 ns)
+
+ <State 3>: 8.61ns
+The critical path consists of the following:
+	'mul' operation ('bound') [28]  (8.61 ns)
+
+ <State 4>: 8.61ns
+The critical path consists of the following:
+	'mul' operation ('bound') [28]  (8.61 ns)
+
+ <State 5>: 4.57ns
+The critical path consists of the following:
+	'phi' operation ('indvar_flatten') with incoming values : ('indvar_flatten_next') [31]  (0 ns)
+	'add' operation ('indvar_flatten_next') [35]  (4.57 ns)
+
+ <State 6>: 6.35ns
+The critical path consists of the following:
+	'mul' operation ('outrowidx_mid2', WebModel.c:65) [43]  (2.82 ns)
+	'add' operation ('sum2', WebModel.c:67) [46]  (3.53 ns)
+
+ <State 7>: 9.12ns
+The critical path consists of the following:
+	'phi' operation ('k') with incoming values : ('k', WebModel.c:68) [51]  (0 ns)
+	'mul' operation ('tmp_5', WebModel.c:70) [63]  (2.82 ns)
+	'add' operation ('sum8', WebModel.c:70) [64]  (3.53 ns)
+	'getelementptr' operation ('B_addr', WebModel.c:70) [66]  (0 ns)
+	'load' operation ('B_load', WebModel.c:70) on array 'B' [67]  (2.77 ns)
+
+ <State 8>: 2.77ns
+The critical path consists of the following:
+	'load' operation ('A_load', WebModel.c:70) on array 'A' [62]  (2.77 ns)
+
+ <State 9>: 8.54ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_6', WebModel.c:70) [68]  (8.54 ns)
+
+ <State 10>: 8.54ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_6', WebModel.c:70) [68]  (8.54 ns)
+
+ <State 11>: 8.54ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_6', WebModel.c:70) [68]  (8.54 ns)
+
+ <State 12>: 9.29ns
+The critical path consists of the following:
+	'load' operation ('C_load_1', WebModel.c:70) on array 'C' [69]  (2.77 ns)
+	'fadd' operation ('tmp_7', WebModel.c:70) [70]  (6.51 ns)
+
+ <State 13>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_7', WebModel.c:70) [70]  (6.51 ns)
+
+ <State 14>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_7', WebModel.c:70) [70]  (6.51 ns)
+
+ <State 15>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_7', WebModel.c:70) [70]  (6.51 ns)
+
+ <State 16>: 9.29ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_7', WebModel.c:70) [70]  (6.51 ns)
+	'store' operation (WebModel.c:70) of variable 'tmp_7', WebModel.c:70 on array 'C' [71]  (2.77 ns)
+
+ <State 17>: 3ns
+The critical path consists of the following:
+	'add' operation ('j', WebModel.c:67) [80]  (3 ns)
+
+ <State 18>: 2.77ns
+The critical path consists of the following:
+	'load' operation ('d_load', WebModel.c:72) on array 'd' [76]  (2.77 ns)
+
+ <State 19>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_s', WebModel.c:72) [78]  (6.51 ns)
+
+ <State 20>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_s', WebModel.c:72) [78]  (6.51 ns)
+
+ <State 21>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_s', WebModel.c:72) [78]  (6.51 ns)
+
+ <State 22>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_s', WebModel.c:72) [78]  (6.51 ns)
+
+ <State 23>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_s', WebModel.c:72) [78]  (6.51 ns)
+
+ <State 24>: 2.77ns
+The critical path consists of the following:
+	'store' operation (WebModel.c:72) of variable 'tmp_s', WebModel.c:72 on array 'C' [79]  (2.77 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

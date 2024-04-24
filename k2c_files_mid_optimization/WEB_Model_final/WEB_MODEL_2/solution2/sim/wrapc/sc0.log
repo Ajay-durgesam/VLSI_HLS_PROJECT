@@ -1,0 +1,19 @@
+   Build using "C:/Xilinx/Vivado/2018.2/msys64/mingw64/bin/g++"
+   Compiling apatb_WebModel.cpp
+   Compiling (apcc) WebModel.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'AJAY' on host 'ajay' (Windows NT_amd64 version 6.2) on Mon Apr 22 16:28:08 +0530 2024
+INFO: [HLS 200-10] In directory 'D:/WEB_Model_final/WEB_MODEL_2/solution2/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) WebModel_test_suite.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'AJAY' on host 'ajay' (Windows NT_amd64 version 6.2) on Mon Apr 22 16:28:13 +0530 2024
+INFO: [HLS 200-10] In directory 'D:/WEB_Model_final/WEB_MODEL_2/solution2/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Generating cosim.tv.exe
