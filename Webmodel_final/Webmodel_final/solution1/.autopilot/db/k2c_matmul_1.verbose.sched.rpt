@@ -1,0 +1,391 @@
+
+
+================================================================
+== Vivado HLS Report for 'k2c_matmul_1'
+================================================================
+* Date:           Tue Apr 23 20:37:42 2024
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Webmodel_final
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a200tsbv484-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     9.286|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |    ?|    ?|         1|          -|          -|     ?|    no    |
+        |- Loop 2     |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        | + Loop 2.1  |    ?|    ?|        11|          6|          1|     ?|    yes   |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 6, depth = 11
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 19
+* Pipeline : 1
+  Pipeline-0 : II = 6, D = 11, States = { 8 9 10 11 12 13 14 15 16 17 18 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / (exitcond2)
+	3  / (!exitcond2)
+4 --> 
+	5  / true
+5 --> 
+	6  / (!exitcond1)
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	19  / (exitcond_flatten)
+	9  / (!exitcond_flatten)
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	8  / true
+19 --> 
+	5  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 8.60>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%outcols_read = call i64 @_ssdm_op_Read.ap_auto.i64(i64 %outcols)"   --->   Operation 20 'read' 'outcols_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%outrows_read = call i64 @_ssdm_op_Read.ap_auto.i64(i64 %outrows)"   --->   Operation 21 'read' 'outrows_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [2/2] (8.60ns)   --->   "%tmp = mul i64 %outcols_read, %outrows_read" [../../../../Downloads/WebModel.c:284]   --->   Operation 22 'mul' 'tmp' <Predicate = true> <Delay = 8.60> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 8.60> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 8.60>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%innerdim_read = call i64 @_ssdm_op_Read.ap_auto.i64(i64 %innerdim)"   --->   Operation 23 'read' 'innerdim_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%B_offset_read = call i64 @_ssdm_op_Read.ap_auto.i64(i64 %B_offset)"   --->   Operation 24 'read' 'B_offset_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/2] (8.60ns)   --->   "%tmp = mul i64 %outcols_read, %outrows_read" [../../../../Downloads/WebModel.c:284]   --->   Operation 25 'mul' 'tmp' <Predicate = true> <Delay = 8.60> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 8.60> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 26 [1/1] (1.35ns)   --->   "br label %1" [../../../../Downloads/WebModel.c:284]   --->   Operation 26 'br' <Predicate = true> <Delay = 1.35>
+
+State 3 <SV = 2> <Delay = 8.60>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%a = phi i15 [ 0, %0 ], [ %a10, %2 ]"   --->   Operation 27 'phi' 'a' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%a_cast = zext i15 %a to i64" [../../../../Downloads/WebModel.c:284]   --->   Operation 28 'zext' 'a_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (2.34ns)   --->   "%exitcond2 = icmp eq i64 %a_cast, %tmp" [../../../../Downloads/WebModel.c:284]   --->   Operation 29 'icmp' 'exitcond2' <Predicate = true> <Delay = 2.34> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 30 [1/1] (1.82ns)   --->   "%a10 = add i15 %a, 1" [../../../../Downloads/WebModel.c:284]   --->   Operation 30 'add' 'a10' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %3, label %2" [../../../../Downloads/WebModel.c:284]   --->   Operation 31 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%C_addr = getelementptr [26000 x float]* %C, i64 0, i64 %a_cast" [../../../../Downloads/WebModel.c:285]   --->   Operation 32 'getelementptr' 'C_addr' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (2.77ns)   --->   "store float 0.000000e+00, float* %C_addr, align 4" [../../../../Downloads/WebModel.c:285]   --->   Operation 33 'store' <Predicate = (!exitcond2)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "br label %1" [../../../../Downloads/WebModel.c:284]   --->   Operation 34 'br' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_3 : Operation 35 [2/2] (8.60ns)   --->   "%tmp_9 = mul i64 %outrows_read, %innerdim_read" [../../../../Downloads/WebModel.c:291]   --->   Operation 35 'mul' 'tmp_9' <Predicate = (exitcond2)> <Delay = 8.60> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 8.60> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_24 = trunc i64 %B_offset_read to i14"   --->   Operation 36 'trunc' 'tmp_24' <Predicate = (exitcond2)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 8.60>
+ST_4 : Operation 37 [1/2] (8.60ns)   --->   "%tmp_9 = mul i64 %outrows_read, %innerdim_read" [../../../../Downloads/WebModel.c:291]   --->   Operation 37 'mul' 'tmp_9' <Predicate = true> <Delay = 8.60> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 8.60> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_22 = trunc i64 %outcols_read to i16"   --->   Operation 38 'trunc' 'tmp_22' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_23 = trunc i64 %innerdim_read to i14"   --->   Operation 39 'trunc' 'tmp_23' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "%tmp_25 = shl i64 %outcols_read, 1" [../../../../Downloads/WebModel.c:291]   --->   Operation 40 'shl' 'tmp_25' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%cast = zext i64 %outrows_read to i128"   --->   Operation 41 'zext' 'cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (1.35ns)   --->   "br label %4" [../../../../Downloads/WebModel.c:291]   --->   Operation 42 'br' <Predicate = true> <Delay = 1.35>
+
+State 5 <SV = 4> <Delay = 5.99>
+ST_5 : Operation 43 [1/1] (0.00ns)   --->   "%indvars_iv11_pn = phi i64 [ %indvars_iv, %7 ], [ 0, %3 ]" [../../../../Downloads/WebModel.c:291]   --->   Operation 43 'phi' 'indvars_iv11_pn' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 44 [1/1] (0.00ns)   --->   "%indvars_iv8 = phi i64 [ %indvars_iv_next9, %7 ], [ %tmp_25, %3 ]" [../../../../Downloads/WebModel.c:291]   --->   Operation 44 'phi' 'indvars_iv8' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 45 [1/1] (0.00ns)   --->   "%indvars_iv6 = phi i64 [ %indvars_iv_next7, %7 ], [ %outcols_read, %3 ]" [../../../../Downloads/WebModel.c:291]   --->   Operation 45 'phi' 'indvars_iv6' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 46 [1/1] (0.00ns)   --->   "%inner_k_outcols = phi i64 [ %inner_k_outcols_4, %7 ], [ 0, %3 ]"   --->   Operation 46 'phi' 'inner_k_outcols' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 47 [1/1] (0.00ns)   --->   "%outrowidx = phi i64 [ %outrowidx_2, %7 ], [ 0, %3 ]"   --->   Operation 47 'phi' 'outrowidx' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 48 [1/1] (0.00ns)   --->   "%inneridx = phi i64 [ %inneridx_2, %7 ], [ 0, %3 ]"   --->   Operation 48 'phi' 'inneridx' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 49 [1/1] (0.00ns)   --->   "%k = phi i64 [ %k_1, %7 ], [ 0, %3 ]"   --->   Operation 49 'phi' 'k' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 50 [1/1] (2.99ns)   --->   "%indvars_iv = sub i64 %indvars_iv11_pn, %outcols_read" [../../../../Downloads/WebModel.c:291]   --->   Operation 50 'sub' 'indvars_iv' <Predicate = true> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 51 [1/1] (2.34ns)   --->   "%exitcond1 = icmp eq i64 %k, %innerdim_read" [../../../../Downloads/WebModel.c:291]   --->   Operation 51 'icmp' 'exitcond1' <Predicate = true> <Delay = 2.34> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 52 [1/1] (2.99ns)   --->   "%k_1 = add i64 %k, 1" [../../../../Downloads/WebModel.c:291]   --->   Operation 52 'add' 'k_1' <Predicate = true> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 53 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %8, label %5" [../../../../Downloads/WebModel.c:291]   --->   Operation 53 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 54 [1/1] (2.34ns)   --->   "%tmp_s = icmp ugt i64 %indvars_iv6, %indvars_iv8" [../../../../Downloads/WebModel.c:291]   --->   Operation 54 'icmp' 'tmp_s' <Predicate = (!exitcond1)> <Delay = 2.34> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 55 [1/1] (0.00ns) (grouped into LUT with out node tmp_6)   --->   "%umax = select i1 %tmp_s, i64 %indvars_iv6, i64 %indvars_iv8" [../../../../Downloads/WebModel.c:291]   --->   Operation 55 'select' 'umax' <Predicate = (!exitcond1)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 56 [1/1] (2.99ns) (out node of the LUT)   --->   "%tmp_6 = add i64 %indvars_iv, %umax" [../../../../Downloads/WebModel.c:291]   --->   Operation 56 'add' 'tmp_6' <Predicate = (!exitcond1)> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 57 [1/1] (0.00ns)   --->   "%tmp_26 = trunc i64 %k to i14" [../../../../Downloads/WebModel.c:291]   --->   Operation 57 'trunc' 'tmp_26' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_5 : Operation 58 [1/1] (2.99ns)   --->   "%inneridx_2 = add i64 %inneridx, %tmp_9" [../../../../Downloads/WebModel.c:297]   --->   Operation 58 'add' 'inneridx_2' <Predicate = (!exitcond1)> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 59 [1/1] (2.99ns)   --->   "%outrowidx_2 = add i64 %outrowidx, %tmp" [../../../../Downloads/WebModel.c:296]   --->   Operation 59 'add' 'outrowidx_2' <Predicate = (!exitcond1)> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 60 [1/1] (0.00ns)   --->   "ret void" [../../../../Downloads/WebModel.c:305]   --->   Operation 60 'ret' <Predicate = (exitcond1)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 8.60>
+ST_6 : Operation 61 [1/1] (0.00ns)   --->   "%cast2 = zext i64 %tmp_6 to i128" [../../../../Downloads/WebModel.c:291]   --->   Operation 61 'zext' 'cast2' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 62 [2/2] (8.60ns)   --->   "%bound = mul i128 %cast2, %cast" [../../../../Downloads/WebModel.c:291]   --->   Operation 62 'mul' 'bound' <Predicate = true> <Delay = 8.60> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 8.60> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 8.60>
+ST_7 : Operation 63 [1/1] (0.00ns)   --->   "%tmp_27 = trunc i64 %inner_k_outcols to i16" [../../../../Downloads/WebModel.c:292]   --->   Operation 63 'trunc' 'tmp_27' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 64 [1/1] (2.99ns)   --->   "%inner_k_outcols_4 = add i64 %outcols_read, %inner_k_outcols" [../../../../Downloads/WebModel.c:292]   --->   Operation 64 'add' 'inner_k_outcols_4' <Predicate = true> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 65 [1/1] (1.84ns)   --->   "%inner_k_outcols_4_ca = add i16 %tmp_27, %tmp_22" [../../../../Downloads/WebModel.c:292]   --->   Operation 65 'add' 'inner_k_outcols_4_ca' <Predicate = true> <Delay = 1.84> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 66 [1/1] (2.99ns)   --->   "%inner_k_outcols_end = add i64 %outcols_read, %inner_k_outcols_4" [../../../../Downloads/WebModel.c:293]   --->   Operation 66 'add' 'inner_k_outcols_end' <Predicate = true> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 67 [1/2] (8.60ns)   --->   "%bound = mul i128 %cast2, %cast" [../../../../Downloads/WebModel.c:291]   --->   Operation 67 'mul' 'bound' <Predicate = true> <Delay = 8.60> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 8.60> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 68 [1/1] (1.35ns)   --->   "br label %6" [../../../../Downloads/WebModel.c:295]   --->   Operation 68 'br' <Predicate = true> <Delay = 1.35>
+
+State 8 <SV = 7> <Delay = 7.07>
+ST_8 : Operation 69 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i128 [ 0, %5 ], [ %indvar_flatten_next, %.reset ]"   --->   Operation 69 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 70 [1/1] (0.00ns)   --->   "%outrowidx_1 = phi i64 [ %outrowidx, %5 ], [ %tmp_5_mid2_v_v_v, %.reset ]" [../../../../Downloads/WebModel.c:296]   --->   Operation 70 'phi' 'outrowidx_1' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 71 [1/1] (0.00ns)   --->   "%inneridx_1 = phi i64 [ %inneridx, %5 ], [ %sum_cast_mid2_v_v_v_s, %.reset ]" [../../../../Downloads/WebModel.c:297]   --->   Operation 71 'phi' 'inneridx_1' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 72 [1/1] (0.00ns)   --->   "%j1 = phi i64 [ %inner_k_outcols_4, %5 ], [ %j_1, %.reset ]"   --->   Operation 72 'phi' 'j1' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 73 [1/1] (2.91ns)   --->   "%exitcond_flatten = icmp eq i128 %indvar_flatten, %bound" [../../../../Downloads/WebModel.c:291]   --->   Operation 73 'icmp' 'exitcond_flatten' <Predicate = true> <Delay = 2.91> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 74 [1/1] (4.56ns)   --->   "%indvar_flatten_next = add i128 %indvar_flatten, 1"   --->   Operation 74 'add' 'indvar_flatten_next' <Predicate = true> <Delay = 4.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 75 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten, label %7, label %.reset" [../../../../Downloads/WebModel.c:291]   --->   Operation 75 'br' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 76 [1/1] (2.34ns)   --->   "%tmp_10 = icmp ult i64 %j1, %inner_k_outcols_end" [../../../../Downloads/WebModel.c:299]   --->   Operation 76 'icmp' 'tmp_10' <Predicate = (!exitcond_flatten)> <Delay = 2.34> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 77 [1/1] (0.83ns)   --->   "%j1_mid2 = select i1 %tmp_10, i64 %j1, i64 %inner_k_outcols_4" [../../../../Downloads/WebModel.c:299]   --->   Operation 77 'select' 'j1_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.83> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 78 [1/1] (2.99ns)   --->   "%tmp_11 = add i64 %innerdim_read, %inneridx_1" [../../../../Downloads/WebModel.c:297]   --->   Operation 78 'add' 'tmp_11' <Predicate = (!exitcond_flatten)> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 79 [1/1] (0.83ns)   --->   "%sum_cast_mid2_v_v_v_s = select i1 %tmp_10, i64 %inneridx_1, i64 %tmp_11" [../../../../Downloads/WebModel.c:299]   --->   Operation 79 'select' 'sum_cast_mid2_v_v_v_s' <Predicate = (!exitcond_flatten)> <Delay = 0.83> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 80 [1/1] (0.00ns)   --->   "%tmp_28 = trunc i64 %sum_cast_mid2_v_v_v_s to i14" [../../../../Downloads/WebModel.c:299]   --->   Operation 80 'trunc' 'tmp_28' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_8 : Operation 81 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%sum_cast_mid2_v_v = add i14 %tmp_28, %tmp_23" [../../../../Downloads/WebModel.c:299]   --->   Operation 81 'add' 'sum_cast_mid2_v_v' <Predicate = (!exitcond_flatten)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.65> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_8 : Operation 82 [1/1] (3.24ns) (root node of TernaryAdder)   --->   "%sum_cast_mid2_v = add i14 %tmp_26, %sum_cast_mid2_v_v" [../../../../Downloads/WebModel.c:291]   --->   Operation 82 'add' 'sum_cast_mid2_v' <Predicate = (!exitcond_flatten)> <Delay = 3.24> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.65> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_8 : Operation 83 [1/1] (2.99ns)   --->   "%tmp_12 = add i64 %outcols_read, %outrowidx_1" [../../../../Downloads/WebModel.c:296]   --->   Operation 83 'add' 'tmp_12' <Predicate = (!exitcond_flatten)> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 84 [1/1] (0.83ns)   --->   "%tmp_5_mid2_v_v_v = select i1 %tmp_10, i64 %outrowidx_1, i64 %tmp_12" [../../../../Downloads/WebModel.c:301]   --->   Operation 84 'select' 'tmp_5_mid2_v_v_v' <Predicate = (!exitcond_flatten)> <Delay = 0.83> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 85 [1/1] (0.00ns)   --->   "%tmp_29 = trunc i64 %tmp_5_mid2_v_v_v to i16" [../../../../Downloads/WebModel.c:301]   --->   Operation 85 'trunc' 'tmp_29' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_8 : Operation 86 [1/1] (1.84ns)   --->   "%tmp_5_mid2_v = add i16 %tmp_29, %tmp_22" [../../../../Downloads/WebModel.c:301]   --->   Operation 86 'add' 'tmp_5_mid2_v' <Predicate = (!exitcond_flatten)> <Delay = 1.84> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 87 [1/1] (0.00ns)   --->   "%tmp_30 = trunc i64 %j1_mid2 to i16" [../../../../Downloads/WebModel.c:299]   --->   Operation 87 'trunc' 'tmp_30' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_8 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_31 = trunc i64 %j1_mid2 to i14" [../../../../Downloads/WebModel.c:299]   --->   Operation 88 'trunc' 'tmp_31' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_8 : Operation 89 [1/1] (1.80ns)   --->   "%sum3 = add i14 %tmp_31, %tmp_24" [../../../../Downloads/WebModel.c:299]   --->   Operation 89 'add' 'sum3' <Predicate = (!exitcond_flatten)> <Delay = 1.80> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 3.31>
+ST_9 : Operation 90 [1/1] (0.00ns)   --->   "%sum_cast_mid2 = zext i14 %sum_cast_mid2_v to i64" [../../../../Downloads/WebModel.c:291]   --->   Operation 90 'zext' 'sum_cast_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_9 : Operation 91 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_5_mid2 = sub i16 %tmp_5_mid2_v, %inner_k_outcols_4_ca" [../../../../Downloads/WebModel.c:301]   --->   Operation 91 'sub' 'tmp_5_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.65> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_9 : Operation 92 [1/1] (0.00ns)   --->   "%B_addr = getelementptr [4160 x float]* %B, i64 0, i64 %sum_cast_mid2" [../../../../Downloads/WebModel.c:301]   --->   Operation 92 'getelementptr' 'B_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_9 : Operation 93 [2/2] (2.77ns)   --->   "%B_load_2 = load float* %B_addr, align 4" [../../../../Downloads/WebModel.c:301]   --->   Operation 93 'load' 'B_load_2' <Predicate = (!exitcond_flatten)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_9 : Operation 94 [1/1] (0.00ns)   --->   "%sum3_cast = zext i14 %sum3 to i64" [../../../../Downloads/WebModel.c:299]   --->   Operation 94 'zext' 'sum3_cast' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_9 : Operation 95 [1/1] (0.00ns)   --->   "%B_addr_2 = getelementptr [4160 x float]* %B, i64 0, i64 %sum3_cast" [../../../../Downloads/WebModel.c:301]   --->   Operation 95 'getelementptr' 'B_addr_2' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_9 : Operation 96 [2/2] (2.77ns)   --->   "%B_load = load float* %B_addr_2, align 4" [../../../../Downloads/WebModel.c:301]   --->   Operation 96 'load' 'B_load' <Predicate = (!exitcond_flatten)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_9 : Operation 97 [1/1] (3.31ns) (root node of TernaryAdder)   --->   "%sum2 = add i16 %tmp_5_mid2, %tmp_30" [../../../../Downloads/WebModel.c:301]   --->   Operation 97 'add' 'sum2' <Predicate = (!exitcond_flatten)> <Delay = 3.31> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.65> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_9 : Operation 98 [1/1] (0.00ns)   --->   "%sum2_cast = zext i16 %sum2 to i64" [../../../../Downloads/WebModel.c:301]   --->   Operation 98 'zext' 'sum2_cast' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_9 : Operation 99 [1/1] (0.00ns)   --->   "%C_addr_2 = getelementptr [26000 x float]* %C, i64 0, i64 %sum2_cast" [../../../../Downloads/WebModel.c:301]   --->   Operation 99 'getelementptr' 'C_addr_2' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+
+State 10 <SV = 9> <Delay = 2.77>
+ST_10 : Operation 100 [1/2] (2.77ns)   --->   "%B_load_2 = load float* %B_addr, align 4" [../../../../Downloads/WebModel.c:301]   --->   Operation 100 'load' 'B_load_2' <Predicate = (!exitcond_flatten)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_10 : Operation 101 [1/2] (2.77ns)   --->   "%B_load = load float* %B_addr_2, align 4" [../../../../Downloads/WebModel.c:301]   --->   Operation 101 'load' 'B_load' <Predicate = (!exitcond_flatten)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 11 <SV = 10> <Delay = 8.54>
+ST_11 : Operation 102 [3/3] (8.54ns)   --->   "%tmp_4 = fmul float %B_load_2, %B_load" [../../../../Downloads/WebModel.c:301]   --->   Operation 102 'fmul' 'tmp_4' <Predicate = (!exitcond_flatten)> <Delay = 8.54> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 2> <II = 1> <Delay = 8.54> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 8.54>
+ST_12 : Operation 103 [2/3] (8.54ns)   --->   "%tmp_4 = fmul float %B_load_2, %B_load" [../../../../Downloads/WebModel.c:301]   --->   Operation 103 'fmul' 'tmp_4' <Predicate = (!exitcond_flatten)> <Delay = 8.54> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 2> <II = 1> <Delay = 8.54> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 8.54>
+ST_13 : Operation 104 [1/3] (8.54ns)   --->   "%tmp_4 = fmul float %B_load_2, %B_load" [../../../../Downloads/WebModel.c:301]   --->   Operation 104 'fmul' 'tmp_4' <Predicate = (!exitcond_flatten)> <Delay = 8.54> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 2> <II = 1> <Delay = 8.54> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 105 [2/2] (2.77ns)   --->   "%C_load = load float* %C_addr_2, align 4" [../../../../Downloads/WebModel.c:301]   --->   Operation 105 'load' 'C_load' <Predicate = (!exitcond_flatten)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_13 : Operation 106 [1/1] (2.99ns)   --->   "%j_1 = add i64 1, %j1_mid2" [../../../../Downloads/WebModel.c:299]   --->   Operation 106 'add' 'j_1' <Predicate = (!exitcond_flatten)> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 9.28>
+ST_14 : Operation 107 [1/2] (2.77ns)   --->   "%C_load = load float* %C_addr_2, align 4" [../../../../Downloads/WebModel.c:301]   --->   Operation 107 'load' 'C_load' <Predicate = (!exitcond_flatten)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_14 : Operation 108 [5/5] (6.51ns)   --->   "%tmp_7 = fadd float %C_load, %tmp_4" [../../../../Downloads/WebModel.c:301]   --->   Operation 108 'fadd' 'tmp_7' <Predicate = (!exitcond_flatten)> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 6.51>
+ST_15 : Operation 109 [4/5] (6.51ns)   --->   "%tmp_7 = fadd float %C_load, %tmp_4" [../../../../Downloads/WebModel.c:301]   --->   Operation 109 'fadd' 'tmp_7' <Predicate = (!exitcond_flatten)> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 6.51>
+ST_16 : Operation 110 [3/5] (6.51ns)   --->   "%tmp_7 = fadd float %C_load, %tmp_4" [../../../../Downloads/WebModel.c:301]   --->   Operation 110 'fadd' 'tmp_7' <Predicate = (!exitcond_flatten)> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 6.51>
+ST_17 : Operation 111 [2/5] (6.51ns)   --->   "%tmp_7 = fadd float %C_load, %tmp_4" [../../../../Downloads/WebModel.c:301]   --->   Operation 111 'fadd' 'tmp_7' <Predicate = (!exitcond_flatten)> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 9.28>
+ST_18 : Operation 112 [1/1] (0.00ns)   --->   "%tmp_8 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str23)" [../../../../Downloads/WebModel.c:299]   --->   Operation 112 'specregionbegin' 'tmp_8' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_18 : Operation 113 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [../../../../Downloads/WebModel.c:300]   --->   Operation 113 'specpipeline' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_18 : Operation 114 [1/5] (6.51ns)   --->   "%tmp_7 = fadd float %C_load, %tmp_4" [../../../../Downloads/WebModel.c:301]   --->   Operation 114 'fadd' 'tmp_7' <Predicate = (!exitcond_flatten)> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 115 [1/1] (2.77ns)   --->   "store float %tmp_7, float* %C_addr_2, align 4" [../../../../Downloads/WebModel.c:301]   --->   Operation 115 'store' <Predicate = (!exitcond_flatten)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_18 : Operation 116 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str23, i32 %tmp_8)" [../../../../Downloads/WebModel.c:302]   --->   Operation 116 'specregionend' 'empty' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_18 : Operation 117 [1/1] (0.00ns)   --->   "br label %6" [../../../../Downloads/WebModel.c:299]   --->   Operation 117 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+
+State 19 <SV = 8> <Delay = 2.99>
+ST_19 : Operation 118 [1/1] (2.99ns)   --->   "%indvars_iv_next7 = add i64 %indvars_iv6, %outcols_read" [../../../../Downloads/WebModel.c:291]   --->   Operation 118 'add' 'indvars_iv_next7' <Predicate = true> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 119 [1/1] (2.99ns)   --->   "%indvars_iv_next9 = add i64 %indvars_iv8, %outcols_read" [../../../../Downloads/WebModel.c:291]   --->   Operation 119 'add' 'indvars_iv_next9' <Predicate = true> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 120 [1/1] (0.00ns)   --->   "br label %4" [../../../../Downloads/WebModel.c:291]   --->   Operation 120 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 8.61ns
+The critical path consists of the following:
+	wire read on port 'outcols' [8]  (0 ns)
+	'mul' operation ('tmp', ../../../../Downloads/WebModel.c:284) [11]  (8.61 ns)
+
+ <State 2>: 8.61ns
+The critical path consists of the following:
+	'mul' operation ('tmp', ../../../../Downloads/WebModel.c:284) [11]  (8.61 ns)
+
+ <State 3>: 8.61ns
+The critical path consists of the following:
+	'mul' operation ('tmp_9', ../../../../Downloads/WebModel.c:291) [24]  (8.61 ns)
+
+ <State 4>: 8.61ns
+The critical path consists of the following:
+	'mul' operation ('tmp_9', ../../../../Downloads/WebModel.c:291) [24]  (8.61 ns)
+
+ <State 5>: 6ns
+The critical path consists of the following:
+	'phi' operation ('indvars_iv11_pn', ../../../../Downloads/WebModel.c:291) with incoming values : ('indvars_iv', ../../../../Downloads/WebModel.c:291) [32]  (0 ns)
+	'sub' operation ('indvars_iv', ../../../../Downloads/WebModel.c:291) [39]  (3 ns)
+	'add' operation ('tmp_6', ../../../../Downloads/WebModel.c:291) [46]  (3 ns)
+
+ <State 6>: 8.61ns
+The critical path consists of the following:
+	'mul' operation ('bound', ../../../../Downloads/WebModel.c:291) [55]  (8.61 ns)
+
+ <State 7>: 8.61ns
+The critical path consists of the following:
+	'mul' operation ('bound', ../../../../Downloads/WebModel.c:291) [55]  (8.61 ns)
+
+ <State 8>: 7.07ns
+The critical path consists of the following:
+	'phi' operation ('inneridx_1', ../../../../Downloads/WebModel.c:297) with incoming values : ('inneridx', ../../../../Downloads/WebModel.c:297) ('sum_cast_mid2_v_v_v_s', ../../../../Downloads/WebModel.c:299) [60]  (0 ns)
+	'add' operation ('tmp_11', ../../../../Downloads/WebModel.c:297) [68]  (3 ns)
+	'select' operation ('sum_cast_mid2_v_v_v_s', ../../../../Downloads/WebModel.c:299) [69]  (0.831 ns)
+	'add' operation ('sum_cast_mid2_v_v', ../../../../Downloads/WebModel.c:299) [71]  (0 ns)
+	'add' operation ('sum_cast_mid2_v', ../../../../Downloads/WebModel.c:291) [72]  (3.24 ns)
+
+ <State 9>: 3.32ns
+The critical path consists of the following:
+	'sub' operation ('tmp_5_mid2', ../../../../Downloads/WebModel.c:301) [78]  (0 ns)
+	'add' operation ('sum2', ../../../../Downloads/WebModel.c:301) [90]  (3.32 ns)
+
+ <State 10>: 2.77ns
+The critical path consists of the following:
+	'load' operation ('B_load_2', ../../../../Downloads/WebModel.c:301) on array 'B' [84]  (2.77 ns)
+
+ <State 11>: 8.54ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_4', ../../../../Downloads/WebModel.c:301) [89]  (8.54 ns)
+
+ <State 12>: 8.54ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_4', ../../../../Downloads/WebModel.c:301) [89]  (8.54 ns)
+
+ <State 13>: 8.54ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_4', ../../../../Downloads/WebModel.c:301) [89]  (8.54 ns)
+
+ <State 14>: 9.29ns
+The critical path consists of the following:
+	'load' operation ('C_load', ../../../../Downloads/WebModel.c:301) on array 'C' [93]  (2.77 ns)
+	'fadd' operation ('tmp_7', ../../../../Downloads/WebModel.c:301) [94]  (6.51 ns)
+
+ <State 15>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_7', ../../../../Downloads/WebModel.c:301) [94]  (6.51 ns)
+
+ <State 16>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_7', ../../../../Downloads/WebModel.c:301) [94]  (6.51 ns)
+
+ <State 17>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_7', ../../../../Downloads/WebModel.c:301) [94]  (6.51 ns)
+
+ <State 18>: 9.29ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_7', ../../../../Downloads/WebModel.c:301) [94]  (6.51 ns)
+	'store' operation (../../../../Downloads/WebModel.c:301) of variable 'tmp_7', ../../../../Downloads/WebModel.c:301 on array 'C' [95]  (2.77 ns)
+
+ <State 19>: 3ns
+The critical path consists of the following:
+	'add' operation ('indvars_iv_next7', ../../../../Downloads/WebModel.c:291) [100]  (3 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

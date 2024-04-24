@@ -1,0 +1,265 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'WebModel'" level="0">
+<item name = "Date">Tue Apr 23 20:38:14 2024
+</item>
+<item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
+<item name = "Project">Webmodel_final</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a200tsbv484-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 9.286, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_k2c_dense_fu_569">k2c_dense, ?, ?, ?, ?, none</column>
+<column name="grp_k2c_dense_1_fu_594">k2c_dense_1, ?, ?, ?, ?, none</column>
+<column name="grp_k2c_dense_2_fu_618">k2c_dense_2, ?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">64, 64, 2, 1, 1, 64, yes</column>
+<column name="- Loop 2">25536, 25536, 2, 1, 1, 25536, yes</column>
+<column name="- Loop 3">4096, 4096, 2, 1, 1, 4096, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 106</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">82, 387, 140497, 111558</column>
+<column name="Memory">607, -, 0, 0</column>
+<column name="Multiplexer">-, -, -, 977</column>
+<column name="Register">-, -, 109, -</column>
+<specialColumn name="Available">730, 740, 269200, 129000</specialColumn>
+<specialColumn name="Utilization (%)">94, 52, 52, 87</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="grp_k2c_dense_fu_569">k2c_dense, 2, 134, 47782, 38449</column>
+<column name="grp_k2c_dense_1_fu_594">k2c_dense_1, 16, 127, 46592, 36607</column>
+<column name="grp_k2c_dense_2_fu_618">k2c_dense_2, 64, 126, 46123, 36502</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="dense_69_kernel_arra_U">WebModel_dense_69Aem, 64, 0, 0, 25536, 32, 1, 817152</column>
+<column name="dense_69_kernel_arra_3_U">WebModel_dense_69DeQ, 16, 0, 0, 6500, 32, 1, 208000</column>
+<column name="dense_69_kernel_arra_2_U">WebModel_dense_69DeQ, 16, 0, 0, 6500, 32, 1, 208000</column>
+<column name="dense_69_kernel_arra_1_U">WebModel_dense_69DeQ, 16, 0, 0, 6500, 32, 1, 208000</column>
+<column name="dense_69_kernel_arra_4_U">WebModel_dense_69DeQ, 16, 0, 0, 6500, 32, 1, 208000</column>
+<column name="dense_69_kernel_shap_U">WebModel_dense_69Hfu, 4, 0, 0, 5, 64, 1, 320</column>
+<column name="dense_69_output_shap_U">WebModel_dense_69Hfu, 4, 0, 0, 5, 64, 1, 320</column>
+<column name="dense_70_kernel_shap_U">WebModel_dense_69Hfu, 4, 0, 0, 5, 64, 1, 320</column>
+<column name="dense_70_output_shap_U">WebModel_dense_69Hfu, 4, 0, 0, 5, 64, 1, 320</column>
+<column name="dense_71_kernel_shap_U">WebModel_dense_69Hfu, 4, 0, 0, 5, 64, 1, 320</column>
+<column name="dense_69_bias_array_U">WebModel_dense_69xdS, 1, 0, 0, 64, 32, 1, 2048</column>
+<column name="dense_70_kernel_arra_U">WebModel_dense_70Bew, 8, 0, 0, 4096, 32, 1, 131072</column>
+<column name="dense_70_output_arra_U">WebModel_dense_70sc4, 64, 0, 0, 26000, 32, 1, 832000</column>
+<column name="dense_69_output_arra_U">WebModel_dense_70sc4, 64, 0, 0, 26000, 32, 1, 832000</column>
+<column name="dense_70_bias_array_U">WebModel_dense_70tde, 1, 0, 0, 64, 32, 1, 2048</column>
+<column name="dense_70_bias_array_2_U">WebModel_dense_70udo, 64, 0, 0, 26000, 32, 1, 832000</column>
+<column name="dense_71_kernel_arra_0_U">WebModel_dense_70udo, 64, 0, 0, 26000, 32, 1, 832000</column>
+<column name="dense_69_bias_array_5_U">WebModel_dense_70udo, 64, 0, 0, 26000, 32, 1, 832000</column>
+<column name="dense_70_kernel_arra_1_U">WebModel_dense_70udo, 64, 0, 0, 26000, 32, 1, 832000</column>
+<column name="dense_71_bias_array_U">WebModel_dense_70udo, 64, 0, 0, 26000, 32, 1, 832000</column>
+<column name="dense_71_kernel_arra_U">WebModel_dense_71vdy, 1, 0, 0, 64, 32, 1, 2048</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="b2_1_fu_695_p2">+, 0, 0, 22, 15, 1</column>
+<column name="b4_1_fu_664_p2">+, 0, 0, 15, 7, 1</column>
+<column name="b5_1_fu_745_p2">+, 0, 0, 20, 13, 1</column>
+<column name="tmp_13_fu_739_p2">icmp, 0, 0, 13, 13, 14</column>
+<column name="tmp_fu_658_p2">icmp, 0, 0, 11, 7, 8</column>
+<column name="tmp_s_fu_689_p2">icmp, 0, 0, 13, 15, 14</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+<column name="ap_enable_pp1">xor, 0, 0, 2, 1, 2</column>
+<column name="ap_enable_pp2">xor, 0, 0, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">xor, 0, 0, 2, 2, 1</column>
+<column name="ap_enable_reg_pp1_iter1">xor, 0, 0, 2, 2, 1</column>
+<column name="ap_enable_reg_pp2_iter1">xor, 0, 0, 2, 2, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">89, 18, 1, 18</column>
+<column name="ap_enable_reg_pp0_iter1">15, 3, 1, 3</column>
+<column name="ap_enable_reg_pp1_iter1">15, 3, 1, 3</column>
+<column name="ap_enable_reg_pp2_iter1">15, 3, 1, 3</column>
+<column name="b2_reg_547">9, 2, 15, 30</column>
+<column name="b4_reg_536">9, 2, 7, 14</column>
+<column name="b5_reg_558">9, 2, 13, 26</column>
+<column name="dense_69_bias_array_5_address0">15, 3, 15, 45</column>
+<column name="dense_69_bias_array_5_ce0">15, 3, 1, 3</column>
+<column name="dense_69_kernel_arra_1_address0">15, 3, 13, 39</column>
+<column name="dense_69_kernel_arra_1_ce0">15, 3, 1, 3</column>
+<column name="dense_69_kernel_arra_2_address0">15, 3, 13, 39</column>
+<column name="dense_69_kernel_arra_2_ce0">15, 3, 1, 3</column>
+<column name="dense_69_kernel_arra_3_address0">15, 3, 13, 39</column>
+<column name="dense_69_kernel_arra_3_ce0">15, 3, 1, 3</column>
+<column name="dense_69_kernel_arra_4_address0">15, 3, 13, 39</column>
+<column name="dense_69_kernel_arra_4_ce0">15, 3, 1, 3</column>
+<column name="dense_69_kernel_shap_address0">27, 5, 3, 15</column>
+<column name="dense_69_kernel_shap_address1">15, 3, 3, 9</column>
+<column name="dense_69_kernel_shap_ce0">15, 3, 1, 3</column>
+<column name="dense_69_kernel_shap_d0">21, 4, 64, 256</column>
+<column name="dense_69_output_arra_address0">21, 4, 15, 60</column>
+<column name="dense_69_output_arra_ce0">21, 4, 1, 4</column>
+<column name="dense_69_output_arra_ce1">9, 2, 1, 2</column>
+<column name="dense_69_output_arra_d0">15, 3, 32, 96</column>
+<column name="dense_69_output_arra_we0">15, 3, 1, 3</column>
+<column name="dense_69_output_arra_we1">9, 2, 1, 2</column>
+<column name="dense_69_output_shap_address0">27, 5, 3, 15</column>
+<column name="dense_69_output_shap_address1">15, 3, 3, 9</column>
+<column name="dense_69_output_shap_ce0">15, 3, 1, 3</column>
+<column name="dense_69_output_shap_d0">15, 3, 64, 192</column>
+<column name="dense_70_bias_array_2_address0">15, 3, 15, 45</column>
+<column name="dense_70_bias_array_2_ce0">15, 3, 1, 3</column>
+<column name="dense_70_kernel_arra_1_address0">15, 3, 15, 45</column>
+<column name="dense_70_kernel_arra_1_ce0">15, 3, 1, 3</column>
+<column name="dense_70_kernel_shap_address0">27, 5, 3, 15</column>
+<column name="dense_70_kernel_shap_address1">15, 3, 3, 9</column>
+<column name="dense_70_kernel_shap_ce0">15, 3, 1, 3</column>
+<column name="dense_70_kernel_shap_d0">15, 3, 64, 192</column>
+<column name="dense_70_output_arra_address0">21, 4, 15, 60</column>
+<column name="dense_70_output_arra_ce0">21, 4, 1, 4</column>
+<column name="dense_70_output_arra_ce1">9, 2, 1, 2</column>
+<column name="dense_70_output_arra_d0">15, 3, 32, 96</column>
+<column name="dense_70_output_arra_we0">15, 3, 1, 3</column>
+<column name="dense_70_output_arra_we1">9, 2, 1, 2</column>
+<column name="dense_70_output_shap_address0">27, 5, 3, 15</column>
+<column name="dense_70_output_shap_address1">15, 3, 3, 9</column>
+<column name="dense_70_output_shap_ce0">15, 3, 1, 3</column>
+<column name="dense_70_output_shap_d0">15, 3, 64, 192</column>
+<column name="dense_71_bias_array_address0">15, 3, 15, 45</column>
+<column name="dense_71_bias_array_ce0">15, 3, 1, 3</column>
+<column name="dense_71_kernel_arra_0_address0">15, 3, 15, 45</column>
+<column name="dense_71_kernel_arra_0_ce0">15, 3, 1, 3</column>
+<column name="dense_71_kernel_shap_address0">27, 5, 3, 15</column>
+<column name="dense_71_kernel_shap_address1">15, 3, 3, 9</column>
+<column name="dense_71_kernel_shap_ce0">15, 3, 1, 3</column>
+<column name="dense_71_kernel_shap_d0">15, 3, 64, 192</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">17, 0, 17, 0</column>
+<column name="ap_enable_reg_pp0_iter0">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp1_iter0">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp1_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp2_iter0">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp2_iter1">1, 0, 1, 0</column>
+<column name="b2_reg_547">15, 0, 15, 0</column>
+<column name="b4_cast3_reg_846">7, 0, 64, 57</column>
+<column name="b4_reg_536">7, 0, 7, 0</column>
+<column name="b5_cast1_reg_902">13, 0, 64, 51</column>
+<column name="b5_reg_558">13, 0, 13, 0</column>
+<column name="dense_69_output_ndim">1, 0, 64, 63</column>
+<column name="dense_69_output_nume">1, 0, 64, 63</column>
+<column name="dense_70_bias_numel">1, 0, 64, 63</column>
+<column name="dense_70_kernel_ndim">1, 0, 64, 63</column>
+<column name="dense_70_kernel_nume">1, 0, 64, 63</column>
+<column name="dense_70_output_ndim">1, 0, 64, 63</column>
+<column name="dense_70_output_nume">1, 0, 64, 63</column>
+<column name="dense_71_bias_numel">1, 0, 64, 63</column>
+<column name="dense_71_kernel_ndim">1, 0, 64, 63</column>
+<column name="dense_71_kernel_nume">1, 0, 64, 63</column>
+<column name="grp_k2c_dense_1_fu_594_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_k2c_dense_2_fu_618_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_k2c_dense_fu_569_ap_start_reg">1, 0, 1, 0</column>
+<column name="newIndex_reg_888">13, 0, 13, 0</column>
+<column name="reg_652">1, 0, 64, 63</column>
+<column name="tmp_13_reg_893">1, 0, 1, 0</column>
+<column name="tmp_80_reg_884">2, 0, 2, 0</column>
+<column name="tmp_reg_837">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, WebModel, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, WebModel, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, WebModel, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, WebModel, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, WebModel, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, WebModel, return value</column>
+<column name="dense_69_input_input_array_address0">out, 15, ap_memory, dense_69_input_input_array, array</column>
+<column name="dense_69_input_input_array_ce0">out, 1, ap_memory, dense_69_input_input_array, array</column>
+<column name="dense_69_input_input_array_q0">in, 32, ap_memory, dense_69_input_input_array, array</column>
+<column name="dense_69_input_input_ndim">in, 64, ap_none, dense_69_input_input_ndim, pointer</column>
+<column name="dense_69_input_input_numel">in, 64, ap_none, dense_69_input_input_numel, pointer</column>
+<column name="dense_69_input_input_shape_address0">out, 3, ap_memory, dense_69_input_input_shape, array</column>
+<column name="dense_69_input_input_shape_ce0">out, 1, ap_memory, dense_69_input_input_shape, array</column>
+<column name="dense_69_input_input_shape_q0">in, 64, ap_memory, dense_69_input_input_shape, array</column>
+<column name="dense_71_output_array_address0">out, 15, ap_memory, dense_71_output_array, array</column>
+<column name="dense_71_output_array_ce0">out, 1, ap_memory, dense_71_output_array, array</column>
+<column name="dense_71_output_array_we0">out, 1, ap_memory, dense_71_output_array, array</column>
+<column name="dense_71_output_array_d0">out, 32, ap_memory, dense_71_output_array, array</column>
+<column name="dense_71_output_array_q0">in, 32, ap_memory, dense_71_output_array, array</column>
+<column name="dense_71_output_array_address1">out, 15, ap_memory, dense_71_output_array, array</column>
+<column name="dense_71_output_array_ce1">out, 1, ap_memory, dense_71_output_array, array</column>
+<column name="dense_71_output_array_we1">out, 1, ap_memory, dense_71_output_array, array</column>
+<column name="dense_71_output_array_d1">out, 32, ap_memory, dense_71_output_array, array</column>
+<column name="dense_71_output_array_q1">in, 32, ap_memory, dense_71_output_array, array</column>
+<column name="dense_71_output_ndim">in, 64, ap_none, dense_71_output_ndim, pointer</column>
+<column name="dense_71_output_numel">in, 64, ap_none, dense_71_output_numel, pointer</column>
+<column name="dense_71_output_shape_address0">out, 3, ap_memory, dense_71_output_shape, array</column>
+<column name="dense_71_output_shape_ce0">out, 1, ap_memory, dense_71_output_shape, array</column>
+<column name="dense_71_output_shape_we0">out, 1, ap_memory, dense_71_output_shape, array</column>
+<column name="dense_71_output_shape_d0">out, 64, ap_memory, dense_71_output_shape, array</column>
+<column name="dense_71_output_shape_q0">in, 64, ap_memory, dense_71_output_shape, array</column>
+<column name="dense_71_output_shape_address1">out, 3, ap_memory, dense_71_output_shape, array</column>
+<column name="dense_71_output_shape_ce1">out, 1, ap_memory, dense_71_output_shape, array</column>
+<column name="dense_71_output_shape_we1">out, 1, ap_memory, dense_71_output_shape, array</column>
+<column name="dense_71_output_shape_d1">out, 64, ap_memory, dense_71_output_shape, array</column>
+<column name="dense_71_output_shape_q1">in, 64, ap_memory, dense_71_output_shape, array</column>
+</table>
+</item>
+</section>
+</profile>

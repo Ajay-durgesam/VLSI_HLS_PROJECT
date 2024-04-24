@@ -1,0 +1,13 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../../../../../Downloads/WebModel.c in debug mode
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'boto7' on host 'jackles' (Windows NT_amd64 version 6.2) on Tue Apr 23 17:42:53 +0530 2024
+INFO: [HLS 200-10] In directory 'C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+Average time over 10 tests: 2.000000e-004 s 
+Max absolute error for 10 tests: 4.231930e-006 
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

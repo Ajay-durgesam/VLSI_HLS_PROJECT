@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="WebModel.c" path="C:\Users\boto7\Downloads\WebModel.c"/>
+  </source>
+  <testbench>
+    <originFiles name="WebModel_test_suite.c" path="C:\Users\boto7\Downloads\WebModel_test_suite.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

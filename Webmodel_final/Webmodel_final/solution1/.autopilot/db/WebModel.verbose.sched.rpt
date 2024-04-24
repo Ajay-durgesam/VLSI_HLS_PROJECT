@@ -1,0 +1,450 @@
+
+
+================================================================
+== Vivado HLS Report for 'WebModel'
+================================================================
+* Date:           Tue Apr 23 20:37:47 2024
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Webmodel_final
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a200tsbv484-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     9.286|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-------+-------+----------+-----------+-----------+-------+----------+
+        |          |    Latency    | Iteration|  Initiation Interval  |  Trip |          |
+        | Loop Name|  min  |  max  |  Latency |  achieved |   target  | Count | Pipelined|
+        +----------+-------+-------+----------+-----------+-----------+-------+----------+
+        |- Loop 1  |     64|     64|         2|          1|          1|     64|    yes   |
+        |- Loop 2  |  25536|  25536|         2|          1|          1|  25536|    yes   |
+        |- Loop 3  |   4096|   4096|         2|          1|          1|   4096|    yes   |
+        +----------+-------+-------+----------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+  * Pipeline-1: initiation interval (II) = 1, depth = 2
+  * Pipeline-2: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 20
+* Pipeline : 3
+  Pipeline-0 : II = 1, D = 2, States = { 2 3 }
+  Pipeline-1 : II = 1, D = 2, States = { 7 8 }
+  Pipeline-2 : II = 1, D = 2, States = { 12 13 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	4  / (tmp)
+	3  / (!tmp)
+3 --> 
+	2  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	9  / (tmp_s)
+	8  / (!tmp_s)
+8 --> 
+	7  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	14  / (tmp_13)
+	13  / (!tmp_13)
+13 --> 
+	12  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.35>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([26000 x float]* %dense_69_input_input_array), !map !262"   --->   Operation 21 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %dense_69_input_input_ndim), !map !266"   --->   Operation 22 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %dense_69_input_input_numel), !map !270"   --->   Operation 23 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([5 x i64]* %dense_69_input_input_shape), !map !274"   --->   Operation 24 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([26000 x float]* %dense_71_output_array), !map !278"   --->   Operation 25 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %dense_71_output_ndim), !map !282"   --->   Operation 26 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %dense_71_output_numel), !map !286"   --->   Operation 27 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([5 x i64]* %dense_71_output_shape), !map !290"   --->   Operation 28 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @WebModel_str) nounwind"   --->   Operation 29 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (1.35ns)   --->   "br label %1" [../../../../Downloads/WebModel.c:30167]   --->   Operation 30 'br' <Predicate = true> <Delay = 1.35>
+
+State 2 <SV = 1> <Delay = 2.77>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%b4 = phi i7 [ 0, %0 ], [ %b4_1, %2 ]"   --->   Operation 31 'phi' 'b4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (1.23ns)   --->   "%tmp = icmp eq i7 %b4, -64" [../../../../Downloads/WebModel.c:30167]   --->   Operation 32 'icmp' 'tmp' <Predicate = true> <Delay = 1.23> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64)"   --->   Operation 33 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (1.66ns)   --->   "%b4_1 = add i7 %b4, 1" [../../../../Downloads/WebModel.c:30167]   --->   Operation 34 'add' 'b4_1' <Predicate = true> <Delay = 1.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.79> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "br i1 %tmp, label %3, label %2" [../../../../Downloads/WebModel.c:30167]   --->   Operation 35 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%b4_cast3 = zext i7 %b4 to i64" [../../../../Downloads/WebModel.c:30167]   --->   Operation 36 'zext' 'b4_cast3' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%dense_70_bias_array_s = getelementptr inbounds [64 x float]* @dense_70_bias_array, i64 0, i64 %b4_cast3" [../../../../Downloads/WebModel.c:30171]   --->   Operation 37 'getelementptr' 'dense_70_bias_array_s' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 38 [2/2] (2.77ns)   --->   "%dense_70_bias_array_1 = load float* %dense_70_bias_array_s, align 4" [../../../../Downloads/WebModel.c:30171]   --->   Operation 38 'load' 'dense_70_bias_array_1' <Predicate = (!tmp)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 4096> <ROM>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%dense_71_kernel_arra_1 = getelementptr inbounds [64 x float]* @dense_71_kernel_arra, i64 0, i64 %b4_cast3" [../../../../Downloads/WebModel.c:30172]   --->   Operation 39 'getelementptr' 'dense_71_kernel_arra_1' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 40 [2/2] (2.77ns)   --->   "%dense_71_kernel_arra_2 = load float* %dense_71_kernel_arra_1, align 4" [../../../../Downloads/WebModel.c:30172]   --->   Operation 40 'load' 'dense_71_kernel_arra_2' <Predicate = (!tmp)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 4096> <ROM>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%dense_69_bias_array_s = getelementptr inbounds [64 x float]* @dense_69_bias_array, i64 0, i64 %b4_cast3" [../../../../Downloads/WebModel.c:30173]   --->   Operation 41 'getelementptr' 'dense_69_bias_array_s' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 42 [2/2] (2.77ns)   --->   "%dense_69_bias_array_1 = load float* %dense_69_bias_array_s, align 4" [../../../../Downloads/WebModel.c:30173]   --->   Operation 42 'load' 'dense_69_bias_array_1' <Predicate = (!tmp)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 4096> <ROM>
+
+State 3 <SV = 2> <Delay = 5.54>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_33 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str24)" [../../../../Downloads/WebModel.c:30168]   --->   Operation 43 'specregionbegin' 'tmp_33' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [../../../../Downloads/WebModel.c:30169]   --->   Operation 44 'specpipeline' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%dense_70_output_arra_1 = getelementptr [26000 x float]* @dense_70_output_arra, i64 0, i64 %b4_cast3" [../../../../Downloads/WebModel.c:30170]   --->   Operation 45 'getelementptr' 'dense_70_output_arra_1' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 46 [1/1] (2.77ns)   --->   "store float 0.000000e+00, float* %dense_70_output_arra_1, align 4" [../../../../Downloads/WebModel.c:30170]   --->   Operation 46 'store' <Predicate = (!tmp)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_3 : Operation 47 [1/2] (2.77ns)   --->   "%dense_70_bias_array_1 = load float* %dense_70_bias_array_s, align 4" [../../../../Downloads/WebModel.c:30171]   --->   Operation 47 'load' 'dense_70_bias_array_1' <Predicate = (!tmp)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 4096> <ROM>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%dense_70_bias_array_s_64 = getelementptr [26000 x float]* @dense_70_bias_array_2, i64 0, i64 %b4_cast3" [../../../../Downloads/WebModel.c:30171]   --->   Operation 48 'getelementptr' 'dense_70_bias_array_s_64' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (2.77ns)   --->   "store float %dense_70_bias_array_1, float* %dense_70_bias_array_s_64, align 4" [../../../../Downloads/WebModel.c:30171]   --->   Operation 49 'store' <Predicate = (!tmp)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_3 : Operation 50 [1/2] (2.77ns)   --->   "%dense_71_kernel_arra_2 = load float* %dense_71_kernel_arra_1, align 4" [../../../../Downloads/WebModel.c:30172]   --->   Operation 50 'load' 'dense_71_kernel_arra_2' <Predicate = (!tmp)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 4096> <ROM>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%dense_71_kernel_arra_1_65 = getelementptr [26000 x float]* @dense_71_kernel_arra_0, i64 0, i64 %b4_cast3" [../../../../Downloads/WebModel.c:30172]   --->   Operation 51 'getelementptr' 'dense_71_kernel_arra_1_65' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (2.77ns)   --->   "store float %dense_71_kernel_arra_2, float* %dense_71_kernel_arra_1_65, align 4" [../../../../Downloads/WebModel.c:30172]   --->   Operation 52 'store' <Predicate = (!tmp)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_3 : Operation 53 [1/2] (2.77ns)   --->   "%dense_69_bias_array_1 = load float* %dense_69_bias_array_s, align 4" [../../../../Downloads/WebModel.c:30173]   --->   Operation 53 'load' 'dense_69_bias_array_1' <Predicate = (!tmp)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 4096> <ROM>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%dense_69_bias_array_s_66 = getelementptr [26000 x float]* @dense_69_bias_array_5, i64 0, i64 %b4_cast3" [../../../../Downloads/WebModel.c:30173]   --->   Operation 54 'getelementptr' 'dense_69_bias_array_s_66' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (2.77ns)   --->   "store float %dense_69_bias_array_1, float* %dense_69_bias_array_s_66, align 4" [../../../../Downloads/WebModel.c:30173]   --->   Operation 55 'store' <Predicate = (!tmp)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%dense_69_output_arra_1 = getelementptr [26000 x float]* @dense_69_output_arra, i64 0, i64 %b4_cast3" [../../../../Downloads/WebModel.c:30174]   --->   Operation 56 'getelementptr' 'dense_69_output_arra_1' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 57 [1/1] (2.77ns)   --->   "store float 0.000000e+00, float* %dense_69_output_arra_1, align 4" [../../../../Downloads/WebModel.c:30174]   --->   Operation 57 'store' <Predicate = (!tmp)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "%empty_67 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str24, i32 %tmp_33)" [../../../../Downloads/WebModel.c:30175]   --->   Operation 58 'specregionend' 'empty_67' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 59 [1/1] (0.00ns)   --->   "br label %1" [../../../../Downloads/WebModel.c:30167]   --->   Operation 59 'br' <Predicate = (!tmp)> <Delay = 0.00>
+
+State 4 <SV = 2> <Delay = 1.75>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "store i64 1, i64* @dense_69_output_ndim, align 8" [../../../../Downloads/WebModel.c:30176]   --->   Operation 60 'store' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "store i64 64, i64* @dense_69_output_nume, align 8" [../../../../Downloads/WebModel.c:30177]   --->   Operation 61 'store' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 62 [1/1] (1.75ns)   --->   "store i64 64, i64* getelementptr inbounds ([5 x i64]* @dense_69_output_shap, i64 0, i64 0), align 8" [../../../../Downloads/WebModel.c:30178]   --->   Operation 62 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 5 <SV = 3> <Delay = 1.75>
+ST_5 : Operation 63 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_69_output_shap, i64 0, i64 1), align 8" [../../../../Downloads/WebModel.c:30179]   --->   Operation 63 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_5 : Operation 64 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_69_output_shap, i64 0, i64 2), align 8" [../../../../Downloads/WebModel.c:30180]   --->   Operation 64 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 6 <SV = 4> <Delay = 1.75>
+ST_6 : Operation 65 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_69_output_shap, i64 0, i64 3), align 8" [../../../../Downloads/WebModel.c:30181]   --->   Operation 65 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_6 : Operation 66 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_69_output_shap, i64 0, i64 4), align 8" [../../../../Downloads/WebModel.c:30182]   --->   Operation 66 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_6 : Operation 67 [1/1] (1.35ns)   --->   "br label %4" [../../../../Downloads/WebModel.c:30188]   --->   Operation 67 'br' <Predicate = true> <Delay = 1.35>
+
+State 7 <SV = 5> <Delay = 2.77>
+ST_7 : Operation 68 [1/1] (0.00ns)   --->   "%b2 = phi i15 [ 0, %3 ], [ %b2_1, %6 ]"   --->   Operation 68 'phi' 'b2' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 69 [1/1] (1.88ns)   --->   "%tmp_s = icmp eq i15 %b2, -7232" [../../../../Downloads/WebModel.c:30188]   --->   Operation 69 'icmp' 'tmp_s' <Predicate = true> <Delay = 1.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 70 [1/1] (0.00ns)   --->   "%empty_68 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 25536, i64 25536, i64 25536)"   --->   Operation 70 'speclooptripcount' 'empty_68' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 71 [1/1] (1.82ns)   --->   "%b2_1 = add i15 %b2, 1" [../../../../Downloads/WebModel.c:30188]   --->   Operation 71 'add' 'b2_1' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.79> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 72 [1/1] (0.00ns)   --->   "br i1 %tmp_s, label %7, label %5" [../../../../Downloads/WebModel.c:30188]   --->   Operation 72 'br' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 73 [1/1] (0.00ns)   --->   "%b2_cast2 = zext i15 %b2 to i64" [../../../../Downloads/WebModel.c:30188]   --->   Operation 73 'zext' 'b2_cast2' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_7 : Operation 74 [1/1] (0.00ns)   --->   "%dense_69_kernel_arra_1 = getelementptr inbounds [25536 x float]* @dense_69_kernel_arra, i64 0, i64 %b2_cast2" [../../../../Downloads/WebModel.c:30191]   --->   Operation 74 'getelementptr' 'dense_69_kernel_arra_1' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_7 : Operation 75 [2/2] (2.77ns)   --->   "%dense_69_kernel_arra_2 = load float* %dense_69_kernel_arra_1, align 4" [../../../../Downloads/WebModel.c:30191]   --->   Operation 75 'load' 'dense_69_kernel_arra_2' <Predicate = (!tmp_s)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 4096> <ROM>
+ST_7 : Operation 76 [1/1] (0.00ns)   --->   "%tmp_80 = trunc i15 %b2 to i2" [../../../../Downloads/WebModel.c:30188]   --->   Operation 76 'trunc' 'tmp_80' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_7 : Operation 77 [1/1] (0.00ns)   --->   "%newIndex = call i13 @_ssdm_op_PartSelect.i13.i15.i32.i32(i15 %b2, i32 2, i32 14)" [../../../../Downloads/WebModel.c:30188]   --->   Operation 77 'partselect' 'newIndex' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_7 : Operation 78 [1/1] (1.21ns)   --->   "switch i2 %tmp_80, label %branch3 [
+    i2 0, label %branch0
+    i2 1, label %branch1
+    i2 -2, label %branch2
+  ]" [../../../../Downloads/WebModel.c:30191]   --->   Operation 78 'switch' <Predicate = (!tmp_s)> <Delay = 1.21>
+
+State 8 <SV = 6> <Delay = 5.54>
+ST_8 : Operation 79 [1/1] (0.00ns)   --->   "%tmp_34 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str26)" [../../../../Downloads/WebModel.c:30189]   --->   Operation 79 'specregionbegin' 'tmp_34' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 80 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [../../../../Downloads/WebModel.c:30190]   --->   Operation 80 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 81 [1/2] (2.77ns)   --->   "%dense_69_kernel_arra_2 = load float* %dense_69_kernel_arra_1, align 4" [../../../../Downloads/WebModel.c:30191]   --->   Operation 81 'load' 'dense_69_kernel_arra_2' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 4096> <ROM>
+ST_8 : Operation 82 [1/1] (0.00ns)   --->   "%newIndex_cast = zext i13 %newIndex to i64" [../../../../Downloads/WebModel.c:30188]   --->   Operation 82 'zext' 'newIndex_cast' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 83 [1/1] (0.00ns)   --->   "%dense_69_kernel_arra_4 = getelementptr [6500 x float]* @dense_69_kernel_arra_3, i64 0, i64 %newIndex_cast" [../../../../Downloads/WebModel.c:30191]   --->   Operation 83 'getelementptr' 'dense_69_kernel_arra_4' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 84 [1/1] (0.00ns)   --->   "%dense_69_kernel_arra_5 = getelementptr [6500 x float]* @dense_69_kernel_arra_2, i64 0, i64 %newIndex_cast" [../../../../Downloads/WebModel.c:30191]   --->   Operation 84 'getelementptr' 'dense_69_kernel_arra_5' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 85 [1/1] (0.00ns)   --->   "%dense_69_kernel_arra_6 = getelementptr [6500 x float]* @dense_69_kernel_arra_1, i64 0, i64 %newIndex_cast" [../../../../Downloads/WebModel.c:30191]   --->   Operation 85 'getelementptr' 'dense_69_kernel_arra_6' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 86 [1/1] (0.00ns)   --->   "%dense_69_kernel_arra_7 = getelementptr [6500 x float]* @dense_69_kernel_arra_4, i64 0, i64 %newIndex_cast" [../../../../Downloads/WebModel.c:30191]   --->   Operation 86 'getelementptr' 'dense_69_kernel_arra_7' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 87 [1/1] (2.77ns)   --->   "store float %dense_69_kernel_arra_2, float* %dense_69_kernel_arra_6, align 4" [../../../../Downloads/WebModel.c:30191]   --->   Operation 87 'store' <Predicate = (tmp_80 == 2)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_8 : Operation 88 [1/1] (0.00ns)   --->   "br label %6" [../../../../Downloads/WebModel.c:30191]   --->   Operation 88 'br' <Predicate = (tmp_80 == 2)> <Delay = 0.00>
+ST_8 : Operation 89 [1/1] (2.77ns)   --->   "store float %dense_69_kernel_arra_2, float* %dense_69_kernel_arra_5, align 4" [../../../../Downloads/WebModel.c:30191]   --->   Operation 89 'store' <Predicate = (tmp_80 == 1)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_8 : Operation 90 [1/1] (0.00ns)   --->   "br label %6" [../../../../Downloads/WebModel.c:30191]   --->   Operation 90 'br' <Predicate = (tmp_80 == 1)> <Delay = 0.00>
+ST_8 : Operation 91 [1/1] (2.77ns)   --->   "store float %dense_69_kernel_arra_2, float* %dense_69_kernel_arra_4, align 4" [../../../../Downloads/WebModel.c:30191]   --->   Operation 91 'store' <Predicate = (tmp_80 == 0)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_8 : Operation 92 [1/1] (0.00ns)   --->   "br label %6" [../../../../Downloads/WebModel.c:30191]   --->   Operation 92 'br' <Predicate = (tmp_80 == 0)> <Delay = 0.00>
+ST_8 : Operation 93 [1/1] (2.77ns)   --->   "store float %dense_69_kernel_arra_2, float* %dense_69_kernel_arra_7, align 4" [../../../../Downloads/WebModel.c:30191]   --->   Operation 93 'store' <Predicate = (tmp_80 == 3)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_8 : Operation 94 [1/1] (0.00ns)   --->   "br label %6" [../../../../Downloads/WebModel.c:30191]   --->   Operation 94 'br' <Predicate = (tmp_80 == 3)> <Delay = 0.00>
+ST_8 : Operation 95 [1/1] (0.00ns)   --->   "%empty_69 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str26, i32 %tmp_34)" [../../../../Downloads/WebModel.c:30192]   --->   Operation 95 'specregionend' 'empty_69' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_8 : Operation 96 [1/1] (0.00ns)   --->   "br label %4" [../../../../Downloads/WebModel.c:30188]   --->   Operation 96 'br' <Predicate = (!tmp_s)> <Delay = 0.00>
+
+State 9 <SV = 6> <Delay = 1.75>
+ST_9 : Operation 97 [1/1] (1.75ns)   --->   "store i64 399, i64* getelementptr inbounds ([5 x i64]* @dense_69_kernel_shap, i64 0, i64 0), align 8" [../../../../Downloads/WebModel.c:30195]   --->   Operation 97 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_9 : Operation 98 [1/1] (0.00ns)   --->   "store i64 1, i64* @dense_70_output_ndim, align 8" [../../../../Downloads/WebModel.c:30213]   --->   Operation 98 'store' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 99 [1/1] (0.00ns)   --->   "store i64 64, i64* @dense_70_output_nume, align 8" [../../../../Downloads/WebModel.c:30214]   --->   Operation 99 'store' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 100 [1/1] (1.75ns)   --->   "store i64 64, i64* getelementptr inbounds ([5 x i64]* @dense_70_output_shap, i64 0, i64 0), align 8" [../../../../Downloads/WebModel.c:30215]   --->   Operation 100 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 10 <SV = 7> <Delay = 1.75>
+ST_10 : Operation 101 [1/1] (1.75ns)   --->   "store i64 64, i64* getelementptr inbounds ([5 x i64]* @dense_69_kernel_shap, i64 0, i64 1), align 8" [../../../../Downloads/WebModel.c:30196]   --->   Operation 101 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_10 : Operation 102 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_69_kernel_shap, i64 0, i64 2), align 8" [../../../../Downloads/WebModel.c:30197]   --->   Operation 102 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_10 : Operation 103 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_70_output_shap, i64 0, i64 1), align 8" [../../../../Downloads/WebModel.c:30216]   --->   Operation 103 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_10 : Operation 104 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_70_output_shap, i64 0, i64 2), align 8" [../../../../Downloads/WebModel.c:30217]   --->   Operation 104 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+
+State 11 <SV = 8> <Delay = 1.75>
+ST_11 : Operation 105 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_69_kernel_shap, i64 0, i64 3), align 8" [../../../../Downloads/WebModel.c:30198]   --->   Operation 105 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_11 : Operation 106 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_69_kernel_shap, i64 0, i64 4), align 8" [../../../../Downloads/WebModel.c:30199]   --->   Operation 106 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_11 : Operation 107 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_70_output_shap, i64 0, i64 3), align 8" [../../../../Downloads/WebModel.c:30218]   --->   Operation 107 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_11 : Operation 108 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_70_output_shap, i64 0, i64 4), align 8" [../../../../Downloads/WebModel.c:30219]   --->   Operation 108 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_11 : Operation 109 [1/1] (1.35ns)   --->   "br label %8" [../../../../Downloads/WebModel.c:30222]   --->   Operation 109 'br' <Predicate = true> <Delay = 1.35>
+
+State 12 <SV = 9> <Delay = 2.77>
+ST_12 : Operation 110 [1/1] (0.00ns)   --->   "%b5 = phi i13 [ 0, %7 ], [ %b5_1, %9 ]"   --->   Operation 110 'phi' 'b5' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 111 [1/1] (1.70ns)   --->   "%tmp_13 = icmp eq i13 %b5, -4096" [../../../../Downloads/WebModel.c:30222]   --->   Operation 111 'icmp' 'tmp_13' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 112 [1/1] (0.00ns)   --->   "%empty_70 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4096, i64 4096, i64 4096)"   --->   Operation 112 'speclooptripcount' 'empty_70' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 113 [1/1] (1.79ns)   --->   "%b5_1 = add i13 %b5, 1" [../../../../Downloads/WebModel.c:30222]   --->   Operation 113 'add' 'b5_1' <Predicate = true> <Delay = 1.79> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.79> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 114 [1/1] (0.00ns)   --->   "br i1 %tmp_13, label %10, label %9" [../../../../Downloads/WebModel.c:30222]   --->   Operation 114 'br' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 115 [1/1] (0.00ns)   --->   "%b5_cast1 = zext i13 %b5 to i64" [../../../../Downloads/WebModel.c:30222]   --->   Operation 115 'zext' 'b5_cast1' <Predicate = (!tmp_13)> <Delay = 0.00>
+ST_12 : Operation 116 [1/1] (0.00ns)   --->   "%dense_70_kernel_arra_1 = getelementptr inbounds [4096 x float]* @dense_70_kernel_arra, i64 0, i64 %b5_cast1" [../../../../Downloads/WebModel.c:30225]   --->   Operation 116 'getelementptr' 'dense_70_kernel_arra_1' <Predicate = (!tmp_13)> <Delay = 0.00>
+ST_12 : Operation 117 [2/2] (2.77ns)   --->   "%dense_70_kernel_arra_2 = load float* %dense_70_kernel_arra_1, align 4" [../../../../Downloads/WebModel.c:30225]   --->   Operation 117 'load' 'dense_70_kernel_arra_2' <Predicate = (!tmp_13)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 4096> <ROM>
+
+State 13 <SV = 10> <Delay = 5.54>
+ST_13 : Operation 118 [1/1] (0.00ns)   --->   "%tmp_35 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str27)" [../../../../Downloads/WebModel.c:30223]   --->   Operation 118 'specregionbegin' 'tmp_35' <Predicate = (!tmp_13)> <Delay = 0.00>
+ST_13 : Operation 119 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [../../../../Downloads/WebModel.c:30224]   --->   Operation 119 'specpipeline' <Predicate = (!tmp_13)> <Delay = 0.00>
+ST_13 : Operation 120 [1/2] (2.77ns)   --->   "%dense_70_kernel_arra_2 = load float* %dense_70_kernel_arra_1, align 4" [../../../../Downloads/WebModel.c:30225]   --->   Operation 120 'load' 'dense_70_kernel_arra_2' <Predicate = (!tmp_13)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 4096> <ROM>
+ST_13 : Operation 121 [1/1] (0.00ns)   --->   "%dense_70_kernel_arra_1_71 = getelementptr [26000 x float]* @dense_70_kernel_arra_1, i64 0, i64 %b5_cast1" [../../../../Downloads/WebModel.c:30225]   --->   Operation 121 'getelementptr' 'dense_70_kernel_arra_1_71' <Predicate = (!tmp_13)> <Delay = 0.00>
+ST_13 : Operation 122 [1/1] (2.77ns)   --->   "store float %dense_70_kernel_arra_2, float* %dense_70_kernel_arra_1_71, align 4" [../../../../Downloads/WebModel.c:30225]   --->   Operation 122 'store' <Predicate = (!tmp_13)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_13 : Operation 123 [1/1] (0.00ns)   --->   "%empty_72 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str27, i32 %tmp_35)" [../../../../Downloads/WebModel.c:30226]   --->   Operation 123 'specregionend' 'empty_72' <Predicate = (!tmp_13)> <Delay = 0.00>
+ST_13 : Operation 124 [1/1] (0.00ns)   --->   "br label %8" [../../../../Downloads/WebModel.c:30222]   --->   Operation 124 'br' <Predicate = (!tmp_13)> <Delay = 0.00>
+
+State 14 <SV = 10> <Delay = 1.75>
+ST_14 : Operation 125 [1/1] (0.00ns)   --->   "store i64 2, i64* @dense_70_kernel_ndim, align 8" [../../../../Downloads/WebModel.c:30227]   --->   Operation 125 'store' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 126 [1/1] (0.00ns)   --->   "store i64 4096, i64* @dense_70_kernel_nume, align 8" [../../../../Downloads/WebModel.c:30228]   --->   Operation 126 'store' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 127 [1/1] (1.75ns)   --->   "store i64 64, i64* getelementptr inbounds ([5 x i64]* @dense_70_kernel_shap, i64 0, i64 0), align 8" [../../../../Downloads/WebModel.c:30229]   --->   Operation 127 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_14 : Operation 128 [1/1] (0.00ns)   --->   "store i64 64, i64* @dense_70_bias_numel, align 8" [../../../../Downloads/WebModel.c:30239]   --->   Operation 128 'store' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 129 [1/1] (0.00ns)   --->   "store i64 2, i64* @dense_71_kernel_ndim, align 8" [../../../../Downloads/WebModel.c:30246]   --->   Operation 129 'store' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 130 [1/1] (0.00ns)   --->   "store i64 64, i64* @dense_71_kernel_nume, align 8" [../../../../Downloads/WebModel.c:30247]   --->   Operation 130 'store' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 131 [1/1] (0.00ns)   --->   "store i64 1, i64* @dense_71_bias_numel, align 8" [../../../../Downloads/WebModel.c:30258]   --->   Operation 131 'store' <Predicate = true> <Delay = 0.00>
+
+State 15 <SV = 11> <Delay = 2.99>
+ST_15 : Operation 132 [1/1] (1.75ns)   --->   "store i64 64, i64* getelementptr inbounds ([5 x i64]* @dense_70_kernel_shap, i64 0, i64 1), align 8" [../../../../Downloads/WebModel.c:30230]   --->   Operation 132 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_15 : Operation 133 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_70_kernel_shap, i64 0, i64 2), align 8" [../../../../Downloads/WebModel.c:30231]   --->   Operation 133 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_15 : Operation 134 [1/1] (0.00ns)   --->   "%dense_69_input_input = call i64 @_ssdm_op_Read.ap_auto.i64P(i64* %dense_69_input_input_ndim)" [../../../../Downloads/WebModel.c:30267]   --->   Operation 134 'read' 'dense_69_input_input' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 135 [1/1] (0.00ns)   --->   "%dense_69_input_input_1 = call i64 @_ssdm_op_Read.ap_auto.i64P(i64* %dense_69_input_input_numel)" [../../../../Downloads/WebModel.c:30267]   --->   Operation 135 'read' 'dense_69_input_input_1' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 136 [2/2] (2.99ns)   --->   "call fastcc void @k2c_dense.2([26000 x float]* @dense_69_output_arra, [26000 x float]* %dense_69_input_input_array, i64 %dense_69_input_input, i64 %dense_69_input_input_1, [5 x i64]* %dense_69_input_input_shape, [6500 x float]* @dense_69_kernel_arra_3, [6500 x float]* @dense_69_kernel_arra_2, [6500 x float]* @dense_69_kernel_arra_1, [6500 x float]* @dense_69_kernel_arra_4, [5 x i64]* @dense_69_kernel_shap, [26000 x float]* @dense_69_bias_array_5)" [../../../../Downloads/WebModel.c:30267]   --->   Operation 136 'call' <Predicate = true> <Delay = 2.99> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 12> <Delay = 1.75>
+ST_16 : Operation 137 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_70_kernel_shap, i64 0, i64 3), align 8" [../../../../Downloads/WebModel.c:30232]   --->   Operation 137 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_16 : Operation 138 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_70_kernel_shap, i64 0, i64 4), align 8" [../../../../Downloads/WebModel.c:30233]   --->   Operation 138 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_16 : Operation 139 [1/1] (1.75ns)   --->   "store i64 64, i64* getelementptr inbounds ([5 x i64]* @dense_71_kernel_shap, i64 0, i64 0), align 8" [../../../../Downloads/WebModel.c:30248]   --->   Operation 139 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_16 : Operation 140 [1/2] (0.00ns)   --->   "call fastcc void @k2c_dense.2([26000 x float]* @dense_69_output_arra, [26000 x float]* %dense_69_input_input_array, i64 %dense_69_input_input, i64 %dense_69_input_input_1, [5 x i64]* %dense_69_input_input_shape, [6500 x float]* @dense_69_kernel_arra_3, [6500 x float]* @dense_69_kernel_arra_2, [6500 x float]* @dense_69_kernel_arra_1, [6500 x float]* @dense_69_kernel_arra_4, [5 x i64]* @dense_69_kernel_shap, [26000 x float]* @dense_69_bias_array_5)" [../../../../Downloads/WebModel.c:30267]   --->   Operation 140 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 13> <Delay = 2.99>
+ST_17 : Operation 141 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_71_kernel_shap, i64 0, i64 1), align 8" [../../../../Downloads/WebModel.c:30249]   --->   Operation 141 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_17 : Operation 142 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_71_kernel_shap, i64 0, i64 2), align 8" [../../../../Downloads/WebModel.c:30250]   --->   Operation 142 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_17 : Operation 143 [1/1] (0.00ns)   --->   "%dense_70_output_nume_1 = load i64* @dense_70_output_nume, align 8" [../../../../Downloads/WebModel.c:30268]   --->   Operation 143 'load' 'dense_70_output_nume_1' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 144 [1/1] (0.00ns)   --->   "%dense_70_bias_numel_s = load i64* @dense_70_bias_numel, align 8" [../../../../Downloads/WebModel.c:30268]   --->   Operation 144 'load' 'dense_70_bias_numel_s' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 145 [1/1] (0.00ns)   --->   "%dense_69_output_ndim_1 = load i64* @dense_69_output_ndim, align 8" [../../../../Downloads/WebModel.c:30268]   --->   Operation 145 'load' 'dense_69_output_ndim_1' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 146 [1/1] (0.00ns)   --->   "%dense_69_output_nume_1 = load i64* @dense_69_output_nume, align 8" [../../../../Downloads/WebModel.c:30268]   --->   Operation 146 'load' 'dense_69_output_nume_1' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 147 [1/1] (0.00ns)   --->   "%dense_70_kernel_ndim_1 = load i64* @dense_70_kernel_ndim, align 8" [../../../../Downloads/WebModel.c:30268]   --->   Operation 147 'load' 'dense_70_kernel_ndim_1' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 148 [1/1] (0.00ns)   --->   "%dense_70_kernel_nume_1 = load i64* @dense_70_kernel_nume, align 8" [../../../../Downloads/WebModel.c:30268]   --->   Operation 148 'load' 'dense_70_kernel_nume_1' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 149 [2/2] (2.99ns)   --->   "call fastcc void @k2c_dense.1([26000 x float]* @dense_70_output_arra, i64 %dense_70_output_nume_1, [26000 x float]* @dense_69_output_arra, i64 %dense_69_output_ndim_1, i64 %dense_69_output_nume_1, [5 x i64]* @dense_69_output_shap, [26000 x float]* @dense_70_kernel_arra_1, i64 %dense_70_kernel_ndim_1, i64 %dense_70_kernel_nume_1, [5 x i64]* @dense_70_kernel_shap, [26000 x float]* @dense_70_bias_array_2, i64 %dense_70_bias_numel_s)" [../../../../Downloads/WebModel.c:30268]   --->   Operation 149 'call' <Predicate = true> <Delay = 2.99> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 14> <Delay = 2.77>
+ST_18 : Operation 150 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_71_kernel_shap, i64 0, i64 3), align 8" [../../../../Downloads/WebModel.c:30251]   --->   Operation 150 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_18 : Operation 151 [1/1] (1.75ns)   --->   "store i64 1, i64* getelementptr inbounds ([5 x i64]* @dense_71_kernel_shap, i64 0, i64 4), align 8" [../../../../Downloads/WebModel.c:30252]   --->   Operation 151 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_18 : Operation 152 [1/1] (2.77ns)   --->   "store float 0x3FCF4ADCC0000000, float* getelementptr inbounds ([26000 x float]* @dense_71_bias_array, i64 0, i64 0), align 8" [../../../../Downloads/WebModel.c:30255]   --->   Operation 152 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 26000> <RAM>
+ST_18 : Operation 153 [1/2] (0.00ns)   --->   "call fastcc void @k2c_dense.1([26000 x float]* @dense_70_output_arra, i64 %dense_70_output_nume_1, [26000 x float]* @dense_69_output_arra, i64 %dense_69_output_ndim_1, i64 %dense_69_output_nume_1, [5 x i64]* @dense_69_output_shap, [26000 x float]* @dense_70_kernel_arra_1, i64 %dense_70_kernel_ndim_1, i64 %dense_70_kernel_nume_1, [5 x i64]* @dense_70_kernel_shap, [26000 x float]* @dense_70_bias_array_2, i64 %dense_70_bias_numel_s)" [../../../../Downloads/WebModel.c:30268]   --->   Operation 153 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 15> <Delay = 2.99>
+ST_19 : Operation 154 [1/1] (0.00ns)   --->   "%dense_71_output_nume = call i64 @_ssdm_op_Read.ap_auto.i64P(i64* %dense_71_output_numel)" [../../../../Downloads/WebModel.c:30269]   --->   Operation 154 'read' 'dense_71_output_nume' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 155 [1/1] (0.00ns)   --->   "%dense_71_bias_numel_s = load i64* @dense_71_bias_numel, align 8" [../../../../Downloads/WebModel.c:30269]   --->   Operation 155 'load' 'dense_71_bias_numel_s' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 156 [1/1] (0.00ns)   --->   "%dense_70_output_ndim_1 = load i64* @dense_70_output_ndim, align 8" [../../../../Downloads/WebModel.c:30269]   --->   Operation 156 'load' 'dense_70_output_ndim_1' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 157 [1/1] (0.00ns)   --->   "%dense_70_output_nume_2 = load i64* @dense_70_output_nume, align 8" [../../../../Downloads/WebModel.c:30269]   --->   Operation 157 'load' 'dense_70_output_nume_2' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 158 [1/1] (0.00ns)   --->   "%dense_71_kernel_ndim_1 = load i64* @dense_71_kernel_ndim, align 8" [../../../../Downloads/WebModel.c:30269]   --->   Operation 158 'load' 'dense_71_kernel_ndim_1' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 159 [1/1] (0.00ns)   --->   "%dense_71_kernel_nume_1 = load i64* @dense_71_kernel_nume, align 8" [../../../../Downloads/WebModel.c:30269]   --->   Operation 159 'load' 'dense_71_kernel_nume_1' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 160 [2/2] (2.99ns)   --->   "call fastcc void @k2c_dense([26000 x float]* %dense_71_output_array, i64 %dense_71_output_nume, [26000 x float]* @dense_70_output_arra, i64 %dense_70_output_ndim_1, i64 %dense_70_output_nume_2, [5 x i64]* @dense_70_output_shap, [26000 x float]* @dense_71_kernel_arra_0, i64 %dense_71_kernel_ndim_1, i64 %dense_71_kernel_nume_1, [5 x i64]* @dense_71_kernel_shap, [26000 x float]* @dense_71_bias_array, i64 %dense_71_bias_numel_s)" [../../../../Downloads/WebModel.c:30269]   --->   Operation 160 'call' <Predicate = true> <Delay = 2.99> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 16> <Delay = 0.00>
+ST_20 : Operation 161 [1/2] (0.00ns)   --->   "call fastcc void @k2c_dense([26000 x float]* %dense_71_output_array, i64 %dense_71_output_nume, [26000 x float]* @dense_70_output_arra, i64 %dense_70_output_ndim_1, i64 %dense_70_output_nume_2, [5 x i64]* @dense_70_output_shap, [26000 x float]* @dense_71_kernel_arra_0, i64 %dense_71_kernel_ndim_1, i64 %dense_71_kernel_nume_1, [5 x i64]* @dense_71_kernel_shap, [26000 x float]* @dense_71_bias_array, i64 %dense_71_bias_numel_s)" [../../../../Downloads/WebModel.c:30269]   --->   Operation 161 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_20 : Operation 162 [1/1] (0.00ns)   --->   "ret void" [../../../../Downloads/WebModel.c:30270]   --->   Operation 162 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('b4') with incoming values : ('b4', ../../../../Downloads/WebModel.c:30167) [54]  (1.35 ns)
+
+ <State 2>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('b4') with incoming values : ('b4', ../../../../Downloads/WebModel.c:30167) [54]  (0 ns)
+	'getelementptr' operation ('dense_70_bias_array_s', ../../../../Downloads/WebModel.c:30171) [65]  (0 ns)
+	'load' operation ('dense_70_bias_array_1', ../../../../Downloads/WebModel.c:30171) on array 'dense_70_bias_array' [66]  (2.77 ns)
+
+ <State 3>: 5.54ns
+The critical path consists of the following:
+	'load' operation ('dense_70_bias_array_1', ../../../../Downloads/WebModel.c:30171) on array 'dense_70_bias_array' [66]  (2.77 ns)
+	'store' operation (../../../../Downloads/WebModel.c:30171) of variable 'dense_70_bias_array_1', ../../../../Downloads/WebModel.c:30171 on array 'dense_70_bias_array_2' [68]  (2.77 ns)
+
+ <State 4>: 1.75ns
+The critical path consists of the following:
+	'store' operation (../../../../Downloads/WebModel.c:30178) of constant 64 on array 'dense_69_output_shap' [84]  (1.75 ns)
+
+ <State 5>: 1.75ns
+The critical path consists of the following:
+	'store' operation (../../../../Downloads/WebModel.c:30179) of constant 1 on array 'dense_69_output_shap' [85]  (1.75 ns)
+
+ <State 6>: 1.75ns
+The critical path consists of the following:
+	'store' operation (../../../../Downloads/WebModel.c:30181) of constant 1 on array 'dense_69_output_shap' [87]  (1.75 ns)
+
+ <State 7>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('b2') with incoming values : ('b2', ../../../../Downloads/WebModel.c:30188) [91]  (0 ns)
+	'getelementptr' operation ('dense_69_kernel_arra_1', ../../../../Downloads/WebModel.c:30191) [100]  (0 ns)
+	'load' operation ('dense_69_kernel_arra_2', ../../../../Downloads/WebModel.c:30191) on array 'dense_69_kernel_arra' [101]  (2.77 ns)
+
+ <State 8>: 5.54ns
+The critical path consists of the following:
+	'load' operation ('dense_69_kernel_arra_2', ../../../../Downloads/WebModel.c:30191) on array 'dense_69_kernel_arra' [101]  (2.77 ns)
+	'store' operation (../../../../Downloads/WebModel.c:30191) of variable 'dense_69_kernel_arra_2', ../../../../Downloads/WebModel.c:30191 on array 'dense_69_kernel_arra_4' [120]  (2.77 ns)
+
+ <State 9>: 1.75ns
+The critical path consists of the following:
+	'store' operation (../../../../Downloads/WebModel.c:30195) of constant 399 on array 'dense_69_kernel_shap' [126]  (1.75 ns)
+
+ <State 10>: 1.75ns
+The critical path consists of the following:
+	'store' operation (../../../../Downloads/WebModel.c:30196) of constant 64 on array 'dense_69_kernel_shap' [127]  (1.75 ns)
+
+ <State 11>: 1.75ns
+The critical path consists of the following:
+	'store' operation (../../../../Downloads/WebModel.c:30198) of constant 1 on array 'dense_69_kernel_shap' [129]  (1.75 ns)
+
+ <State 12>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('b5') with incoming values : ('b5', ../../../../Downloads/WebModel.c:30222) [140]  (0 ns)
+	'getelementptr' operation ('dense_70_kernel_arra_1', ../../../../Downloads/WebModel.c:30225) [149]  (0 ns)
+	'load' operation ('dense_70_kernel_arra_2', ../../../../Downloads/WebModel.c:30225) on array 'dense_70_kernel_arra' [150]  (2.77 ns)
+
+ <State 13>: 5.54ns
+The critical path consists of the following:
+	'load' operation ('dense_70_kernel_arra_2', ../../../../Downloads/WebModel.c:30225) on array 'dense_70_kernel_arra' [150]  (2.77 ns)
+	'store' operation (../../../../Downloads/WebModel.c:30225) of variable 'dense_70_kernel_arra_2', ../../../../Downloads/WebModel.c:30225 on array 'dense_70_kernel_arra_1' [152]  (2.77 ns)
+
+ <State 14>: 1.75ns
+The critical path consists of the following:
+	'store' operation (../../../../Downloads/WebModel.c:30229) of constant 64 on array 'dense_70_kernel_shap' [158]  (1.75 ns)
+
+ <State 15>: 3ns
+The critical path consists of the following:
+	wire read on port 'dense_69_input_input_ndim' (../../../../Downloads/WebModel.c:30267) [173]  (0 ns)
+	'call' operation (../../../../Downloads/WebModel.c:30267) to 'k2c_dense.2' [175]  (3 ns)
+
+ <State 16>: 1.75ns
+The critical path consists of the following:
+	'store' operation (../../../../Downloads/WebModel.c:30232) of constant 1 on array 'dense_70_kernel_shap' [161]  (1.75 ns)
+
+ <State 17>: 3ns
+The critical path consists of the following:
+	'load' operation ('dense_70_output_nume_1', ../../../../Downloads/WebModel.c:30268) on global variable 'dense_70_output_nume' [176]  (0 ns)
+	'call' operation (../../../../Downloads/WebModel.c:30268) to 'k2c_dense.1' [182]  (3 ns)
+
+ <State 18>: 2.77ns
+The critical path consists of the following:
+	'store' operation (../../../../Downloads/WebModel.c:30255) of constant 0.244472 on array 'dense_71_bias_array' [171]  (2.77 ns)
+
+ <State 19>: 3ns
+The critical path consists of the following:
+	wire read on port 'dense_71_output_numel' (../../../../Downloads/WebModel.c:30269) [183]  (0 ns)
+	'call' operation (../../../../Downloads/WebModel.c:30269) to 'k2c_dense' [189]  (3 ns)
+
+ <State 20>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

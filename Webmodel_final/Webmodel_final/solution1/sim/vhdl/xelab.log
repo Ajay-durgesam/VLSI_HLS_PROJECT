@@ -1,0 +1,570 @@
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "C:/Xilinx/Vivado/2018.2/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_WebModel_top glbl -prj WebModel.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims -L xpm --initfile C:/Xilinx/Vivado/2018.2/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s WebModel 
+Multi-threading is on. Using 10 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/AESL_sim_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/ip/xil_defaultlib/WebModel_ap_fadd_3_full_dsp_32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_ap_fadd_3_full_dsp_32
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/ip/xil_defaultlib/WebModel_ap_fcmp_0_no_dsp_32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_ap_fcmp_0_no_dsp_32
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/ip/xil_defaultlib/WebModel_ap_fdiv_10_no_dsp_32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_ap_fdiv_10_no_dsp_32
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/ip/xil_defaultlib/WebModel_ap_fexp_6_full_dsp_32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_ap_fexp_6_full_dsp_32
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/ip/xil_defaultlib/WebModel_ap_fmul_1_max_dsp_32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_ap_fmul_1_max_dsp_32
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/AESL_automem_dense_69_input_input_array.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity AESL_automem_dense_69_input_input_array
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/AESL_automem_dense_69_input_input_shape.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity AESL_automem_dense_69_input_input_shape
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/AESL_automem_dense_71_output_array.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity AESL_automem_dense_71_output_array
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_affine_matmul.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_affine_matmul
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_affine_matmul_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_affine_matmul_1
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_dense.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_dense
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_dense_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_dense_1
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_dense_2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_dense_2
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_dot.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_dot
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_dot_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_dot_1
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_dot_1_dense_7ncg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_dot_1_dense_7ncg_ram
+INFO: [VRFC 10-307] analyzing entity k2c_dot_1_dense_7ncg
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_dot_2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_dot_2
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_dot_2_dense_7pcA.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_dot_2_dense_7pcA_ram
+INFO: [VRFC 10-307] analyzing entity k2c_dot_2_dense_7pcA
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_dot_dense_69_fYi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_dot_dense_69_fYi_ram
+INFO: [VRFC 10-307] analyzing entity k2c_dot_dense_69_fYi
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_dot_permA.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_dot_permA_ram
+INFO: [VRFC 10-307] analyzing entity k2c_dot_permA
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_dot_permB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_dot_permB_ram
+INFO: [VRFC 10-307] analyzing entity k2c_dot_permB
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_matmul.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_matmul
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_matmul_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_matmul_1
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_matmul_2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_matmul_2
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_relu_func.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_relu_func
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/k2c_sub2idx.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity k2c_sub2idx
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel.autotb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity apatb_WebModel_top
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_dense_69Aem.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_69Aem_rom
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_69Aem
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_dense_69DeQ.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_69DeQ_ram
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_69DeQ
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_dense_69Hfu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_69Hfu_ram
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_69Hfu
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_dense_69xdS.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_69xdS_rom
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_69xdS
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_dense_70Bew.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_70Bew_rom
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_70Bew
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_dense_70sc4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_70sc4_ram
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_70sc4
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_dense_70tde.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_70tde_rom
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_70tde
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_dense_70udo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_70udo_ram
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_70udo
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_dense_71vdy.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_71vdy_rom
+INFO: [VRFC 10-307] analyzing entity WebModel_dense_71vdy
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_fadd_32ncud.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_fadd_32ncud
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_fcmp_32nlbW.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_fcmp_32nlbW
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_fdiv_32nqcK.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_fdiv_32nqcK
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_fexp_32nrcU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_fexp_32nrcU
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_fmul_32ndEe.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_fmul_32ndEe
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_mac_mulaocq.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_mac_mulaocq_DSP48_1
+INFO: [VRFC 10-307] analyzing entity WebModel_mac_mulaocq
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_mul_64nseOg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_mul_64nseOg_MulnS_1
+INFO: [VRFC 10-307] analyzing entity WebModel_mul_64nseOg
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_mul_64s_bkb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_mul_64s_bkb_MulnS_0
+INFO: [VRFC 10-307] analyzing entity WebModel_mul_64s_bkb
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_mul_mul_mb6.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_mul_mul_mb6_DSP48_0
+INFO: [VRFC 10-307] analyzing entity WebModel_mul_mul_mb6
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_mux_464_kbM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_mux_464_kbM
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_udiv_18nhbi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_udiv_18nhbi_div_u
+INFO: [VRFC 10-307] analyzing entity WebModel_udiv_18nhbi_div
+INFO: [VRFC 10-307] analyzing entity WebModel_udiv_18nhbi
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_udiv_64ng8j.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_udiv_64ng8j_div_u
+INFO: [VRFC 10-307] analyzing entity WebModel_udiv_64ng8j_div
+INFO: [VRFC 10-307] analyzing entity WebModel_udiv_64ng8j
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_udiv_64njbC.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_udiv_64njbC_div_u
+INFO: [VRFC 10-307] analyzing entity WebModel_udiv_64njbC_div
+INFO: [VRFC 10-307] analyzing entity WebModel_udiv_64njbC
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/boto7/AppData/Roaming/Xilinx/Vivado/Webmodel_final/solution1/sim/vhdl/WebModel_urem_64nibs.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity WebModel_urem_64nibs_div_u
+INFO: [VRFC 10-307] analyzing entity WebModel_urem_64nibs_div
+INFO: [VRFC 10-307] analyzing entity WebModel_urem_64nibs
+Starting static elaboration
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/mult_gen_v12_0/hdl/mult_gen_v12_0_vh_rfs.vhd:2255]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/mult_gen_v12_0/hdl/mult_gen_v12_0_vh_rfs.vhd:2240]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:90362]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/xbip_pipe_v3_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd:375]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/xbip_pipe_v3_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd:375]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/xbip_pipe_v3_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd:375]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/xbip_pipe_v3_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd:375]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/xbip_pipe_v3_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd:375]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/xbip_pipe_v3_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd:375]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/xbip_pipe_v3_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd:375]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:13629]
+WARNING: [VRFC 10-982] library name floating_point_v7_1_6 of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/WebModel_ap_fadd_3_full_dsp_32.vhd:195]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:90362]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:13629]
+WARNING: [VRFC 10-982] library name floating_point_v7_1_6 of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/WebModel_ap_fmul_1_max_dsp_32.vhd:195]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:90362]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/xbip_pipe_v3_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd:375]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/xbip_pipe_v3_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd:375]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/xbip_pipe_v3_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd:375]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/xbip_pipe_v3_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd:375]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:13629]
+WARNING: [VRFC 10-982] library name floating_point_v7_1_6 of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/WebModel_ap_fdiv_10_no_dsp_32.vhd:195]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:90362]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:14216]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:30530]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/xbip_pipe_v3_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd:375]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/xbip_pipe_v3_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd:375]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:76921]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:77053]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:76921]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:77053]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:79206]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:77294]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:78210]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/xbip_pipe_v3_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd:375]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:14403]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/xbip_pipe_v3_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd:375]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:13629]
+WARNING: [VRFC 10-982] library name floating_point_v7_1_6 of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/WebModel_ap_fexp_6_full_dsp_32.vhd:190]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/xhdhdnobkup2/mounicav/xsimsource/xsim_HEAD/data/vhdl/src/ieee_2008/numeric_std-body.vhdl:3476]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:90362]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/2018.2/continuous/2018_06_14_2258646/packages/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:13629]
+WARNING: [VRFC 10-982] library name floating_point_v7_1_6 of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/WebModel_ap_fcmp_0_no_dsp_32.vhd:194]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/xhdhdnobkup2/mounicav/xsimsource/xsim_HEAD/data/vhdl/src/ieee_2008/numeric_std-body.vhdl:3476]
+WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/xhdhdnobkup2/mounicav/xsimsource/xsim_HEAD/data/vhdl/src/ieee_2008/numeric_std-body.vhdl:3476]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_textio
+Compiling package floating_point_v7_1_6.floating_point_v7_1_6_viv_comp
+Compiling package xbip_utils_v3_0_9.xbip_utils_v3_0_9_pkg
+Compiling package axi_utils_v2_0_5.axi_utils_v2_0_5_pkg
+Compiling package floating_point_v7_1_6.floating_point_v7_1_6_consts
+Compiling package ieee.math_real
+Compiling package floating_point_v7_1_6.floating_point_v7_1_6_exp_table_...
+Compiling package mult_gen_v12_0_14.mult_gen_v12_0_14_pkg
+Compiling package ieee.std_logic_signed
+Compiling package floating_point_v7_1_6.floating_point_v7_1_6_pkg
+Compiling package floating_point_v7_1_6.flt_utils
+Compiling package xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv_comp
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling module work.glbl
+Compiling architecture rtl of entity xil_defaultlib.WebModel_dense_70sc4_ram [\WebModel_dense_70sc4_ram(1,5)\]
+Compiling architecture arch of entity xil_defaultlib.WebModel_dense_70sc4 [webmodel_dense_70sc4_default]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_dense_70tde_rom [webmodel_dense_70tde_rom_default]
+Compiling architecture arch of entity xil_defaultlib.WebModel_dense_70tde [webmodel_dense_70tde_default]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_dense_70udo_ram [\WebModel_dense_70udo_ram(1,5)\]
+Compiling architecture arch of entity xil_defaultlib.WebModel_dense_70udo [webmodel_dense_70udo_default]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_dense_71vdy_rom [webmodel_dense_71vdy_rom_default]
+Compiling architecture arch of entity xil_defaultlib.WebModel_dense_71vdy [webmodel_dense_71vdy_default]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_dense_69xdS_rom [webmodel_dense_69xds_rom_default]
+Compiling architecture arch of entity xil_defaultlib.WebModel_dense_69xdS [webmodel_dense_69xds_default]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_dense_69Aem_rom [webmodel_dense_69aem_rom_default]
+Compiling architecture arch of entity xil_defaultlib.WebModel_dense_69Aem [webmodel_dense_69aem_default]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_dense_70Bew_rom [webmodel_dense_70bew_rom_default]
+Compiling architecture arch of entity xil_defaultlib.WebModel_dense_70Bew [webmodel_dense_70bew_default]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_dense_69DeQ_ram [\WebModel_dense_69DeQ_ram(1,5)\]
+Compiling architecture arch of entity xil_defaultlib.WebModel_dense_69DeQ [webmodel_dense_69deq_default]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_dense_69Hfu_ram [\WebModel_dense_69Hfu_ram(1,5)\]
+Compiling architecture arch of entity xil_defaultlib.WebModel_dense_69Hfu [webmodel_dense_69hfu_default]
+Compiling architecture rtl of entity xil_defaultlib.k2c_dot_2_dense_7pcA_ram [\k2c_dot_2_dense_7pcA_ram(1,5)\]
+Compiling architecture arch of entity xil_defaultlib.k2c_dot_2_dense_7pcA [k2c_dot_2_dense_7pca_default]
+Compiling architecture rtl of entity xil_defaultlib.k2c_dot_permA_ram [\k2c_dot_permA_ram(1,11)\]
+Compiling architecture arch of entity xil_defaultlib.k2c_dot_permA [k2c_dot_perma_default]
+Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=7,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity floating_point_v7_1_6.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=24,length=0,fast_in...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=16,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=4,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=48,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=24,length=0)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_6.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,c_wi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [delay_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=13,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=27,length=0)\]
+Compiling architecture synth of entity floating_point_v7_1_6.align_add_dsp48e1_sgl [\align_add_dsp48e1_sgl(c_xdevice...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000001111...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000000000...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=5,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_6.lead_zero_encode_shift [\lead_zero_encode_shift(ab_fw=24...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=3,length=0)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111110010101001011...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00010001010111110000...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11101110101000001111...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=2)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=25,length=0)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(adreg=0,alumodereg=0,ca...]
+Compiling architecture rtl of entity floating_point_v7_1_6.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,c_wi...]
+Compiling architecture rtl of entity floating_point_v7_1_6.norm_and_round_dsp48e1_sgl [\norm_and_round_dsp48e1_sgl(c_mu...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10011001100110011001...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11111111000000001111...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=9,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=8,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=10)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=4,length=0,fast_inp...]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fde_v of entity unisim.FDE [fde_default]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity floating_point_v7_1_6.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(fast_input=true)\]
+Compiling architecture rtl of entity floating_point_v7_1_6.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity floating_point_v7_1_6.compare_gt [\compare_gt(c_xdevicefamily="art...]
+Compiling architecture synth of entity floating_point_v7_1_6.compare [\compare(c_xdevicefamily="artix7...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=8)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=9)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=2,length=2,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(length=2,fast_input=true)...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(length=0,fast_input=true)...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=2,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=12,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_6.flt_add_exp_sp [\flt_add_exp_sp(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=23)\]
+Compiling architecture synth of entity floating_point_v7_1_6.flt_dec_op [\flt_dec_op(c_xdevicefamily="art...]
+Compiling architecture rtl of entity floating_point_v7_1_6.flt_add_dsp [\flt_add_dsp(c_xdevicefamily="ar...]
+Compiling architecture rtl of entity floating_point_v7_1_6.flt_add [\flt_add(c_xdevicefamily="artix7...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=32,length=0)\]
+Compiling architecture xilinx of entity floating_point_v7_1_6.floating_point_v7_1_6_viv [\floating_point_v7_1_6_viv(c_xde...]
+Compiling architecture xilinx of entity floating_point_v7_1_6.floating_point_v7_1_6 [\floating_point_v7_1_6(c_xdevice...]
+Compiling architecture webmodel_ap_fadd_3_full_dsp_32_arch of entity xil_defaultlib.WebModel_ap_fadd_3_full_dsp_32 [webmodel_ap_fadd_3_full_dsp_32_d...]
+Compiling architecture arch of entity xil_defaultlib.WebModel_fadd_32ncud [\WebModel_fadd_32ncud(id=1)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=17,length=0)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_6.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_6.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_6.fix_mult_dsp48e1_sgl [\fix_mult_dsp48e1_sgl(registers=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.fix_mult [\fix_mult(c_xdevicefamily="artix...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=8,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity floating_point_v7_1_6.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_6.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=3,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=14,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_6.flt_mult_exp [\flt_mult_exp(c_xdevicefamily="a...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=30,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=18,length=0)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_6.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=30,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_6.flt_round_dsp_opt_full [\flt_round_dsp_opt_full(c_xdevic...]
+Compiling architecture rtl of entity floating_point_v7_1_6.flt_mult_round [\flt_mult_round(c_xdevicefamily=...]
+Compiling architecture synth of entity floating_point_v7_1_6.flt_dec_op_lat [\flt_dec_op_lat(c_xdevicefamily=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.flt_mult [\flt_mult(c_xdevicefamily="artix...]
+Compiling architecture xilinx of entity floating_point_v7_1_6.floating_point_v7_1_6_viv [\floating_point_v7_1_6_viv(c_xde...]
+Compiling architecture xilinx of entity floating_point_v7_1_6.floating_point_v7_1_6 [\floating_point_v7_1_6(c_xdevice...]
+Compiling architecture webmodel_ap_fmul_1_max_dsp_32_arch of entity xil_defaultlib.WebModel_ap_fmul_1_max_dsp_32 [webmodel_ap_fmul_1_max_dsp_32_de...]
+Compiling architecture arch of entity xil_defaultlib.WebModel_fmul_32ndEe [\WebModel_fmul_32ndEe(id=1)\]
+Compiling architecture behav of entity xil_defaultlib.WebModel_mul_64s_bkb_MulnS_0 [webmodel_mul_64s_bkb_mulns_0_def...]
+Compiling architecture arch of entity xil_defaultlib.WebModel_mul_64s_bkb [\WebModel_mul_64s_bkb(id=1,num_s...]
+Compiling architecture behav of entity xil_defaultlib.WebModel_mul_64nseOg_MulnS_1 [webmodel_mul_64nseog_mulns_1_def...]
+Compiling architecture arch of entity xil_defaultlib.WebModel_mul_64nseOg [\WebModel_mul_64nseOg(id=1,num_s...]
+Compiling architecture behav of entity xil_defaultlib.k2c_matmul_2 [k2c_matmul_2_default]
+Compiling architecture behav of entity xil_defaultlib.k2c_sub2idx [k2c_sub2idx_default]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_udiv_64ng8j_div_u [\WebModel_udiv_64ng8j_div_u(in0_...]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_udiv_64ng8j_div [\WebModel_udiv_64ng8j_div(in0_wi...]
+Compiling architecture arch of entity xil_defaultlib.WebModel_udiv_64ng8j [\WebModel_udiv_64ng8j(id=1,num_s...]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_urem_64nibs_div_u [\WebModel_urem_64nibs_div_u(in0_...]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_urem_64nibs_div [\WebModel_urem_64nibs_div(in0_wi...]
+Compiling architecture arch of entity xil_defaultlib.WebModel_urem_64nibs [\WebModel_urem_64nibs(id=1,num_s...]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_udiv_64njbC_div_u [\WebModel_udiv_64njbC_div_u(in0_...]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_udiv_64njbC_div [\WebModel_udiv_64njbC_div(in0_wi...]
+Compiling architecture arch of entity xil_defaultlib.WebModel_udiv_64njbC [\WebModel_udiv_64njbC(id=1,num_s...]
+Compiling architecture behav of entity xil_defaultlib.k2c_dot_2 [k2c_dot_2_default]
+Compiling architecture behav of entity xil_defaultlib.WebModel_mul_mul_mb6_DSP48_0 [webmodel_mul_mul_mb6_dsp48_0_def...]
+Compiling architecture arch of entity xil_defaultlib.WebModel_mul_mul_mb6 [\WebModel_mul_mul_mb6(id=1,num_s...]
+Compiling architecture behav of entity xil_defaultlib.WebModel_mac_mulaocq_DSP48_1 [webmodel_mac_mulaocq_dsp48_1_def...]
+Compiling architecture arch of entity xil_defaultlib.WebModel_mac_mulaocq [\WebModel_mac_mulaocq(id=1,num_s...]
+Compiling architecture behav of entity xil_defaultlib.k2c_affine_matmul [k2c_affine_matmul_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=23,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=25,length=0,fast_in...]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity floating_point_v7_1_6.flt_div_mant_addsub [\flt_div_mant_addsub(c_xdevicefa...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=26,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=25,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity floating_point_v7_1_6.flt_div_mant_addsub [\flt_div_mant_addsub(c_xdevicefa...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=26)\]
+Compiling architecture virtex of entity floating_point_v7_1_6.flt_div_mant [\flt_div_mant(c_xdevicefamily="a...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=10,length=0,fast_in...]
+Compiling architecture rtl of entity floating_point_v7_1_6.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(length=9,fast_input=true)...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=2,fast_input=true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=4,fast_input=true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=8,length=9)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(length=8,fast_input=true)...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=3,length=8,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=4,length=8,fast_inp...]
+Compiling architecture rtl of entity floating_point_v7_1_6.flt_div_exp [\flt_div_exp(c_xdevicefamily="no...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=12,length=0,fast_in...]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=2,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture rtl of entity floating_point_v7_1_6.flt_round_bit [\flt_round_bit(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_6.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+Compiling architecture synth of entity floating_point_v7_1_6.flt_dec_op_lat [\flt_dec_op_lat(c_xdevicefamily=...]
+Compiling architecture virtex of entity floating_point_v7_1_6.flt_div [\flt_div(c_xdevicefamily="artix7...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture xilinx of entity floating_point_v7_1_6.floating_point_v7_1_6_viv [\floating_point_v7_1_6_viv(c_xde...]
+Compiling architecture xilinx of entity floating_point_v7_1_6.floating_point_v7_1_6 [\floating_point_v7_1_6(c_xdevice...]
+Compiling architecture webmodel_ap_fdiv_10_no_dsp_32_arch of entity xil_defaultlib.WebModel_ap_fdiv_10_no_dsp_32 [webmodel_ap_fdiv_10_no_dsp_32_de...]
+Compiling architecture arch of entity xil_defaultlib.WebModel_fdiv_32nqcK [\WebModel_fdiv_32nqcK(id=1)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=43,length=0)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_6.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=17,b_wi...]
+Compiling architecture rtl of entity floating_point_v7_1_6.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(length=4)\]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity floating_point_v7_1_6.compare_gt [\compare_gt(c_xdevicefamily="art...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=2,length=4,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(length=5)\]
+Compiling architecture synth of entity floating_point_v7_1_6.flt_exp_specialcase [\flt_exp_specialcase(c_xdevicefa...]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ki...]
+Compiling architecture synth of entity floating_point_v7_1_6.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_6.special_detect [\special_detect(a_fw=24,op_delay...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=10,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay_s [\delay_s(width=10,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay_s [\delay_s(width=9,length=0)\]
+Compiling architecture muxf7_v of entity unisim.MUXF7 [muxf7_default]
+Compiling architecture muxf8_v of entity unisim.MUXF8 [muxf8_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=6,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity floating_point_v7_1_6.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_6.zero_det_sel [\zero_det_sel(c_xdevicefamily="a...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=34,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_6.shift_msb_first [\shift_msb_first(a_width=24,resu...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=35,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=36)\]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=34)\]
+Compiling architecture synth of entity floating_point_v7_1_6.flt_to_fix_conv [\flt_to_fix_conv(c_xdevicefamily...]
+Compiling architecture rtl of entity floating_point_v7_1_6.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=30,b_wi...]
+Compiling architecture synth of entity floating_point_v7_1_6.flt_log_addsub [\flt_log_addsub(c_xdevicefamily=...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_6.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=30,b_wi...]
+Compiling architecture synth of entity floating_point_v7_1_6.flt_log_addsub [\flt_log_addsub(c_xdevicefamily=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.flt_exp_ccm [\flt_exp_ccm(c_xdevicefamily="ar...]
+Compiling architecture synth of entity floating_point_v7_1_6.flt_log_addsub [\flt_log_addsub(c_xdevicefamily=...]
+Compiling architecture synth of entity floating_point_v7_1_6.flt_log_addsub [\flt_log_addsub(c_xdevicefamily=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.flt_exp_ccm [\flt_exp_ccm(c_xdevicefamily="ar...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=33,length=2)\]
+Compiling architecture synth of entity floating_point_v7_1_6.flt_log_addsub [\flt_log_addsub(c_xdevicefamily=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.flt_exp_e2A [\flt_exp_e2A(c_xdevicefamily="ar...]
+Compiling architecture rtl of entity floating_point_v7_1_6.flt_exp_e2zmzm1 [\flt_exp_e2zmzm1(c_xdevicefamily...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=16)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=8,length=3)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(length=2)\]
+Compiling architecture rtl of entity floating_point_v7_1_6.dsp48e1_wrapper [\dsp48e1_wrapper(b_width=18,c_wi...]
+Compiling architecture rtl of entity floating_point_v7_1_6.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1100110010010110")(0...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1100110000111100")(0...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=9,length=0,fast_inp...]
+Compiling architecture synth of entity floating_point_v7_1_6.flt_log_addsub [\flt_log_addsub(c_xdevicefamily=...]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity floating_point_v7_1_6.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture synth of entity floating_point_v7_1_6.compare_ne_im [\compare_ne_im(c_xdevicefamily="...]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity floating_point_v7_1_6.compare_gt [\compare_gt(c_xdevicefamily="art...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=32)\]
+Compiling architecture synth of entity floating_point_v7_1_6.flt_exp_recomb [\flt_exp_recomb(c_xdevicefamily=...]
+Compiling architecture synth of entity floating_point_v7_1_6.flt_exp [\flt_exp(c_xdevicefamily="artix7...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture xilinx of entity floating_point_v7_1_6.floating_point_v7_1_6_viv [\floating_point_v7_1_6_viv(c_xde...]
+Compiling architecture xilinx of entity floating_point_v7_1_6.floating_point_v7_1_6 [\floating_point_v7_1_6(c_xdevice...]
+Compiling architecture webmodel_ap_fexp_6_full_dsp_32_arch of entity xil_defaultlib.WebModel_ap_fexp_6_full_dsp_32 [webmodel_ap_fexp_6_full_dsp_32_d...]
+Compiling architecture arch of entity xil_defaultlib.WebModel_fexp_32nrcU [\WebModel_fexp_32nrcU(id=1)\]
+Compiling architecture behav of entity xil_defaultlib.k2c_dense [k2c_dense_default]
+Compiling architecture rtl of entity xil_defaultlib.k2c_dot_1_dense_7ncg_ram [\k2c_dot_1_dense_7ncg_ram(1,5)\]
+Compiling architecture arch of entity xil_defaultlib.k2c_dot_1_dense_7ncg [k2c_dot_1_dense_7ncg_default]
+Compiling architecture behav of entity xil_defaultlib.k2c_matmul_1 [k2c_matmul_1_default]
+Compiling architecture behav of entity xil_defaultlib.k2c_dot_1 [k2c_dot_1_default]
+Compiling architecture synth of entity floating_point_v7_1_6.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture synth of entity floating_point_v7_1_6.compare_ne_im [\compare_ne_im(c_xdevicefamily="...]
+Compiling architecture synth of entity floating_point_v7_1_6.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_6.delay [\delay(width=11,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity floating_point_v7_1_6.compare_eq [\compare_eq(c_xdevicefamily="art...]
+Compiling architecture struct of entity floating_point_v7_1_6.carry_chain [\carry_chain(c_xdevicefamily="ar...]
+Compiling architecture synth of entity floating_point_v7_1_6.compare_gt [\compare_gt(c_xdevicefamily="art...]
+Compiling architecture rtl of entity floating_point_v7_1_6.fp_cmp [\fp_cmp(c_xdevicefamily="artix7"...]
+Compiling architecture xilinx of entity floating_point_v7_1_6.floating_point_v7_1_6_viv [\floating_point_v7_1_6_viv(c_xde...]
+Compiling architecture xilinx of entity floating_point_v7_1_6.floating_point_v7_1_6 [\floating_point_v7_1_6(c_xdevice...]
+Compiling architecture webmodel_ap_fcmp_0_no_dsp_32_arch of entity xil_defaultlib.WebModel_ap_fcmp_0_no_dsp_32 [webmodel_ap_fcmp_0_no_dsp_32_def...]
+Compiling architecture arch of entity xil_defaultlib.WebModel_fcmp_32nlbW [\WebModel_fcmp_32nlbW(id=1)\]
+Compiling architecture behav of entity xil_defaultlib.k2c_relu_func [k2c_relu_func_default]
+Compiling architecture behav of entity xil_defaultlib.k2c_dense_1 [k2c_dense_1_default]
+Compiling architecture rtl of entity xil_defaultlib.k2c_dot_dense_69_fYi_ram [\k2c_dot_dense_69_fYi_ram(1,5)\]
+Compiling architecture arch of entity xil_defaultlib.k2c_dot_dense_69_fYi [k2c_dot_dense_69_fyi_default]
+Compiling architecture rtl of entity xil_defaultlib.k2c_dot_permB_ram [\k2c_dot_permB_ram(1,11)\]
+Compiling architecture arch of entity xil_defaultlib.k2c_dot_permB [k2c_dot_permb_default]
+Compiling architecture behav of entity xil_defaultlib.k2c_matmul [k2c_matmul_default]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_udiv_18nhbi_div_u [\WebModel_udiv_18nhbi_div_u(in0_...]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_udiv_18nhbi_div [\WebModel_udiv_18nhbi_div(in0_wi...]
+Compiling architecture arch of entity xil_defaultlib.WebModel_udiv_18nhbi [\WebModel_udiv_18nhbi(id=1,num_s...]
+Compiling architecture rtl of entity xil_defaultlib.WebModel_mux_464_kbM [\WebModel_mux_464_kbM(id=1,din4_...]
+Compiling architecture behav of entity xil_defaultlib.k2c_dot [k2c_dot_default]
+Compiling architecture behav of entity xil_defaultlib.k2c_affine_matmul_1 [k2c_affine_matmul_1_default]
+Compiling architecture behav of entity xil_defaultlib.k2c_dense_2 [k2c_dense_2_default]
+Compiling architecture behav of entity xil_defaultlib.WebModel [webmodel_default]
+Compiling architecture behav of entity xil_defaultlib.AESL_automem_dense_69_input_input_array [aesl_automem_dense_69_input_inpu...]
+Compiling architecture behav of entity xil_defaultlib.AESL_automem_dense_69_input_input_shape [aesl_automem_dense_69_input_inpu...]
+Compiling architecture behav of entity xil_defaultlib.AESL_automem_dense_71_output_array [aesl_automem_dense_71_output_arr...]
+Compiling architecture behav of entity xil_defaultlib.apatb_webmodel_top
+Built simulation snapshot WebModel
